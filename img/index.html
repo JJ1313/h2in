@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+	
+	<title>H2VAL | CORFO-PUCV</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="h2val.css"/>	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	
+	
+</head>
+<body>
+
+
+<div style="background-image: url('img/ribbon.png'); z-index: 2; box-shadow: 0 8px 2px -2px #ACE531; position: absolute; top: 0; margin-top: -10pt; background-size: cover; width: 100%; height: 120px; background-position: center bottom;"></div>
+
+<div class="contenedor-inferior">
+  <div class="contenedor-inferior-content">
+		<img src="img/ribbon2.webp" >
+  </div>
+</div>
+
+<div class="contenedor-superior">
+  <img src="img/logo_muni.png" width="160pt" >  
+  <img src="img/logo_pucv_w.png" width="160pt" class="imagen-con-sombra" >
+  <img src="img/logo_corfo_w.png" width="160pt" class="imagen-con-sombra" >
+  <img src="img/logo_DPS_w.png" width="160pt" class="imagen-con-sombra" >
+</div>
+
+
+
+<div id="map-container">	
+	<div id="map" style="width: 100%; height: 100%;  z-index: 1; position: relative;"></div>
+	
+	<script src="valpo.js"></script>
+	
+	<script>
+	
+	const map = L.map('map').setView([-33.0309126,-71.0634993], 10);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	//const marker = L.marker([51.5, -0.09]).addTo(map)
+		//.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+
+	/*const circle = L.circle([51.508, -0.11], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 500
+	}).addTo(map).bindPopup('I am a circle.');*/
+
+	/*const polygon = L.polygon([
+		 [-32.165718,-70.760062 ], 
+		 [-32.186343,-70.790854], 
+		 [-32.216675,-70.786464], 		 
+	]).addTo(map).bindPopup('I am a polygon.');*/
+	
+	
+    window.onload = function() {
+        
+        for (var key in hexagonos) {
+            if (hexagonos.hasOwnProperty(key)) {
+			
+				var a = hexagonos[key]["COORDINATES"];
+				
+				const popupOptions = {
+					maxWidth: "400",
+				};
+			
+				var popupContent = "<table> <tr> <th>Variable</th> <th align='right'>Valor</th></tr> ";
+				popupContent += "<tr> <td>Hexágono (ID)</td> <td align='right'>"+ key +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. SNASPE(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_SNASPE_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. AVE(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_AVE_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. HUMEDAL(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_HUMEDAL_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. SALAR(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_SALAR_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. TIERRA_INDIGENA(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_TIERRA_INDIGENA_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. PATRIMONIO_MUNDIAL(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_PATRIMONIO_MUNDIAL_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. MONUMENTO_NACIONAL(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_MONUMENTO_NACIONAL_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. SANTUARIO_NATURAL(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_ZONA_TIPICA_Y_SANTUARIO_NATURAL_(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. RED_VIAL(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_RED_VIAL(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. COSTA(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_COSTA(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. TERMINAL(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_TERMINAL(KM)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>DIST. POBLACION(km)</td> <td align='right'>"+ parseFloat(hexagonos[key]['DISTANCIA_A_POBLACION']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>ÁREA(m<sup>2</sup>)</td> <td align='right'>"+ parseFloat(hexagonos[key]['ÁREA_(M2)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>RTI(m)</td> <td align='right'>"+ parseFloat(hexagonos[key]['RTI_(M)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>POT. SOLAR(MW)</td> <td align='right'>"+ parseFloat(hexagonos[key]['POTENCIA_SOLAR_(MW)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>POT. EÓLICA(MW)</td> <td align='right'>"+ parseFloat(hexagonos[key]['POTENCIA_EÓLICA_(MW)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>HIDROGENO (kgH<sub>2</sub>/kWp)</td> <td align='right'>"+ parseFloat(hexagonos[key]['HIDROGENO_(KGH_2/KWP)']).toFixed(2) +"</td> </tr>";
+				popupContent += "<tr> <td>HIDROGENO (kgH<sub>2</sub>/m<sup>2</sup>)</td> <td align='right'>"+ parseFloat(hexagonos[key]['HIDROGENO_(KGH_2/M_2)']).toFixed(2) +"</td> </tr>";		
+				
+				popupContent += "</table>";
+				
+				
+				const polygon = L.polygon(a).addTo(map).bindPopup(popupContent,popupOptions);
+				polygon.setStyle({fillColor: '#362B29', color:'black', weight: 0.5, opacity: 0.8});
+				
+				
+				function showPopup(e) {
+					this.bindPopup(popupContent, popupOptions).openPopup();
+				}
+
+				
+				function hidePopup(e) {
+					this.closePopup();
+				}
+				
+				polygon.on('mouseover', showPopup);
+				polygon.on('mouseout', hidePopup);
+				
+            }
+        }
+    };
+
+
+	/*const popup = L.popup()
+		.setLatLng([51.513, -0.09])
+		.setContent('I am a standalone popup.')
+		.openOn(map);*/
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent(`You clicked the map at ${e.latlng.toString()}`)
+			.openOn(map);
+	}
+	map.on('click', onMapClick);	
+
+</script>
+
+</div>
+
+</body>
+</html>
