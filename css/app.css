@@ -1,0 +1,165 @@
+:root {
+  --clr-blue: #042663;
+  --clr-green: #5baa16;
+  --clr-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  font-size: 1.5rem;
+}
+
+
+
+
+#infoDiv {
+  --padding: 10px;
+
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  /* border-radius: 5px; 
+  border: 1px solid #F2EFE9;
+  padding: var(--padding); */
+  min-width: 340px;
+  margin-top: 150px;
+  margin-left: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1.9);
+  transition: translate ease-in-out 1s;
+
+  &:not([data-visible]) {
+    translate: -130%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &>header {
+    background: var(--clr-blue);
+    padding: var(--padding);
+    color: var(--clr-white);
+    text-transform: uppercase;
+
+    button {
+      color: var(--clr-white);
+      position: relative;
+      /*
+      &::before,
+      &::after{
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: var(--clr-white);
+        display: block;
+        position: absolute;
+      }
+      &::before{
+        transform: translateY(50%) rotateZ(45deg);
+      }
+      &::after{
+        transform: translateY(-50%) rotateZ(-45deg);
+      }
+      */
+    }
+  }
+
+  & div header {
+    border-top: 1px solid var(--clr-blue);
+    border-bottom: 1px solid #777;
+    padding: var(--padding);
+  }
+
+  & div main {
+    height: auto;
+    transition: opacity 1s ease-in-out;
+    visibility: visible;
+
+    &:not([data-opened]) {
+      height: 0;
+      visibility: hidden;
+
+      button{
+        outline: 1px solid red;
+        transform: rotateY(45deg);
+      }
+    }
+  }
+
+  .unit {
+    font-size: 0.8rem;
+    margin-inline-start: 0.3rem;
+
+    &::before {
+      content: '[';
+    }
+
+    &::after {
+      content: ']';
+    }
+  }
+
+  span:not(.unit) {
+    margin-inline-start: auto;
+  }
+
+  .btn-popover {
+    background: var(--clr-blue);
+    color: var(--clr-white);
+    width: 1rem;
+    height: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin: 0 1rem 0 0.3rem;
+  }
+
+  .pop-info {
+    padding: 0 var(--padding);
+    background: black;
+    opacity: 0.85;
+    z-index: 9999;
+    color: var(--clr-white);
+    position: absolute;
+    left: calc(100% + var(--padding)*2);
+    top: -25%;
+    translate: 0 50%;
+    width: max-content;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+
+    &:not([data-visible]) {
+      width: 0;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  main {
+    padding-inline: var(--padding);
+  }
+
+  & main>div {
+    position: relative;
+    display: flex;
+    padding-block: 5px;
+    align-items: center;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #777;
+    }
+  }
+}

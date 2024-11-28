@@ -1,170 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-	<title>H2V Valparaiso</title>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">	
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">	
-	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body, html {
-            height: 100%;  /* Asegura que el elemento HTML y BODY ocupen toda la altura de la ventana del navegador */
-            margin: 0;
-            padding: 0;
-            display: flex;  /* Activa Flexbox */
-            justify-content: center;  /* Centra horizontalmente */
-            align-items: center;  /* Centra verticalmente */
-            background: url('img/background.webp') no-repeat center center fixed; 
-            /* Cambia 'path/to/your/background-image.jpg' con la ruta correcta de tu imagen */
-            background-size: cover;  /* Asegura que la imagen de fondo cubra toda la pantalla */
-        }
-		.container {
-            display: flex; /* Habilita Flexbox */
-            flex-direction: column; /* Organiza los hijos en columna (uno debajo del otro) */
-            justify-content: center; /* Centra los items verticalmente si el contenedor es más alto */
-            align-items: center; /* Centra los items horizontalmente */
-            height: 100vh; /* Usa el 100% de la altura de la pantalla */
-        }
-		.splash-container1 {
-            width: 300px; /* Ajusta al ancho de la imagen */
-            height: 100px; /* Ajusta a la altura de la imagen */
-            background: url('img/logo_w.webp') no-repeat center center;
-            background-size: contain; /* Asegura que la imagen se ajuste completamente dentro del div */			 
-            #width: 100%; /* Ajusta al 80% del ancho del contenedor padre */
-            padding: 20px; /* Añade padding para visualización */
-            margin: 10px 0; /* Añade margen vertical */
-            #border: 1px solid #ccc; /* Agrega un borde para visualización */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Opcional: añade sombra para mejor estética */
-            text-align: center; /* Alinea el texto al centro */			
-			margin-top: -40px;
-        }
-		.splash-container2 {
-            width: 300px; /* Ajusta al ancho de la imagen */
-            height: 100px; /* Ajusta a la altura de la imagen */
-            #background: url('img/logo_w.png') no-repeat center center;
-            #background-size: contain; /* Asegura que la imagen se ajuste completamente dentro del div */			 
-            #width: 100%; /* Ajusta al 80% del ancho del contenedor padre */
-            padding: 20px; /* Añade padding para visualización */
-            margin: 1px 0; /* Añade margen vertical */
-            #border: 1px solid #ccc; /* Agrega un borde para visualización */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Opcional: añade sombra para mejor estética */
-            text-align: center; /* Alinea el texto al centro */
-        }
-		.button-group {
-			display: flex;
-			flex-direction: column;
-		}
+  <title>H2V Valparaiso</title>
 
-		.login-button {
-			border: none;
-			color: white;
-			padding: 10px;
-			margin: 5px;
-			border-radius: 5px;
-			font-size: 16px;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			transition: background-color 0.3s, box-shadow 0.3s; 
-		}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
-		.facebook {
-			background-color: #3b5998;
-		}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-		.google {
-			background-color: #dd4b39;
-		}
 
-		.github {
-			background-color: #333;
-		}
-		.comunidad {
-			background-color: #408E16;
-		}
+  <style>
+    body,
+    html {
+      height: 100%;
+      /* Asegura que el elemento HTML y BODY ocupen toda la altura de la ventana del navegador */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      /* Activa Flexbox */
+      justify-content: center;
+      /* Centra horizontalmente */
+      align-items: center;
+      /* Centra verticalmente */
+      background: url('img/background.webp') no-repeat center center fixed;
+      /* Cambia 'path/to/your/background-image.jpg' con la ruta correcta de tu imagen */
+      background-size: cover;
+      /* Asegura que la imagen de fondo cubra toda la pantalla */
+    }
 
-		.login-button i {
-			margin-right: 10px;
-		}
-		.splash-container2 h2 {
-			color: white; /* Cambia este color al que prefieras */
-		}
-		.login-button:hover {
-			box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Añade un brillo blanco alrededor del botón */
-			transform: translateY(-2px); /* Levanta ligeramente el botón */
-		}
+    .container {
+      display: flex;
+      /* Habilita Flexbox */
+      flex-direction: column;
+      /* Organiza los hijos en columna (uno debajo del otro) */
+      justify-content: center;
+      /* Centra los items verticalmente si el contenedor es más alto */
+      align-items: center;
+      /* Centra los items horizontalmente */
+      height: 100vh;
+      /* Usa el 100% de la altura de la pantalla */
+    }
 
-		.facebook:hover {
-			background-color: #4a69ad; /* Un tono más claro de azul */
-		}
+    .splash-container1 {
+      width: 300px;
+      /* Ajusta al ancho de la imagen */
+      height: 100px;
+      /* Ajusta a la altura de la imagen */
+      background: url('img/logo_w.webp') no-repeat center center;
+      background-size: contain;
+      /* Asegura que la imagen se ajuste completamente dentro del div */
+      #width: 100%;
+      /* Ajusta al 80% del ancho del contenedor padre */
+      padding: 20px;
+      /* Añade padding para visualización */
+      margin: 10px 0;
+      /* Añade margen vertical */
+      #border: 1px solid #ccc;
+      /* Agrega un borde para visualización */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Opcional: añade sombra para mejor estética */
+      text-align: center;
+      /* Alinea el texto al centro */
+      margin-top: -40px;
+    }
 
-		.google:hover {
-			background-color: #e75a33; /* Un tono más claro de rojo */
-		}
+    .splash-container2 {
+      width: 300px;
+      /* Ajusta al ancho de la imagen */
+      height: 100px;
+      /* Ajusta a la altura de la imagen */
+      #background: url('img/logo_w.png') no-repeat center center;
+      #background-size: contain;
+      /* Asegura que la imagen se ajuste completamente dentro del div */
+      #width: 100%;
+      /* Ajusta al 80% del ancho del contenedor padre */
+      padding: 20px;
+      /* Añade padding para visualización */
+      margin: 1px 0;
+      /* Añade margen vertical */
+      #border: 1px solid #ccc;
+      /* Agrega un borde para visualización */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Opcional: añade sombra para mejor estética */
+      text-align: center;
+      /* Alinea el texto al centro */
+    }
 
-		.github:hover {
-			background-color: #4c4c4c; /* Un tono más claro de gris */
-		}
+    .button-group {
+      display: flex;
+      flex-direction: column;
+    }
 
-		.comunidad:hover {
-			background-color: #5AD439; /* Un tono más claro de verde */
-		}
-		
+    .login-button {
+      border: none;
+      color: white;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
 
-    </style>
+    .facebook {
+      background-color: #3b5998;
+    }
+
+    .google {
+      background-color: #dd4b39;
+    }
+
+    .github {
+      background-color: #333;
+    }
+
+    .comunidad {
+      background-color: #408E16;
+    }
+
+    .login-button i {
+      margin-right: 10px;
+    }
+
+    .splash-container2 h2 {
+      color: white;
+      /* Cambia este color al que prefieras */
+    }
+
+    .login-button:hover {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+      /* Añade un brillo blanco alrededor del botón */
+      transform: translateY(-2px);
+      /* Levanta ligeramente el botón */
+    }
+
+    .facebook:hover {
+      background-color: #4a69ad;
+      /* Un tono más claro de azul */
+    }
+
+    .google:hover {
+      background-color: #e75a33;
+      /* Un tono más claro de rojo */
+    }
+
+    .github:hover {
+      background-color: #4c4c4c;
+      /* Un tono más claro de gris */
+    }
+
+    .comunidad:hover {
+      background-color: #5AD439;
+      /* Un tono más claro de verde */
+    }
+  </style>
 </head>
+
 <body>
 
-	
-     <div class="container">
-        
-		<div class="splash-container1">
-            <!-- Contenido del primer div, si hay alguno -->
-        </div>        
-        <div class="splash-container2">		
 
-            <div class="button-group">
-				<button class="login-button facebook"> Funcionario Público</button>
-				<button class="login-button google"> Empresa</button>
-				<button class="login-button github"> Educación</button>
-				<button class="login-button comunidad"> Comunidad</button>
-			</div>
-        </div>
+  <div class="container">
+
+    <div class="splash-container1">
+      <!-- Contenido del primer div, si hay alguno -->
     </div>
-	
-	
+    <div class="splash-container2">
 
-    <script>
+      <div class="button-group">
+        <button class="login-button facebook"> Funcionario Público</button>
+        <button class="login-button google"> Empresa</button>
+        <button class="login-button github"> Educación</button>
+        <button class="login-button comunidad"> Comunidad</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
        //  Redireccionar a index.html después de 10 segundos
-		/*    setTimeout(function() {
+    /*    setTimeout(function() {
             window.location.href = 'app.html';
         }, 5000)*/
-    </script>
-	
-	<script>
+  </script>
+
+  <script>
     // Seleccionar todos los botones
     var buttons = document.querySelectorAll('.login-button');
 
     // Función para redireccionar
     function redirectToApp() {
-        window.location.href = 'app.html';
+      window.location.href = 'app.html';
     }
 
     // Asignar el evento de clic a cada botón
-    buttons.forEach(function(button) {
-        button.addEventListener('click', redirectToApp);
+    buttons.forEach(function (button) {
+      button.addEventListener('click', redirectToApp);
     });
-</script>
+  </script>
 
-	
-	
+
+
 </body>
+
 </html>
