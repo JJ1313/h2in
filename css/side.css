@@ -1,35 +1,45 @@
 /* Estilos generales para el sidebar */
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px; /* Ancho del sidebar */
-    height: 10%; /* Altura total de la vista */
-    background-color: #f4f4f4; /* Color de fondo del sidebar */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5); /* Sombra para el sidebar */
-    transform: translateX(100%); /* Inicialmente oculto */
-    transition: transform 0.3s ease-in-out; /* Animación suave */
-    z-index: 1001; /* Asegura que esté sobre otros contenidos */
-	margin-top: 115px
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  /* Ancho del sidebar */
+  height: 10%;
+  /* Altura total de la vista */
+  background-color: #f4f4f4;
+  /* Color de fondo del sidebar */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  /* Sombra para el sidebar */
+  transform: translateX(100%);
+  /* Inicialmente oculto */
+  transition: transform 0.3s ease-in-out;
+  /* Animación suave */
+  z-index: 1001;
+  /* Asegura que esté sobre otros contenidos */
+  margin-top: 115px
 }
 
 .sidebar button {
-    position: absolute;
-    left: -80px; /* Posiciona el botón fuera del sidebar */
-    top: 20px;
-    padding: 5px 10px;
-    cursor: pointer;	
-	background-color: #122562;
-	color: white;
+  position: absolute;
+  left: -80px;
+  /* Posiciona el botón fuera del sidebar */
+  top: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #122562;
+  color: white;
 }
 
 .sidebar-content {
-    padding: 10px;
-    height: 100%;
-    overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+  /* Permite desplazamiento si el contenido es largo */
 }
 
 /* Clase para mostrar el sidebar */
 .show-sidebar {
-    transform: translateX(0); /* Mueve el sidebar a la vista */
+  transform: translateX(0);
+  /* Mueve el sidebar a la vista */
 }
