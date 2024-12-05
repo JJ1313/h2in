@@ -1,17 +1,20 @@
-// COMUNAS
+function toggleSidebar() {
+	var sidebar = document.getElementById('sidebar');
+	sidebar.classList.toggle('show-sidebar');
+}
+
 function handleOption1(checkbox) {
     if (checkbox.checked) {
-        // console.log("Opción 1 seleccionada");
+        console.log("Opción 1 seleccionada");
         display_communes();
     } 
 	else 
 	{
-        //console.log("Opción 1 deseleccionada");
+        console.log("Opción 1 deseleccionada");
 		removeAllPolygons();
     }
 }
 
-// Descripcion indicadores
 function handleOption2(checkbox) {
     var floatingDiv = document.getElementById('floatingDiv');
     if (checkbox.checked) {
@@ -23,10 +26,10 @@ function handleOption2(checkbox) {
 
 function handleOption3(checkbox) {
     if (checkbox.checked) {
-        //console.log("Opción 3 seleccionada");
+        console.log("Opción 3 seleccionada");
         // Código adicional cuando se selecciona la Opción 3
     } else {
-        // console.log("Opción 3 deseleccionada");
+        console.log("Opción 3 deseleccionada");
         // Código adicional cuando se deselecciona la Opción 3
     }
 }
