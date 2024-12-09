@@ -29,8 +29,6 @@
 </head>
 
 <body>
-
-
   <div
     style="background-image: url('img/ribbon.webp'); z-index: 2; box-shadow: 0 8px 2px -2px #ACE531; position: absolute; top: 0; margin-top: -10pt; background-size: cover; width: 100%; height: 120px; background-position: center bottom;">
   </div>
@@ -48,46 +46,61 @@
     <img src="img/logo_DPS_w.png" width="160pt" class="imagen-con-sombra">
   </div>
 
-  <div id="sideMenu-left" data-expanded>
-    <div data-target="section-opciones" class="btn-sideMenuLeft">
-      <img src="./img/icon/options.png" alt="">
-      <h4>Opciones</h4>
-    </div>
-    <div data-target="section-indicadores" class="btn-sideMenuLeft">
-      <img src="./img/icon/information.png" alt="">
-      <h4>Indicadores</h4>
-    </div>
-  </div>
-
-  <section id="section-opciones" class="menu-floating">
-    <header>
-      <button data-target="section-opciones" id="btn-closeOpciones" class="btn-close"
-        data-target="section-opciones">&times;</button>
-    </header>
-    <main class="submenu-sideMenu">
+  <div id="sideMenu-left" class="menu-floating" data-visible>
+    <div class="menu-opciones">
       <div>
         <input type="checkbox" id="option-limiteComunas" name="option1" onclick="handleOption1(this)">
         <label for="option1">Ver limite de comunas</label>
       </div>
       <div>
-        <input type="checkbox" id="option-comunas" name="option1" onclick="handleOption1(this)" checked>
-        <label for="option1">Ver comunas</label>
+        <input type="checkbox" id="toggle-communes" name="toggle-communes" checked>
+        <label for="toggle-communes">Ver comunas</label>
       </div>
       <div>
-        <input type="checkbox" id="option-desalinizadoras" name="option1" onclick="handleOption1(this)">
-        <label for="option1">Ver Desalinizadoras</label>
+        <input type="checkbox" id="toggle-desalination" name="toggle-desalination" checked>
+        <label for="toggle-desalination">Ver Desalinizadoras</label>
       </div>
-    </main>
-  </section>
+    </div>
+    <!-- <div data-target="section-opciones" class="btn"> -->
+    <!--   <!-1- <img src="./img/icon/options.png" alt=""> -1-> -->
+    <!--   <h4>Opciones</h4> -->
+    <!-- </div> -->
+    <div data-target="section-indicadores" class="btn">
+      <!-- <img src="./img/icon/information.png" alt=""> -->
+      <h4>Indicadores</h4>
+    </div>
+  </div>
 
-  <section id="section-indicadores" class="menu-floating">
+  <!-- <section id="section-opciones" class="menu-floating"> -->
+  <!--   <header> -->
+  <!--     <button data-target="section-opciones" id="btn-closeOpciones" class="btn-close" -->
+  <!--       data-target="section-opciones">&times;</button> -->
+  <!--   </header> -->
+  <!--   <main class="submenu-sideMenu"> -->
+  <!--     <div> -->
+  <!--       <input type="checkbox" id="option-limiteComunas" name="option1" onclick="handleOption1(this)"> -->
+  <!--       <label for="option1">Ver limite de comunas</label> -->
+  <!--     </div> -->
+  <!--     <div> -->
+  <!--       <input type="checkbox" id="option-comunas" name="option1" onclick="handleOption1(this)" checked> -->
+  <!--       <label for="option1">Ver comunas</label> -->
+  <!--     </div> -->
+  <!--     <div> -->
+  <!--       <input type="checkbox" id="option-desalinizadoras" name="option1" onclick="handleOption1(this)"> -->
+  <!--       <label for="option1">Ver Desalinizadoras</label> -->
+  <!--     </div> -->
+  <!--   </main> -->
+  <!-- </section> -->
+
+  <section id="section-indicadores" class="menu-floating" >
     <header>
+        <h4>Indicadores</h4>
       <button id="btn-closeIndicadores" class="btn-close" data-target="section-indicadores">&times;</button>
     </header>
     <div id="menu-socioAmbiental">
-      <header>
+      <header data-target="section-socioAmbiental" class="btn">
         <h4>Socio-ambientales</h4>
-        <button data-target="section-socioAmbiental" class="btn-accordion">&plus;</button>
+        <button>&plus;</button>
       </header>
       <main id="section-socioAmbiental" class="submenu-sideMenu">
         <div>
@@ -157,9 +170,9 @@
       </main>
     </div>
     <div id="menu-tecnico">
-      <header>
+      <header data-target="section-tecnico" class="btn">
         <h4>Técnicos</h4>
-        <button data-target="section-tecnico" class="btn-accordion">&plus;</button>
+        <button>&plus;</button>
       </header>
       <main id="section-tecnico" class="submenu-sideMenu">
 
@@ -186,7 +199,7 @@
 
         </div>
         <div>
-          Terminal<span class="unit">Km</span>
+          Dist. Terminal<span class="unit">Km</span>
 
           <button data-target="pop-terminal" class="btn-popover">&quest;</button>
           <span id="valor-terminal">-</span>
@@ -198,7 +211,7 @@
         </div>
 
         <div>
-          Poblacion<span class="unit">Km</span>
+          Dist. Población<span class="unit">Km</span>
 
           <button data-target="pop-poblacion" class="btn-popover">&quest;</button>
           <span id="valor-poblacion">-</span>
@@ -256,18 +269,25 @@
       </main>
     </div>
     <div id="menu-detalle">
-      <header data-target="section-detalle" class="btn-accordion">
+      <header data-target="section-detalle" class="btn">
         <h4>Descripción indicadores</h4>
-        <button data-target="section-detalle" class="btn-accordion">&plus;</button>
+        <button> &plus;</button>
       </header>
+    </div>
   </section>
 
+  <div id="alert-notMeet">
+    Área no cumple con los requisitos.
+  </div>
   <div id="coordDisplay">
     Coordenadas: <span id="coordValue"> </span>
   </div>
 
-  <section id="section-detalle">
-    <!-- <div style="align-items: center; text-align: center; margin-bottom: 10px;">Descripción de Indicadores<br></div> -->
+  <section id="section-detalle" class="menu-floating" >
+    <header>
+      <h4>Descripción Indicadores</h4> 
+      <button data-target="section-detalle" class="btn">&times;</button>
+    </header>
     <div id="tableDiv">
       <table>
         <thead>
@@ -386,7 +406,7 @@
     </div>
   </section>
 
-  <section id="section-desaladoras">
+  <section id="section-desaladoras" class="menu-floating" >
     <header>
       <h4>Desalinizadora</h4>
       <button id="btn-closeDesaladoras" class="btn-close" data-target="section-desaladoras">&times;</button>
@@ -528,6 +548,14 @@
                 sectionIndicadores.querySelector('#valor-hidrogenoM2').innerText = `${parseFloat(hexagonos[key]['Hidrogeno (kgH_2/m_2)']).toFixed(2)}`;
 
                 sectionIndicadores.toggleAttribute('data-visible', true);
+
+                console.log(e.target.key);
+                if (hexagonos[e.target.key]["Color"] === 'black') {
+                  document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
+                  setTimeout(() => {
+                    document.getElementById('alert-notMeet').toggleAttribute('data-visible', false);
+                  }, 4000);
+                }
               });
             })(key);
           }
@@ -544,12 +572,15 @@
         iconSize: [42, 42], // size of the icon
         iconAnchor: [36, 15], // point of the icon which will correspond to marker's location
       });
+      const communesMarkers = [];
+      const desalinationMarkers = [];
 
       function display_communes_marker() {
         for (var key in markers) {
           if (markers.hasOwnProperty(key)) {
             var coordinates = markers[key]["Coordinates"][0];
             var marker = L.marker([coordinates[0], coordinates[1]], {icon: cityPin}).addTo(map);
+            communesMarkers.push(marker);
             marker.bindTooltip(key, {permanent: true, direction: 'right'}).openTooltip();
           }
         }
@@ -561,6 +592,7 @@
           if (desaladoras.hasOwnProperty(plantKey)) {
             let coordinates = desaladoras[plantKey]["coordinates"];
             const marker = L.marker([coordinates[0], coordinates[1]], {icon: industrialPin}).addTo(map);
+            desalinationMarkers.push(marker);
             marker.name = plantKey
             marker.bindTooltip(plantKey, {permanent: true, direction: 'right'}).openTooltip();
 
@@ -574,6 +606,17 @@
             });
           }
         }
+      }
+
+      const toggleMarkers = (markers, show) => {
+        markers.forEach(marker => {
+          if (show){
+            marker.addTo(map);
+          }
+          else{
+            map.removeLayer(marker);
+          }
+        });
       }
 
       window.onload = function () {
@@ -590,6 +633,8 @@
 
         function onMapClick(e) {
         }
+      console.log(communesMarkers);
+      console.log(desalinationMarkers);
         map.on('click', onMapClick);
       }
     </script>
