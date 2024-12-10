@@ -31,182 +31,32 @@ button {
   background: transparent;
   font-size: 1.5rem;
 }
-.btn{
-  cursor: pointer;
-  &:hover{
-    background-color: var(--clr-gray-light);
-  }
-  &:last-child{
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-  }
-}
 
 #sideMenu-left {
   top: 150px;
   left: 10px;
   z-index: 10;
+  min-width: 340px;
 
-  div.btn {
-    display: flex;
-    color: var(--clr-black);
-    padding: var(--padding);
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 5px;
-      background-color: red;
-      right: 0;
-      top: 50%;
-    }
-  }
-
-  h4 {
-    font-size: 1.1rem;
-  }
-
-  img {
-    display: none;
-    width: 32px;
-    height: 32px;
-  }
 }
 
-.menu-opciones {
-  display: flex;
-  flex-direction: column;
-  justify-items: start;
-  padding: var(--padding) var(--padding) var(--padding) 0;
-  border-bottom: 1px solid var(--clr-gray-dark);
-}
+#menu-opciones {
 
-.menu-floating {
-  position: absolute;
-  background-color: var(--clr-white);
-  top: 150px;
-  z-index: 11;
-  border-radius: var(--border-radius);
-  padding: var(--padding);
-  box-shadow: 0 0 10px 0 var(--clr-black);
-  transition: all 500ms ease;
-  scale: 1;
-  transform-origin: 0 0;
-  opacity: 1;
-
-  main>div {
-    position: relative;
-    display: flex;
-    padding: 5px;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--clr-gray-light);
-    }
+  label {
+    cursor: pointer;
   }
 
-  &:not([data-visible]) {
-    opacity: 0;
-    scale: 0;
+  input[type="checkbox"] {
+    cursor: pointer;
+    margin-inline-end: 5px;
   }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    color: var(--clr-black);
-
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--clr-gray-dark);
-    }
-
-
-    button {
-      right: var(--padding);
-      top: var(--padding);
-      width: 1rem;
-      height: 1rem;
-      line-height: 1rem;
-    }
-  }
-}
-
-#section-indicadores {
-  left: 220px;
-
-  div header {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--padding);
-    color: black;
-  }
-
-  .btn-popover {
-    background: var(--clr-blue);
-    width: 1rem;
-    height: 1rem;
-    ;
-    background: var(--clr-black);
-    color: var(--clr-white);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    font-size: 0.7rem;
-    font-weight: bold;
-    margin: 0 1rem 0 0.3rem;
-  }
-
-  .pop-info {
-    padding: 0 var(--padding);
-    background: var(--clr-black);
-    opacity: 0.85;
-    z-index: 9999;
-    color: var(--clr-white);
-    position: absolute;
-    left: calc(100% + var(--padding)*2);
-    top: -25%;
-    translate: 0 50%;
-    width: max-content;
-    scale: 1;
-    transform-origin: 0 50%;
-    transition: all 500ms ease;
-
-    a {
-      color: var(--clr-white);
-    }
-
-    &:not([data-visible]) {
-      scale: 0;
-    }
-  }
-
-  div>main {
-    min-width: 321px;
-  }
-
-  div main {
-    height: auto;
-    transition: opacity 1s ease-in-out;
-    visibility: visible;
-
-
-    &:not([data-visible]) {
-      height: 0;
-      visibility: hidden;
-      opacity: 0;
-
-      button {
-        /* outline: 1px solid red; */
-      }
-    }
-  }
-
-
-
 }
 
 #section-desaladoras {
   right: 20px;
   width: 300px;
   z-index: 12;
+  transform-origin: 100% 0;
 
   header {
     display: flex;
@@ -221,15 +71,49 @@ button {
     text-align: end;
   }
 
+  main>div {
+    padding: 5px;
+    display: flex;
+    justify-items: space-between;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--clr-gray-light);
+    }
+  }
 }
 
 #section-detalle {
-  left: 565px;
+  left: 360px;
   max-height: calc(100dvh - 160px);
   overflow-y: auto;
   z-index: 1000;
   color: var(--clr-black);
   transform-origin: 0 0;
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* table-layout: fixed; */
+  }
+
+  td,
+  th {
+    padding: 8px;
+    text-align: left;
+    font-size: 0.8rem;
+
+    &:first-child {
+      padding-inline-start: calc(2 * var(--padding));
+    }
+
+    &:last-child {
+      padding-inline-end: var(--padding);
+    }
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--clr-gray-light);
+  }
 }
 
 
@@ -289,26 +173,5 @@ span:not(.unit) {
 
   &:not([data-visible]) {
     scale: 0;
-  }
-
-}
-
-
-#section-detalle {
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    /* table-layout: fixed; */
-  }
-
-  td,
-  th {
-    padding: 8px;
-    text-align: left;
-    font-size: 0.8rem;
-  }
-
-  tr:not(:last-child){
-    border-bottom: 1px solid var(--clr-gray-light);
   }
 }

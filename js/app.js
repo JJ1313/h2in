@@ -2,13 +2,13 @@ const btnsSideMenu = document.querySelectorAll('.btn');
 btnsSideMenu.forEach(btn => {
 
   btn.addEventListener('click', (event) => {
-    let idTarget;
-    if(event.target.tagName === 'H4' || event.target.tagName === "BUTTON"){
+    let idTarget =  event.target.getAttribute('data-target');
+    let target = event.target;
+    if(!idTarget){
       idTarget = event.target.parentElement.getAttribute('data-target');
+      target = event.target.parentElement;
     }
-    else{
-      idTarget = event.target.getAttribute('data-target');
-    }
+    target.toggleAttribute('data-active');
     document.getElementById(idTarget).toggleAttribute('data-visible');
   });
 });
@@ -28,6 +28,10 @@ const btnsClose = document.querySelectorAll('.btn-close');
 btnsClose.forEach(btn => {
   btn.addEventListener('click', (event) => {
     const idTarget = event.target.getAttribute('data-target');
+    const mainBtn = document.querySelector(`.btn[data-target=${idTarget}]`);
+    if (mainBtn){
+      mainBtn.toggleAttribute('data-active', false);
+    }
     document.getElementById(idTarget).toggleAttribute('data-visible', false);
   });
 });
