@@ -51,7 +51,7 @@
         <main id="menu-opciones" class="accordion">
           <div>
             <input type="checkbox" id="option-limiteComunas" name="option-limiteComunas" onclick="handleOption1(this)">
-            <label for="option-limiteComunas">Ver limite de comunas</label>
+            <label for="option-limiteComunas">Ver límite de comunas</label>
           </div>
           <div>
             <input type="checkbox" id="toggle-communes" name="toggle-communes" checked>
@@ -207,7 +207,7 @@
             </div>
           </div>
           <div>
-            Potencia Eolica <span class="unit">MW</span>
+            Potencia Eólica <span class="unit">MW</span>
             <button data-target="pop-potenciaEolica" class="btn-popover">&quest;</button>
             <span id="valor-potenciaEolica">-</span>
             <div id="pop-potenciaEolica" class="pop-info">
@@ -216,7 +216,7 @@
             </div>
           </div>
           <div>
-            Hidrogeno<span class="unit">kgH<sub>2</sub>-Año/kWp</span>
+            Hidrógeno<span class="unit">kgH<sub>2</sub>-Año/kWp</span>
             <button data-target="pop-hidrogeno" class="btn-popover">&quest;</button>
             <span id="valor-hidrogeno">-</span>
             <div id="pop-hidrogeno" class="pop-info">
@@ -224,7 +224,7 @@
             </div>
           </div>
           <div>
-            Hidrogeno<span class="unit">kgH<sub>2</sub>-Año/m<sup>2</sup></span>
+            Hidrógeno<span class="unit">kgH<sub>2</sub>-Año/m<sup>2</sup></span>
             <span id="valor-hidrogenoM2">-</span>
           </div>
         </main>
@@ -500,21 +500,37 @@
               });
 
               polygon.on('click', function (e) {
-                document.querySelector('#valor-snaspe').innerText = `${parseFloat(hexagonos[key]['distancia a snaspe (km)']).toFixed(2)}`;
-                document.querySelector('#valor-ave').innerText = `${parseFloat(hexagonos[key]['distancia a ave (km)']).toFixed(2)}`;
-                document.querySelector('#valor-humedal').innerText = `${parseFloat(hexagonos[key]['distancia a humedal (km)']).toFixed(2)}`;
-                document.querySelector('#valor-patrimonioMundial').innerText = `${parseFloat(hexagonos[key]['distancia a patrimonio mundial (km)']).toFixed(2)}`;
-                document.querySelector('#valor-monumentoNacional').innerText = `${parseFloat(hexagonos[key]['distancia a monumento nacional (km)']).toFixed(2)}`;
-                document.querySelector('#valor-santuarioNatural').innerText = `${parseFloat(hexagonos[key]['distancia a zona tipica y santuario natural (km)']).toFixed(2)}`;
-                document.querySelector('#valor-redVial').innerText = `${parseFloat(hexagonos[key]['distancia a red vial(km)']).toFixed(2)}`;
-                document.querySelector('#valor-costa').innerText = `${parseFloat(hexagonos[key]['distancia a costa(km)']).toFixed(2)}`;
-                document.querySelector('#valor-terminal').innerText = `${parseFloat(hexagonos[key]['distancia a terminal(km)']).toFixed(2)}`;
-                document.querySelector('#valor-poblacion').innerText = !isNaN(hexagonos[key]['distancia a poblacion']) ? parseFloat(hexagonos[key]['distancia a poblacion']).toFixed(2) : 'No cumple';
-                document.querySelector('#valor-rti').innerText = `${parseFloat(hexagonos[key]['RTI (m)']).toFixed(2)}`;
-                document.querySelector('#valor-pvout').innerText = `${parseFloat(hexagonos[key]['potencia solar (MW)']).toFixed(2)}`;
-                document.querySelector('#valor-potenciaEolica').innerText = `${parseFloat(hexagonos[key]['potencia eólica (MW)']).toFixed(2)}`;
-                document.querySelector('#valor-hidrogeno').innerText = `${parseFloat(hexagonos[key]['Hidrogeno (kgH_2/kWp)']).toFixed(2)}`;
-                document.querySelector('#valor-hidrogenoM2').innerText = `${parseFloat(hexagonos[key]['Hidrogeno (kgH_2/m_2)']).toFixed(2)}`;
+                const msg = 'No cumple';
+                document.querySelector('#valor-snaspe').innerText = !isNaN(hexagonos[key]['distancia a snaspe (km)']) ?
+                                                                                          parseFloat(hexagonos[key]['distancia a snaspe (km)']).toFixed(2) : msg;
+                document.querySelector('#valor-ave').innerText = !isNaN(hexagonos[key]['distancia a ave (km)']) ? 
+                                                                                          parseFloat(hexagonos[key]['distancia a ave (km)']).toFixed(2) : msg;
+                document.querySelector('#valor-humedal').innerText = !isNaN(hexagonos[key]['distancia a humedal (km)']) ?
+                                                                                          parseFloat(hexagonos[key]['distancia a humedal (km)']).toFixed(2) : msg;
+                document.querySelector('#valor-patrimonioMundial').innerText = !isNaN(hexagonos[key]['distancia a patrimonio mundial (km)']) ?
+                                                                                          parseFloat(hexagonos[key]['distancia a patrimonio mundial (km)']).toFixed(2) : msg;
+                document.querySelector('#valor-monumentoNacional').innerText = !isNaN(hexagonos[key]['distancia a monumento nacional (km)']) ?
+                                                                                          parseFloat(hexagonos[key]['distancia a monumento nacional (km)']).toFixed(2) : msg;
+                document.querySelector('#valor-santuarioNatural').innerText = !isNaN(hexagonos[key]['distancia a zona tipica y santuario natural (km)']) ? 
+                                                                                          parseFloat(hexagonos[key]['distancia a zona tipica y santuario natural (km)']).toFixed(2) : msg;
+                document.querySelector('#valor-redVial').innerText = !isNaN(hexagonos[key]['distancia a red vial(km)']) ? 
+                                                                                          parseFloat(hexagonos[key]['distancia a red vial(km)']).toFixed(2) : msg;
+                document.querySelector('#valor-costa').innerText = !isNaN(hexagonos[key]['distancia a costa(km)']) ? 
+                                                                                          parseFloat(hexagonos[key]['distancia a costa(km)']).toFixed(2) : msg;
+                document.querySelector('#valor-terminal').innerText = !isNaN(hexagonos[key]['distancia a terminal(km)']) ? 
+                                                                                          parseFloat(hexagonos[key]['distancia a terminal(km)']).toFixed(2) : msg;
+                document.querySelector('#valor-poblacion').innerText = !isNaN(hexagonos[key]['distancia a poblacion']) ? 
+                                                                                          parseFloat(hexagonos[key]['distancia a poblacion']).toFixed(2) : msg;
+                document.querySelector('#valor-rti').innerText = !isNaN(hexagonos[key]['RTI (m)']) ?
+                                                                                          parseFloat(hexagonos[key]['RTI (m)']).toFixed(2) : msg;
+                document.querySelector('#valor-pvout').innerText = !isNaN(hexagonos[key]['potencia solar (MW)']) ? 
+                                                                                          parseFloat(hexagonos[key]['potencia solar (MW)']).toFixed(2): msg;
+                document.querySelector('#valor-potenciaEolica').innerText = !isNaN(hexagonos[key]['potencia eólica (MW)']) ? 
+                                                                                          parseFloat(hexagonos[key]['potencia eólica (MW)']).toFixed(2) : msg;
+                document.querySelector('#valor-hidrogeno').innerText = !isNaN(hexagonos[key]['Hidrogeno (kgH_2/kWp)']) ? 
+                                                                                          parseFloat(hexagonos[key]['Hidrogeno (kgH_2/kWp)']).toFixed(2) : msg;
+                document.querySelector('#valor-hidrogenoM2').innerText = !isNaN(hexagonos[key]['Hidrogeno (kgH_2/m_2)']) ? 
+                                                                                          parseFloat(hexagonos[key]['Hidrogeno (kgH_2/m_2)']).toFixed(2) : msg;
 
                 if (hexagonos[e.target.key]["Color"] === 'black') {
                   document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
