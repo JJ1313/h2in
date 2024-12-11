@@ -500,7 +500,7 @@
               });
 
               polygon.on('click', function (e) {
-                const msg = 'No cumple';
+                const msg = 'Inhabilita';
                 document.querySelector('#valor-snaspe').innerText = !isNaN(hexagonos[key]['distancia a snaspe (km)']) ?
                                                                                           parseFloat(hexagonos[key]['distancia a snaspe (km)']).toFixed(2) : msg;
                 document.querySelector('#valor-ave').innerText = !isNaN(hexagonos[key]['distancia a ave (km)']) ? 
