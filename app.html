@@ -247,7 +247,7 @@
   </section>
 
   <div id="alert-notMeet">
-    Área no cumple con los requisitos.
+    Área no cumple con los requisitos
   </div>
   <div id="coordDisplay">
     Coordenadas: <span id="coordValue"> </span>
@@ -426,7 +426,7 @@
       }).addTo(map);
 
       L.control.zoom({
-        position: 'bottomleft'  // Places the zoom control at the top right corner of the map
+        position: 'bottomright'  
       }).addTo(map);
 
       var polygonMap = {};
@@ -468,9 +468,6 @@
               if (hexagonos[key]["Color"] === 'black') {
                 polygon.setStyle({fillColor: 'black', color: 'black', weight: 0.5, opacity: 1, fillOpacity: 0.6});
               }
-              <!-- else if(hexagonos[key]["Color"] === 'special'){ -->
-              <!--   polygon.setStyle({fillColor: 'black', color: 'black', weight: 0.5, opacity: 1, fillOpacity: 0}); -->
-              <!-- } -->
               else {
                 polygon.setStyle({fillColor: originalColor, color: 'black', weight: 0.5, fillOpacity: 0.6});
               }
@@ -535,7 +532,7 @@
                 document.querySelector('#valor-hidrogenoM2').innerText = !isNaN(hexagonos[key]['Hidrogeno (kgH_2/m_2)']) ? 
                                                                                           parseFloat(hexagonos[key]['Hidrogeno (kgH_2/m_2)']).toFixed(2) : msg;
 
-                if (hexagonos[e.target.key]["Color"] === 'black' || hexagonos[e.target.key]["Color"] === 'special') {
+                if (hexagonos[e.target.key]["Color"] === 'black') {
                   document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
                   setTimeout(() => {
                     document.getElementById('alert-notMeet').toggleAttribute('data-visible', false);

@@ -1,6 +1,6 @@
+// Controla botones para abrir o cerrar secciones
 const btnsSideMenu = document.querySelectorAll('.btn');
 btnsSideMenu.forEach(btn => {
-
   btn.addEventListener('click', (event) => {
     let idTarget =  event.target.getAttribute('data-target');
     let target = event.target;
@@ -8,11 +8,18 @@ btnsSideMenu.forEach(btn => {
       idTarget = event.target.parentElement.getAttribute('data-target');
       target = event.target.parentElement;
     }
-    target.toggleAttribute('data-active');
+    target.toggleAttribute('data-active')
     document.getElementById(idTarget).toggleAttribute('data-visible');
   });
 });
+// Calcula trasnform origin de section indicadore
+// TO DO:
+// - Agregar cuando se cierre con btn-close
+document.getElementById('menu-detalle').addEventListener('mouseover', (event) => {
+      document.getElementById('section-detalle').style.transformOrigin = `0px ${event.target.getBoundingClientRect().y - 130}px`;
+});
 
+// Control de pop info de indicadores
 const btnsPopOver = document.querySelectorAll('.btn-popover');
 btnsPopOver.forEach(btn => {
   btn.addEventListener('click', (event) => {
@@ -24,6 +31,7 @@ btnsPopOver.forEach(btn => {
   });
 });
 
+// Controla botones close
 const btnsClose = document.querySelectorAll('.btn-close');
 btnsClose.forEach(btn => {
   btn.addEventListener('click', (event) => {
@@ -36,6 +44,7 @@ btnsClose.forEach(btn => {
   });
 });
 
+// Cambia indicadores de desalinizadoras
 const selectDesaladora = document.getElementById('select-desaladoras');
 selectDesaladora.addEventListener('change', (event) => {
   document.getElementById("desaladora-status").innerText = desaladoras[selectDesaladora.value].status;
@@ -45,6 +54,7 @@ selectDesaladora.addEventListener('change', (event) => {
   document.getElementById("desaladora-owner").innerText = desaladoras[selectDesaladora.value].owner;
 });
 
+// Toggle de markers 
 document.getElementById('toggle-communes').addEventListener("change", (event) => {
   toggleMarkers(communesMarkers, event.target.checked);
 });
