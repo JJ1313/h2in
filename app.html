@@ -459,7 +459,7 @@
             (function (key) {
               var coor = hexagonos[key]["COORDINATES"];
 
-              var originalColor = hexagonos[key]["Color"] === 'black' ? 'black' : hexagonos[key]["Color"];
+              var originalColor = hexagonos[key]["Color"] === 'special' ? 'transparent' : hexagonos[key]["Color"];
               var hoverColor = 'yellow';
 
               let polygon = L.polygon(coor).addTo(map);
@@ -468,6 +468,9 @@
               if (hexagonos[key]["Color"] === 'black') {
                 polygon.setStyle({fillColor: 'black', color: 'black', weight: 0.5, opacity: 1, fillOpacity: 0.6});
               }
+              <!-- else if(hexagonos[key]["Color"] === 'special'){ -->
+              <!--   polygon.setStyle({fillColor: 'black', color: 'black', weight: 0.5, opacity: 1, fillOpacity: 0}); -->
+              <!-- } -->
               else {
                 polygon.setStyle({fillColor: originalColor, color: 'black', weight: 0.5, fillOpacity: 0.6});
               }
@@ -532,7 +535,7 @@
                 document.querySelector('#valor-hidrogenoM2').innerText = !isNaN(hexagonos[key]['Hidrogeno (kgH_2/m_2)']) ? 
                                                                                           parseFloat(hexagonos[key]['Hidrogeno (kgH_2/m_2)']).toFixed(2) : msg;
 
-                if (hexagonos[e.target.key]["Color"] === 'black') {
+                if (hexagonos[e.target.key]["Color"] === 'black' || hexagonos[e.target.key]["Color"] === 'special') {
                   document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
                   setTimeout(() => {
                     document.getElementById('alert-notMeet').toggleAttribute('data-visible', false);
