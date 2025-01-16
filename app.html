@@ -2,623 +2,994 @@
 <html lang="en">
 
 <head>
-  <base target="_top">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-  <title>H2V Valparaiso</title>
+    <title>H2V Valparaiso</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="css/topBar.css" />
-  <link rel="stylesheet" href="./css/app.css" />
-  <link rel="stylesheet" href="./css/components.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/topBar.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="js/valpo8.js"></script>
-  <script src="js/comunas.js"></script>
-  <script src="js/desalinizadoras.js"></script>
-  <script src="js/toggleSidebar.js"></script>
-  <script src="./js/app.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/valpo8.js"></script>
+    <script src="js/comunas.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_050_Costeras Quilimari-Petorca.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_051_Rio Petorca.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_052_Rio Ligua.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_053_Costeras Ligua-Aconcagua.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_054_Rio Aconcagua.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_055_Costeras entre Aconcagua y Maipo.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_056_Islas del Pacifico.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_057_Rio Maipo.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_058_Costeras entre  Maipo y Rapel.js"></script>
+    <script src="./data/cuencas/Cuencas_files/cuenca_060_Rio Rapel.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_500_Costera Quilimari - Petorca.js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_510_Rio Petorca Alto (hasta despues Junta Rio Sobrante).js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_511_Petorca Medio.js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_512_Rio Petorca Bajo (Entre Las Palmas y Desembocadura).js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_520_Rio Ligua Alto (Estero Alicahue).js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_521_Rio Ligua Medio (entre Quebrada La Cerrada y Los Angeles).js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_522_Rio Ligua Bajo (Entre Estero Los Angeles y Desembocadura).js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_530_Costeras entre Estero Ligua y Estero Catapilco.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_531_Estero Catapilco.js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_532_Costeras entre Estero Catapilco y Rio Aconcagua.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_540_Aconcagua Alto.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_541_Aconcagua Medio.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_542_Aconcagua Bajo.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_550_E. Marga-Marga.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_551_Lago Penuelas.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_552_E. Casablanca y E. San Jeronimo (Incl.).js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_553_E. del Rosario (Incl.) a R. Maipo.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_560_Islas de Juan Fernandez.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_561_Isla de Pascua.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_570_Rio Maipo Alto.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_571_Rio Maipo Medio.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_572_R. Mapocho Alto.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_573_Mapocho Bajo.js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_574_Rio Maipo Bajo (Entre Rio Mapocho y Desembocadura).js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_580_Estero Yali.js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_600_Rio Cachapoal Alto (Hasta bajo junta Rio Claro).js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_601_Cachapoal Bajo.js"></script>
+    <script
+        src="./data/cuencas/Subcuencas_files/subcuenca_602_Rio Tinguiririca Alto (Hasta bajo junta Rio Claro).js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_603_Tinguiririca Bajo.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_604_Estero Alhue.js"></script>
+    <script src="./data/cuencas/Subcuencas_files/subcuenca_605_Rio Rapel.js"></script>
+    <script src="js/desalinizadoras.js"></script>
+    <script src="./js/app.js" defer></script>
 
 </head>
 
 <body>
-  <div id="top-bar">
-    <img src="img/logo_h2v.webp" height="120" class="logo">
-    <img src="img/logo_muni.webp" width="160pt">
-    <img src="img/logo_pucv_w.webp" width="160pt">
-    <img src="img/logo_corfo_w.png" width="160pt">
-    <img src="img/logo_DPS_w.png" width="160pt">
-  </div>
-
-  <div id="sideMenu-left" class="menu-floating" data-visible>
-    <header class="title">
-      <h2>Indicadores</h2>
-      <!-- <button type="button" data-target="sideMenu-left" class="btn">&times;</button> -->
-    </header>
-    <main>
-      <section id="section-opciones">
-        <header data-target="menu-opciones" class="btn">
-          <h3>Opciones</h3>
-          <button type="button" class="btn-accordion"></button>
-        </header>
-        <main id="menu-opciones" class="accordion">
-          <div>
-            <input type="checkbox" id="option-limiteComunas" name="option-limiteComunas" onclick="handleOption1(this)">
-            <label for="option-limiteComunas">Ver límite de comunas</label>
-          </div>
-          <div>
-            <input type="checkbox" id="toggle-communes" name="toggle-communes" checked>
-            <label for="toggle-communes">Ver comunas</label>
-          </div>
-          <div>
-            <input type="checkbox" id="toggle-desalination" name="toggle-desalination" checked>
-            <label for="toggle-desalination">Ver desalinizadoras</label>
-          </div>
-        </main>
-      </section>
-
-      <section id="section-socioAmbiental">
-        <header data-target="menu-socioAmbiental" class="btn">
-          <h3>Socio-ambientales</h3>
-          <button type="button" class="btn-accordion"></button>
-        </header>
-        <main id="menu-socioAmbiental" class="accordion">
-          <div>
-            Dist. SNASPE <span class="unit">Km</span>
-            <button data-target="pop-snaspe" class="btn-popover">&quest;</button>
-            <span id="valor-snaspe">-</span>
-            <div id="pop-snaspe" class="pop-info">
-              Distancia a Sistema Nacional de Áreas Silvestres Protegidas del Estado (<a
-                href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. AVE<span class="unit">Km</span>
-
-            <button data-target="pop-ave" class="btn-popover">&quest;</button>
-            <span id="valor-ave">-</span>
-            <div id="pop-ave" class="pop-info">
-              Distancia a Áreas con Valor Ecológico (<a href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
-                20.283</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. Humedal<span class="unit">Km</span>
-
-            <button data-target="pop-humedal" class="btn-popover">&quest;</button>
-            <span id="valor-humedal">-</span>
-            <div id="pop-humedal" class="pop-info">
-              Distancia a Sitios RAMSAR (Humedal) (<a href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
-                20.283</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. Patrimonio Mundial<span class="unit">Km</span>
-
-            <button data-target="pop-patrimonioMundial" class="btn-popover">&quest;</button>
-            <span id="valor-patrimonioMundial">-</span>
-            <div id="pop-patrimonioMundial" class="pop-info">
-              Distancia a Sitios del Patrimonio Mundial (<a href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
-                17.288</a>; <a href="https://whc.unesco.org/en/conventiontext/">UNESCO 1972</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. Monumento Nacional<span class="unit">Km</span>
-
-            <button data-target="pop-monumentoNacional" class="btn-popover">&quest;</button>
-            <span id="valor-monumentoNacional">-</span>
-            <div id="pop-monumentoNacional" class="pop-info">
-              Distancia a Monumentos Nacionales (<a href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
-                17.288</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. Santuario Natural<span class="unit">Km</span>
-
-            <button data-target="pop-santuarioNatural" class="btn-popover">&quest;</button>
-            <span id="valor-santuarioNatural">-</span>
-            <div id="pop-santuarioNatural" class="pop-info">
-              Distancia a Sitios Santuarios de la Naturaleza (<a
-                href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)
-            </div>
-          </div>
-        </main>
-      </section>
-      <section id="section-tecnico">
-        <header data-target="menu-tecnico" class="btn">
-          <h3>Técnicos</h3>
-          <button type="button" class="btn-accordion"></button>
-        </header>
-        <main id="menu-tecnico" class="accordion">
-          <div>
-            Dist. Red Vial<span class="unit">Km</span>
-
-            <button data-target="pop-redVial" class="btn-popover">&quest;</button>
-            <span id="valor-redVial">-</span>
-            <div id="pop-redVial" class="pop-info">
-              Distancia a Red Vial o Red de Carreteras (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-                Martin et al., 2023</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. Costa<span class="unit">Km</span>
-
-            <button data-target="pop-costa" class="btn-popover">&quest;</button>
-            <span id="valor-costa">-</span>
-            <div id="pop-costa" class="pop-info">
-              Distancia a la Costa (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-                Martin et al., 2023</a>)
-            </div>
-
-          </div>
-          <div>
-            Dist. Terminal<span class="unit">Km</span>
-
-            <button data-target="pop-terminal" class="btn-popover">&quest;</button>
-            <span id="valor-terminal">-</span>
-            <div id="pop-terminal" class="pop-info">
-              Distancia a Terminales Marítimas (Puertos) (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-                Martin et al., 2023</a>)
-            </div>
-
-          </div>
-
-          <div>
-            Dist. Población<span class="unit">Km</span>
-            <button data-target="pop-poblacion" class="btn-popover">&quest;</button>
-            <span id="valor-poblacion">-</span>
-            <div id="pop-poblacion" class="pop-info">
-              Distancia a Áreas Pobladas (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al.,
-                2023</a>)
-            </div>
-
-          </div>
-          <div>
-            RTI<span class="unit">m</span>
-            <button data-target="pop-rti" class="btn-popover">&quest;</button>
-            <span id="valor-rti">-</span>
-            <div id="pop-rti" class="pop-info">
-              Rugosidad del Terreno (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-                Martin et al., 2023</a>)
-            </div>
-
-          </div>
-          <div>
-            PVOUT <span class="unit">kWh-Año/kWp</span>
-            <button data-target="pop-pvout" class="btn-popover">&quest;</button>
-            <span id="valor-pvout">-</span>
-            <div id="pop-pvout" class="pop-info">
-              Potencial Fotovoltaico o Energía útil anual por unidad de potencia (<a
-                href="https://globalsolaratlas.info/download/chile">Global Solar Atlas</a>; <a
-                href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al., 2023</a>)
-            </div>
-          </div>
-          <div>
-            Potencia Eólica <span class="unit">MW</span>
-            <button data-target="pop-potenciaEolica" class="btn-popover">&quest;</button>
-            <span id="valor-potenciaEolica">-</span>
-            <div id="pop-potenciaEolica" class="pop-info">
-              Potencial Energético Eólico (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al.,
-                2023</a>)
-            </div>
-          </div>
-          <div>
-            Hidrógeno<span class="unit">kgH<sub>2</sub>-Año/kWp</span>
-            <button data-target="pop-hidrogeno" class="btn-popover">&quest;</button>
-            <span id="valor-hidrogeno">-</span>
-            <div id="pop-hidrogeno" class="pop-info">
-              Potencial de Generación de Hidrógeno Verde
-            </div>
-          </div>
-          <div>
-            Hidrógeno<span class="unit">kgH<sub>2</sub>-Año/m<sup>2</sup></span>
-            <span id="valor-hidrogenoM2">-</span>
-          </div>
-        </main>
-      </section>
-
-      <div id="menu-detalle">
-        <header data-target="section-detalle" class="btn">
-          <h3>Descripción indicadores</h3>
-          <button type="button" class="btn-floating"></button>
-        </header>
-      </div>
-    </main>
-  </div>
-
-  <section id="section-indicadores" class="menu-floating">
-    <header>
-      <h3>Indicadores</h3>
-      <button id="btn-closeIndicadores" class="btn-close" data-target="section-indicadores">&times;</button>
-    </header>
-  </section>
-
-  <div id="alert-notMeet">
-    Área no cumple con los requisitos
-  </div>
-  <div id="coordDisplay">
-    Coordenadas: <span id="coordValue"> </span>
-  </div>
-
-  <section id="section-detalle" class="menu-floating">
-    <header class="title">
-      <h3>Descripción Indicadores</h3>
-      <button data-target="section-detalle" class="btn-close">&times;</button>
-    </header>
-    <div id="tableDiv">
-      <table>
-        <thead>
-          <tr>
-            <th>Indicador</th>
-            <th>Detalles</th>
-            <th style="text-align: center;">Tipo</th>
-            <th style="text-align: center;">Unidad</th>
-          </tr>
-        </thead>
-        <tr>
-          <td>Dist. SNASPE</td>
-          <td>Distancia a Sistema Nacional de Áreas Silvestres Protegidas del Estado (<a
-              href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)</td>
-          <td style="text-align: center;">Socio-ambiental</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-        <tr>
-          <td>Dist. AVE</td>
-          <td>Distancia a Áreas con Valor Ecológico (<a href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
-              20.283</a>)</td>
-          <td style="text-align: center;">Socio-ambiental</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-        <tr>
-          <td>DIST. Humedal</td>
-          <td>Distancia a Sitios RAMSAR (Humedal) (<a href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
-              20.283</a>)</td>
-          <td style="text-align: center;">Socio-ambiental</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-        <tr>
-          <td>Dist. Patrimonio mundial</td>
-          <td>Distancia a Sitios del Patrimonio Mundial (<a href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
-              17.288</a>; <a href="https://whc.unesco.org/en/conventiontext/">UNESCO 1972</a>)</td>
-          <td style="text-align: center;">Socio-ambiental</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-        <tr>
-          <td>Dist. Monumento nacional</td>
-          <td>Distancia a Monumentos Nacionales (<a href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
-              17.288</a>)</td>
-          <td style="text-align: center;">Socio-ambiental</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-        <tr>
-          <td>Dist. Santuario natural</td>
-          <td>Distancia a Sitios Santuarios de la Naturaleza (<a
-              href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)</td>
-          <td style="text-align: center;">Socio-ambiental</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-
-        <tr>
-          <td>Dist. Red vial</td>
-          <td>Distancia a Red Vial o Red de Carreteras (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-              Martin et al., 2023</a>)</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-
-        <tr>
-          <td>Dist. Costa</td>
-          <td> Distancia a la Costa (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-              Martin et al., 2023</a>)</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-
-        <tr>
-          <td>Dist. Terminal</td>
-          <td>Distancia a Terminales Marítimas (Puertos) (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-              Martin et al., 2023</a>)</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-
-        <tr>
-          <td>Dist. Poblacion</td>
-          <td>Distancia a Áreas Pobladas (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al.,
-              2023</a>)</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">km</td>
-        </tr>
-
-        <tr>
-          <td>RTI</td>
-          <td>Rugosidad del Terreno (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
-              Martin et al., 2023</a>)</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">m</td>
-        </tr>
-        <tr>
-          <td>PVOUT</td>
-          <td>Potencial Fotovoltaico o Energía útil anual por unidad de potencia (<a
-              href="https://globalsolaratlas.info/download/chile">Global Solar Atlas</a>; <a
-              href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al., 2023</a>)
-          </td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">kWh-Año/kWp</td>
-        </tr>
-        <tr>
-          <td>Pot. Eólica</td>
-          <td>Potencia Energético Eólico (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al.,
-              2023</a>)</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">MW</td>
-        </tr>
-        <tr>
-          <td>Hidrógeno</td>
-          <td>Potencial de Generación de Hidrógeno Verde</td>
-          <td style="text-align: center;">Técnica</td>
-          <td style="text-align: center;">kgH2/kW <br>kgH2/m^2</td>
-        </tr>
-      </table>
+    <div id="top-bar">
+        <img src="img/logo_h2v.webp" height="120" class="logo">
+        <img src="img/logo_muni.webp" width="160pt">
+        <img src="img/logo_pucv_w.webp" width="160pt">
+        <img src="img/logo_corfo_w.png" width="160pt">
+        <img src="img/logo_DPS_w.png" width="160pt">
     </div>
-  </section>
 
-  <section id="section-desaladoras" class="menu-floating">
-    <header class="title">
-      <h3>Desalinizadora</h3>
-      <button id="btn-closeDesaladoras" class="btn-close" data-target="section-desaladoras">&times;</button>
-    </header>
-    <main>
-      <div>
-        Nombre
-        <select id="select-desaladoras">
-          <option value="Desalinizadora Petorca">Desalinizadora Petorca</option>
-          <option value="Unidad 3 Ventanas">Unidad 3 Ventanas</option>
-          <option value="Unidad 4 Ventanas">Unidad 4 Ventanas</option>
-          <option value="Aconcagua">Aconcagua</option>
-        </select>
-      </div>
-      <div>
-        Estado
-        <span id="desaladora-status">-</span>
-      </div>
-      <div>
-        Capacidad
-        <span id="desaladora-capacity">-</span>
-        <span id="desaladora-unit" class="unit"></span>
-      </div>
-      <div>
-        Uso
-        <span id="desaladora-use">-</span>
-      </div>
-      <div>
-        Propietario
-        <span id="desaladora-owner">-</span>
-      </div>
-    </main>
-  </section>
+    <div id="sideMenu-left" class="menu-floating" data-visible>
+        <main>
+            <section id="section-opciones">
+                <header data-target="menu-opciones" class="btn">
+                    <img src="./img/icon/options.png" width="32" alt="">
+                    <h3>Opciones</h3>
+                </header>
+            </section>
+            <section id="menu-indicadores">
+                <header data-target="section-indicadores" class="btn">
+                    <img src="./img/icon/graph.png" width="32" alt="">
+                    <h3>Indicadores</h3>
+                </header>
+            </section>
 
-  <div id="map-container">
-    <div id="map" style="width: 100%; height: 100%;  z-index: 1; position: relative;"></div>
-    <script>
-      var map = L.map('map', {
-        center: [-33.0309126, -71.0634993],
-        zoom: 10,
-        zoomControl: false // Deshabilita el control de zoom automático
-      });
+            <section id="section-hidricos">
+                <header data-target='menu-hidrico' class="btn">
+                    <img src="./img/icon/agua.png" width="32" alt="">
+                    <h3>Recursos Hídricos</h3>
+                </header>
+            </section>
+            <section id="menu-detalle">
+                <header data-target="section-detalle" class="btn">
+                    <img src="./img/icon/information.png" width="32" alt="">
+                    <h3>Descripción Indicadores</h3>
+                </header>
+            </section>
+        </main>
+    </div>
 
-      const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
+    <div id="alert-notMeet">
+        Área no cumple con los requisitos
+    </div>
+    <div id="coordDisplay">
+        Coordenadas: <span id="coordValue"> </span>
+    </div>
+    <section id="menu-hidrico" class="menu-floating">
+        <header class="title">
+            <h3>Recursos Hídricos</h3>
+            <button data-target="menu-hidrico" class="btn-close">&times;</button>
+        </header>
+        <main>
+            <div>
+                <header>
+                    <input type="checkbox" id="toggle-cuencas" name="toggle-cuencas" onchange="displayCuencas(this)">
+                    <div data-target="menu-cuencas" class='btn'>
+                        <label>Cuencas</label>
+                        <button type="button" class="btn-accordion"></button>
+                    </div>
+                </header>
+                <form id="menu-cuencas" class="accordion" autocomplete="off">
+                    <div>
+                        <input type="checkbox" id="toggle-quilimariPetorca" name="toggle-quilimariPetorca"
+                            onchange="toggleCuenca(this, '050')" data-cuenca="050" checked>
+                        <label for="toggle-quilimariPetorca">Costeras Quilimari-Petorca</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-petorca" name="toggle-petorca"
+                            onchange="toggleCuenca(this, '051')" data-cuenca="051" checked>
+                        <label for="toggle-petorca">Río petorca</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-ligua" name="toggle-ligua"
+                            onchange="toggleCuenca(this, '052')" data-cuenca="052" checked>
+                        <label for="toggle-ligua">Rio Ligua</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-liguaAconcagua" name="toggle-liguaAconcagua"
+                            onchange="toggleCuenca(this, '053')" data-cuenca="053" checked>
+                        <label for="toggle-liguaAconcagua">Costeras Ligua-Aconcagua</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-quilimari" name="toggle-quilimari"
+                            onchange="toggleCuenca(this, '054')" data-cuenca="054" checked>
+                        <label for="toggle-quilimari">Río Aconcagua</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-AconcaguaMaipo" name="toggle-AconcaguaMaipo"
+                            onchange="toggleCuenca(this, '055')" data-cuenca="055" checked>
+                        <label for="toggle-AconcaguaMaipo">Costeras Aconcagua-Maipo</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-pacifico" name="toggle-pacifico"
+                            onchange="toggleCuenca(this, '056')" data-cuenca="056" checked disabled>
+                        <label for="toggle-pacifico">Islas del Pacífico</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-Maipo" name="toggle-Maipo"
+                            onchange="toggleCuenca(this, '057')" data-cuenca="057" checked>
+                        <label for="toggle-Maipo">Río Maipo</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-MaipoRapel" name="toggle-MaipoRapel"
+                            onchange="toggleCuenca(this, '058')" data-cuenca="058" checked>
+                        <label for="toggle-MaipoRapel">Costeras Maipo-Rapel</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="toggle-Rapel" name="toggle-Rapel"
+                            onchange="toggleCuenca(this, '060')" data-cuenca="060" checked>
+                        <label for="toggle-Rapel">Río Rapel</label>
+                    </div>
+                </form>
+                <div>
+                    <input type="checkbox" id="toggle-subcuencas" name="toggle-subcuencas"
+                        onchange="toggleSubcuencas(this)">
+                    <label for="toggle-subcuencas">Subcuencas</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-subsubcuencas" name="toggle-subsubcuencas"
+                        onchange="toggleSubsubcuencas(this)" disabled>
+                    <label for="toggle-subsubcuencas">Subsubcuencas</label>
+                </div>
+            </div>
+        </main>
+    </section>
+    <section id="menu-opciones" class="menu-floating">
+        <header class="title">
+            <h3>Opciones</h3>
+            <button data-target="menu-opciones" class="btn-close">&times;</button>
+        </header>
+        <main>
+            <div>
+                <input type="checkbox" id="toggle-limitCommunes" name="toggle-limitCommunes">
+                <label for="toggle-limitCommunes">Ver límite de comunas</label>
+            </div>
+            <div>
+                <input type="checkbox" id="toggle-communes" name="toggle-communes" checked>
+                <label for="toggle-communes">Ver comunas</label>
+            </div>
+            <div>
+                <input type="checkbox" id="toggle-desalination" name="toggle-desalination" checked>
+                <label for="toggle-desalination">Ver desalinizadoras</label>
+            </div>
+        </main>
+    </section>
+    <section id="section-indicadores" class="menu-floating">
+        <header class="title">
+            <h3>Indicadores</h3>
+            <button data-target="section-indicadores" class="btn-close">&times;</button>
+        </header>
+        <main>
+            <section id="section-socioAmbiental">
+                <header data-target="menu-socioAmbiental" class="btn" data-active>
+                    <h3>Socio-ambientales</h3>
+                    <button type="button" class="btn-accordion"></button>
+                </header>
+                <main id="menu-socioAmbiental" class="accordion" data-visible>
+                    <div>
+                        Dist. SNASPE <span class="unit">Km</span>
+                        <button data-target="pop-snaspe" class="btn-popover">&quest;</button>
+                        <span id="valor-snaspe">-</span>
+                        <div id="pop-snaspe" class="pop-info">
+                            Distancia a Sistema Nacional de Áreas Silvestres Protegidas del Estado (<a
+                                href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)
+                        </div>
 
-      L.control.zoom({
-        position: 'bottomright'  
-      }).addTo(map);
+                    </div>
+                    <div>
+                        Dist. AVE<span class="unit">Km</span>
 
-      var polygonMap = {};
-      function display_communes() {
-        for (var key in comunas) {
-          if (comunas.hasOwnProperty(key)) {
-            (function (key) {
-              var coor = comunas[key]["Coordinates"];
-              const polygon = L.polygon(coor).addTo(map);
-              polygon.setStyle({fillColor: 'black', color: 'black', weight: 5, opacity: 2, fillOpacity: 0.0});
-              polygonMap[key] = polygon;  // Store the polygon with the key as a reference
-              polygonMap[key].bringToBack();
-            })(key);
-          }
-        }
-      }
+                        <button data-target="pop-ave" class="btn-popover">&quest;</button>
+                        <span id="valor-ave">-</span>
+                        <div id="pop-ave" class="pop-info">
+                            Distancia a Áreas con Valor Ecológico (<a
+                                href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
+                                20.283</a>)
+                        </div>
 
-      function removeAllPolygons() {
-        for (var key in polygonMap) {
-          if (polygonMap.hasOwnProperty(key)) {
-            map.removeLayer(polygonMap[key]);  // Remove the polygon from the map
-            delete polygonMap[key];  // Optionally, delete the reference to clean up
-          }
-        }
-      }
+                    </div>
+                    <div>
+                        Dist. Humedal<span class="unit">Km</span>
 
-      function display_hidrogen_availability() {
-        for (var key in hexagonos) {
-          if (hexagonos.hasOwnProperty(key)) {
-            (function (key) {
-              var coor = hexagonos[key]["COORDINATES"];
+                        <button data-target="pop-humedal" class="btn-popover">&quest;</button>
+                        <span id="valor-humedal">-</span>
+                        <div id="pop-humedal" class="pop-info">
+                            Distancia a Sitios RAMSAR (Humedal) (<ac
+                                href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
+                                20.283</a>)
+                        </div>
 
-              var originalColor = hexagonos[key]["Color"] === 'special' ? 'transparent' : hexagonos[key]["Color"];
-              var hoverColor = 'yellow';
+                    </div>
+                    <div>
+                        Dist. Patrimonio Mundial<span class="unit">Km</span>
 
-              let polygon = L.polygon(coor).addTo(map);
-              polygon.key = key;
+                        <button data-target="pop-patrimonioMundial" class="btn-popover">&quest;</button>
+                        <span id="valor-patrimonioMundial">-</span>
+                        <div id="pop-patrimonioMundial" class="pop-info">
+                            Distancia a Sitios del Patrimonio Mundial (<a
+                                href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
+                                17.288</a>; <a href="https://whc.unesco.org/en/conventiontext/">UNESCO 1972</a>)
+                        </div>
 
-              if (hexagonos[key]["Color"] === 'black') {
-                polygon.setStyle({fillColor: 'black', color: 'black', weight: 0.5, opacity: 1, fillOpacity: 0.6});
-              }
-              else {
-                polygon.setStyle({fillColor: originalColor, color: 'black', weight: 0.5, fillOpacity: 0.6});
-              }
+                    </div>
+                    <div>
+                        Dist. Monumento Nacional<span class="unit">Km</span>
 
+                        <button data-target="pop-monumentoNacional" class="btn-popover">&quest;</button>
+                        <span id="valor-monumentoNacional">-</span>
+                        <div id="pop-monumentoNacional" class="pop-info">
+                            Distancia a Monumentos Nacionales (<a
+                                href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
+                                17.288</a>)
+                        </div>
 
+                    </div>
+                    <div>
+                        Dist. Santuario Natural<span class="unit">Km</span>
 
-              polygon.on('mouseover', function (e) {
-                var coordDisplay = document.getElementById("coordValue");
-                coordDisplay.textContent = JSON.stringify(coor[0]);
-                this.setStyle({
-                  fillColor: hoverColor,
-                  color: 'black',
-                  weight: 0.5,
-                  opacity: 1,
-                  fillOpacity: 0.6
-                });
-              }
-              );
+                        <button data-target="pop-santuarioNatural" class="btn-popover">&quest;</button>
+                        <span id="valor-santuarioNatural">-</span>
+                        <div id="pop-santuarioNatural" class="pop-info">
+                            Distancia a Sitios Santuarios de la Naturaleza (<a
+                                href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)
+                        </div>
+                    </div>
+                </main>
+            </section>
+            <section id="section-tecnico">
+                <header data-target="menu-tecnico" class="btn" data-active>
+                    <h3>Técnicos</h3>
+                    <button type="button" class="btn-accordion"></button>
+                </header>
+                <main id="menu-tecnico" class="accordion" data-visible>
+                    <div>
+                        Dist. Red Vial<span class="unit">Km</span>
 
+                        <button data-target="pop-redVial" class="btn-popover">&quest;</button>
+                        <span id="valor-redVial">-</span>
+                        <div id="pop-redVial" class="pop-info">
+                            Distancia a Red Vial o Red de Carreteras (<a
+                                href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                                Martin et al., 2023</a>)
+                        </div>
 
-              polygon.on('mouseout', function (e) {
-                this.setStyle({
-                  fillColor: originalColor,
-                  color: 'black',
-                  weight: 0.5,
-                  opacity: 1,
-                  fillOpacity: 0.6
-                });
+                    </div>
+                    <div>
+                        Dist. Costa<span class="unit">Km</span>
 
-              });
+                        <button data-target="pop-costa" class="btn-popover">&quest;</button>
+                        <span id="valor-costa">-</span>
+                        <div id="pop-costa" class="pop-info">
+                            Distancia a la Costa (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                                Martin et al., 2023</a>)
+                        </div>
 
-              polygon.on('click', function (e) {
-                const msg = 'Inhabilita';
-                document.querySelector('#valor-snaspe').innerText = !isNaN(hexagonos[key]['distancia a snaspe (km)']) ?
-                                                                                          parseFloat(hexagonos[key]['distancia a snaspe (km)']).toFixed(2) : msg;
-                document.querySelector('#valor-ave').innerText = !isNaN(hexagonos[key]['distancia a ave (km)']) ? 
-                                                                                          parseFloat(hexagonos[key]['distancia a ave (km)']).toFixed(2) : msg;
-                document.querySelector('#valor-humedal').innerText = !isNaN(hexagonos[key]['distancia a humedal (km)']) ?
-                                                                                          parseFloat(hexagonos[key]['distancia a humedal (km)']).toFixed(2) : msg;
-                document.querySelector('#valor-patrimonioMundial').innerText = !isNaN(hexagonos[key]['distancia a patrimonio mundial (km)']) ?
-                                                                                          parseFloat(hexagonos[key]['distancia a patrimonio mundial (km)']).toFixed(2) : msg;
-                document.querySelector('#valor-monumentoNacional').innerText = !isNaN(hexagonos[key]['distancia a monumento nacional (km)']) ?
-                                                                                          parseFloat(hexagonos[key]['distancia a monumento nacional (km)']).toFixed(2) : msg;
-                document.querySelector('#valor-santuarioNatural').innerText = !isNaN(hexagonos[key]['distancia a zona tipica y santuario natural (km)']) ? 
-                                                                                          parseFloat(hexagonos[key]['distancia a zona tipica y santuario natural (km)']).toFixed(2) : msg;
-                document.querySelector('#valor-redVial').innerText = !isNaN(hexagonos[key]['distancia a red vial(km)']) ? 
-                                                                                          parseFloat(hexagonos[key]['distancia a red vial(km)']).toFixed(2) : msg;
-                document.querySelector('#valor-costa').innerText = !isNaN(hexagonos[key]['distancia a costa(km)']) ? 
-                                                                                          parseFloat(hexagonos[key]['distancia a costa(km)']).toFixed(2) : msg;
-                document.querySelector('#valor-terminal').innerText = !isNaN(hexagonos[key]['distancia a terminal(km)']) ? 
-                                                                                          parseFloat(hexagonos[key]['distancia a terminal(km)']).toFixed(2) : msg;
-                document.querySelector('#valor-poblacion').innerText = !isNaN(hexagonos[key]['distancia a poblacion']) ? 
-                                                                                          parseFloat(hexagonos[key]['distancia a poblacion']).toFixed(2) : msg;
-                document.querySelector('#valor-rti').innerText = !isNaN(hexagonos[key]['RTI (m)']) ?
-                                                                                          parseFloat(hexagonos[key]['RTI (m)']).toFixed(2) : msg;
-                document.querySelector('#valor-pvout').innerText = !isNaN(hexagonos[key]['potencia solar (MW)']) ? 
-                                                                                          parseFloat(hexagonos[key]['potencia solar (MW)']).toFixed(2): msg;
-                document.querySelector('#valor-potenciaEolica').innerText = !isNaN(hexagonos[key]['potencia eólica (MW)']) ? 
-                                                                                          parseFloat(hexagonos[key]['potencia eólica (MW)']).toFixed(2) : msg;
-                document.querySelector('#valor-hidrogeno').innerText = !isNaN(hexagonos[key]['Hidrogeno (kgH_2/kWp)']) ? 
-                                                                                          parseFloat(hexagonos[key]['Hidrogeno (kgH_2/kWp)']).toFixed(2) : msg;
-                document.querySelector('#valor-hidrogenoM2').innerText = !isNaN(hexagonos[key]['Hidrogeno (kgH_2/m_2)']) ? 
-                                                                                          parseFloat(hexagonos[key]['Hidrogeno (kgH_2/m_2)']).toFixed(2) : msg;
+                    </div>
+                    <div>
+                        Dist. Terminal<span class="unit">Km</span>
 
-                if (hexagonos[e.target.key]["Color"] === 'black') {
-                  document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
-                  setTimeout(() => {
-                    document.getElementById('alert-notMeet').toggleAttribute('data-visible', false);
-                  }, 4000);
-                }
-              });
-            })(key);
-          }
-        }
+                        <button data-target="pop-terminal" class="btn-popover">&quest;</button>
+                        <span id="valor-terminal">-</span>
+                        <div id="pop-terminal" class="pop-info">
+                            Distancia a Terminales Marítimas (Puertos) (<a
+                                href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                                Martin et al., 2023</a>)
+                        </div>
 
-      };
-      let cityPin = L.icon({
-        iconUrl: './img/icon/pin.png',
-        iconSize: [42, 42], // size of the icon
-        iconAnchor: [36, 20], // point of the icon which will correspond to marker's location
-      });
-      let industrialPin = L.icon({
-        iconUrl: './img/icon/factory_pin.png',
-        iconSize: [42, 42], // size of the icon
-        iconAnchor: [36, 15], // point of the icon which will correspond to marker's location
-      });
-      const communesMarkers = [];
-      const desalinationMarkers = [];
+                    </div>
 
-      function display_communes_marker() {
-        for (var key in markers) {
-          if (markers.hasOwnProperty(key)) {
-            var coordinates = markers[key]["Coordinates"][0];
-            var marker = L.marker([coordinates[0], coordinates[1]], {icon: cityPin}).addTo(map);
-            communesMarkers.push(marker);
-            marker.bindTooltip(key, {permanent: true, direction: 'right'}).openTooltip();
-          }
-        }
-      };
+                    <div>
+                        Dist. Población<span class="unit">Km</span>
+                        <button data-target="pop-poblacion" class="btn-popover">&quest;</button>
+                        <span id="valor-poblacion">-</span>
+                        <div id="pop-poblacion" class="pop-info">
+                            Distancia a Áreas Pobladas (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                                Martin et al.,
+                                2023</a>)
+                        </div>
 
-      function display_desalination_marker() {
+                    </div>
+                    <div>
+                        RTI<span class="unit">m</span>
+                        <button data-target="pop-rti" class="btn-popover">&quest;</button>
+                        <span id="valor-rti">-</span>
+                        <div id="pop-rti" class="pop-info">
+                            Rugosidad del Terreno (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                                Martin et al., 2023</a>)
+                        </div>
 
-        for (let plantKey in desaladoras) {
-          if (desaladoras.hasOwnProperty(plantKey)) {
-            let coordinates = desaladoras[plantKey]["coordinates"];
-            const marker = L.marker([coordinates[0], coordinates[1]], {icon: industrialPin}).addTo(map);
-            desalinationMarkers.push(marker);
-            marker.name = plantKey
-            marker.bindTooltip(plantKey, {permanent: true, direction: 'right'}).openTooltip();
+                    </div>
+                    <div>
+                        PVOUT <span class="unit">kWh-Año/kWp</span>
+                        <button data-target="pop-pvout" class="btn-popover">&quest;</button>
+                        <span id="valor-pvout">-</span>
+                        <div id="pop-pvout" class="pop-info">
+                            Potencial Fotovoltaico o Energía útil anual por unidad de potencia (<a
+                                href="https://globalsolaratlas.info/download/chile">Global Solar Atlas</a>; <a
+                                href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al., 2023</a>)
+                        </div>
+                    </div>
+                    <div>
+                        Potencia Eólica <span class="unit">MW</span>
+                        <button data-target="pop-potenciaEolica" class="btn-popover">&quest;</button>
+                        <span id="valor-potenciaEolica">-</span>
+                        <div id="pop-potenciaEolica" class="pop-info">
+                            Potencial Energético Eólico (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                                Martin et al.,
+                                2023</a>)
+                        </div>
+                    </div>
+                    <div>
+                        Hidrógeno<span class="unit">kgH<sub>2</sub>-Año/kWp</span>
+                        <button data-target="pop-hidrogeno" class="btn-popover">&quest;</button>
+                        <span id="valor-hidrogeno">-</span>
+                        <div id="pop-hidrogeno" class="pop-info">
+                            Potencial de Generación de Hidrógeno Verde
+                        </div>
+                    </div>
+                    <div>
+                        Hidrógeno<span class="unit">kgH<sub>2</sub>-Año/m<sup>2</sup></span>
+                        <span id="valor-hidrogenoM2">-</span>
+                    </div>
+                </main>
+            </section>
 
-            marker.on('click', (event) => {
-              const selectElement = document.getElementById('select-desaladoras');
-              const sectionDesaladoras = document.getElementById('section-desaladoras');
-              const changeEvent = new Event('change');
-              selectElement.value = event.target.name;
-              selectElement.dispatchEvent(changeEvent);
-              sectionDesaladoras.toggleAttribute('data-visible', true);
+        </main>
+
+    </section>
+    <section id="section-detalle" class="menu-floating">
+        <header class="title">
+            <h3>Descripción Indicadores</h3>
+            <button data-target="section-detalle" class="btn-close">&times;</button>
+        </header>
+        <div id="tableDiv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Detalles</th>
+                        <th style="text-align: center;">Tipo</th>
+                        <th style="text-align: center;">Unidad</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Dist. SNASPE</td>
+                    <td>Distancia a Sistema Nacional de Áreas Silvestres Protegidas del Estado (<a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)</td>
+                    <td style="text-align: center;">Socio-ambiental</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+                <tr>
+                    <td>Dist. AVE</td>
+                    <td>Distancia a Áreas con Valor Ecológico (<a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
+                            20.283</a>)</td>
+                    <td style="text-align: center;">Socio-ambiental</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+                <tr>
+                    <td>DIST. Humedal</td>
+                    <td>Distancia a Sitios RAMSAR (Humedal) (<a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley
+                            20.283</a>)</td>
+                    <td style="text-align: center;">Socio-ambiental</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+                <tr>
+                    <td>Dist. Patrimonio mundial</td>
+                    <td>Distancia a Sitios del Patrimonio Mundial (<a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
+                            17.288</a>; <a href="https://whc.unesco.org/en/conventiontext/">UNESCO 1972</a>)</td>
+                    <td style="text-align: center;">Socio-ambiental</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+                <tr>
+                    <td>Dist. Monumento nacional</td>
+                    <td>Distancia a Monumentos Nacionales (<a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=28892">Ley
+                            17.288</a>)</td>
+                    <td style="text-align: center;">Socio-ambiental</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+                <tr>
+                    <td>Dist. Santuario natural</td>
+                    <td>Distancia a Sitios Santuarios de la Naturaleza (<a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=274894">Ley 20.283</a>)</td>
+                    <td style="text-align: center;">Socio-ambiental</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+
+                <tr>
+                    <td>Dist. Red vial</td>
+                    <td>Distancia a Red Vial o Red de Carreteras (<a
+                            href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                            Martin et al., 2023</a>)</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+
+                <tr>
+                    <td>Dist. Costa</td>
+                    <td> Distancia a la Costa (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                            Martin et al., 2023</a>)</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+
+                <tr>
+                    <td>Dist. Terminal</td>
+                    <td>Distancia a Terminales Marítimas (Puertos) (<a
+                            href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                            Martin et al., 2023</a>)</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+
+                <tr>
+                    <td>Dist. Poblacion</td>
+                    <td>Distancia a Áreas Pobladas (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin
+                            et al.,
+                            2023</a>)</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">km</td>
+                </tr>
+
+                <tr>
+                    <td>RTI</td>
+                    <td>Rugosidad del Terreno (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San
+                            Martin et al., 2023</a>)</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">m</td>
+                </tr>
+                <tr>
+                    <td>PVOUT</td>
+                    <td>Potencial Fotovoltaico o Energía útil anual por unidad de potencia (<a
+                            href="https://globalsolaratlas.info/download/chile">Global Solar Atlas</a>; <a
+                            href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin et al., 2023</a>)
+                    </td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">kWh-Año/kWp</td>
+                </tr>
+                <tr>
+                    <td>Pot. Eólica</td>
+                    <td>Potencia Energético Eólico (<a href="https://doi.org/10.1016/j.ijhydene.2023.10.013">San Martin
+                            et al.,
+                            2023</a>)</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">MW</td>
+                </tr>
+                <tr>
+                    <td>Hidrógeno</td>
+                    <td>Potencial de Generación de Hidrógeno Verde</td>
+                    <td style="text-align: center;">Técnica</td>
+                    <td style="text-align: center;">kgH2/kW <br>kgH2/m^2</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="section-desaladoras" class="menu-floating">
+        <header class="title">
+            <h3>Desalinizadora</h3>
+            <button id="btn-closeDesaladoras" class="btn-close" data-target="section-desaladoras">&times;</button>
+        </header>
+        <main>
+            <div>
+                Nombre
+                <select id="select-desaladoras">
+                    <option value="Desalinizadora Petorca">Desalinizadora Petorca</option>
+                    <option value="Unidad 3 Ventanas">Unidad 3 Ventanas</option>
+                    <option value="Unidad 4 Ventanas">Unidad 4 Ventanas</option>
+                    <option value="Aconcagua">Aconcagua</option>
+                </select>
+            </div>
+            <div>
+                Estado
+                <span id="desaladora-status">-</span>
+            </div>
+            <div>
+                Capacidad
+                <span id="desaladora-capacity">-</span>
+                <span id="desaladora-unit" class="unit"></span>
+            </div>
+            <div>
+                Uso
+                <span id="desaladora-use">-</span>
+            </div>
+            <div>
+                Propietario
+                <span id="desaladora-owner">-</span>
+            </div>
+        </main>
+    </section>
+
+    <div id="map-container">
+        <div id="map" style="width: 100%; height: 100%;  z-index: 1; position: relative;"></div>
+        <script>
+            const map = L.map('map', {
+                center: [-33.0309126, -71.0634993],
+                zoom: 10,
+                zoomControl: false
             });
-          }
-        }
-      }
+            const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
 
-      const toggleMarkers = (markers, show) => {
-        markers.forEach(marker => {
-          if (show) {
-            marker.addTo(map);
-          }
-          else {
-            map.removeLayer(marker);
-          }
-        });
-      }
+            L.control.zoom({
+                position: 'bottomright'
+            }).addTo(map);
 
-      window.onload = function () {
+            // ========= Limite de comunas =========
+            let communesMap = {};
+            const displayLimitcommunes = () => {
+                for (var key in comunas) {
+                    if (comunas.hasOwnProperty(key)) {
+                        (function (key) {
+                            var coor = comunas[key]["Coordinates"];
+                            const polygon = L.polygon(coor).addTo(map);
+                            polygon.setStyle({fillColor: 'black', color: 'black', weight: 1, opacity: 2, fillOpacity: 0.0});
+                            communesMap[key] = polygon;
+                        })(key);
+                    }
+                }
+            }
+            function removeLimitCommunes() {
+                for (var key in communesMap) {
+                    if (communesMap.hasOwnProperty(key)) {
+                        map.removeLayer(communesMap[key]);
+                        delete communesMap[key];
+                    }
+                }
+            }
 
-        display_communes_marker();
-        display_hidrogen_availability();
-        display_desalination_marker();
-        map.on('mousemove', function (e) {
-          var latlng = e.latlng;
-          var coordDisplay = document.getElementById("coordValue");
-          var a = "[" + latlng.lat + ", " + latlng.lng + "]";
-          coordDisplay.textContent = a;
-        });
+            // ========= Cuencas =========
+            let cuencasMap = {};
+            const cuencas = [
+                cuenca50,
+                cuenca51,
+                cuenca52,
+                cuenca53,
+                cuenca54,
+                cuenca55,
+                // cuenca56,
+                cuenca57,
+                cuenca58,
+                cuenca60,
+            ];
+            const loadCuencas = () => {
+                cuencas.forEach((c) => {
+                    const coor = c.features[0].geometry.rings;
+                    const polygon = L.polygon(coor);
+                    polygon.setStyle({fillColor: '#17255B', color: '#333333', weight: 1, opacity: 2, fillOpacity: 0.5});
+                    cuencasMap[c.features[0].attributes.COD_CUEN] = polygon;
+                });
+            }
+            const toggleCuenca = (checkbox, cuencaKey) => {
+                const displayCuencas = document.getElementById('toggle-cuencas').checked;
+                if (cuencasMap[cuencaKey] === undefined) { return }
+                checkbox.checked && displayCuencas ? cuencasMap[cuencaKey].addTo(map) : map.removeLayer(cuencasMap[cuencaKey]);
+            }
+            const displayCuencas = (checkbox) => {
+                const cuencasCheckbox = document.querySelectorAll('#menu-cuencas input');
+                cuencasCheckbox.forEach((checkbox) => {
+                    checkbox.dispatchEvent(new Event('change'));
+                });
+                const subcuencaCheckbox = document.getElementById('toggle-subcuencas');
+                subcuencaCheckbox.dispatchEvent(new Event('change'));
+            }
 
-        function onMapClick(e) {
-        }
-        map.on('click', onMapClick);
-      }
-    </script>
-  </div>
+            // ========= Subcuencas =========
+            let subcuencasMap = {};
+            const subcuencas = [
+                subcuenca500,
+                subcuenca510,
+                subcuenca511,
+                subcuenca512,
+                subcuenca520,
+                subcuenca521,
+                subcuenca522,
+                subcuenca530,
+                subcuenca531,
+                subcuenca532,
+                subcuenca540,
+                subcuenca541,
+                subcuenca542,
+                subcuenca550,
+                subcuenca551,
+                subcuenca552,
+                subcuenca553,
+                subcuenca560,
+                subcuenca561,
+                subcuenca570,
+                subcuenca571,
+                subcuenca572,
+                subcuenca573,
+                subcuenca574,
+                subcuenca580,
+                subcuenca600,
+                subcuenca601,
+                subcuenca602,
+                subcuenca603,
+                subcuenca604,
+                subcuenca605];
+
+            const loadSubcuencas = () => {
+                subcuencas.forEach((sc) => {
+                    const coor = sc.features[0].geometry.rings;
+                    const polygon = L.polygon(coor);
+                    polygon.setStyle({fillColor: '#087F8C', color: '#333333', weight: 1, opacity: 1, fillOpacity: 0.5});
+                    polygon.cuenca = sc.features[0].attributes.COD_CUEN;
+                    subcuencasMap[sc.features[0].attributes.COD_SUBC] = polygon;
+                });
+            };
+            const toggleSubcuencas = (checkbox) => {
+                if (checkbox.checked) {
+                    for (let key in subcuencasMap) {
+                        const cuencaId = subcuencasMap[key].cuenca;
+                        const cuencaChecked = document.querySelector(`form input[data-cuenca="${cuencaId}"]`).checked;
+                        if (cuencaChecked) {
+                            subcuencasMap[key].addTo(map);
+                        }
+                    }
+
+                }
+                else {
+                    for (let key in subcuencasMap) {
+                        map.removeLayer(subcuencasMap[key])
+                    }
+                }
+            }
+            // ========= Subsubcuencas =========
+            const toggleSubsubcuencas = () => {
+                console.log('subsubcuencas');
+            }
+            // ========= Disponibilidad de Hidrogeno =========
+            function display_hidrogen_availability() {
+                for (var key in hexagonos) {
+                    if (hexagonos.hasOwnProperty(key)) {
+                        (function (key) {
+                            const coor = hexagonos[key]["COORDINATES"];
+                            const originalColor = hexagonos[key]["Color"] === 'special' ? 'transparent' : hexagonos[key]["Color"];
+                            const hoverColor = 'yellow';
+
+                            let polygon = L.polygon(coor).addTo(map);
+                            polygon.key = key;
+
+                            if (hexagonos[key]["Color"] === 'black') {
+                                polygon.setStyle({fillColor: 'black', color: 'black', weight: 0.5, opacity: 0, fillOpacity: 0.5});
+                            }
+                            else {
+                                polygon.setStyle({fillColor: originalColor, color: originalColor, weight: 0, fillOpacity: 0.5});
+                            }
+
+                            polygon.on('mouseover', function (e) {
+                                const coordDisplay = document.getElementById("coordValue").textContent = JSON.stringify(coor[0]);
+                                this.setStyle({
+                                    fillColor: hoverColor,
+                                    color: hoverColor,
+                                    weight: 0,
+                                    opacity: 0,
+                                    fillOpacity: 0.5
+                                });
+                            }
+                            );
+
+                            polygon.on('mouseout', function (e) {
+                                this.setStyle({
+                                    fillColor: originalColor,
+                                    color: originalColor,
+                                    weight: 0,
+                                    opacity: 0,
+                                    fillOpacity: 0.5
+                                });
+
+                            });
+
+                            polygon.on('click', function (e) {
+                                const msg = 'Inhabilita';
+                                const hex = hexagonos[key];
+
+                                const snaspe = document.querySelector('#valor-snaspe');
+                                if (isNaN(hex['distancia a snaspe (km)'])) {
+                                    snaspe.innerText = msg;
+                                    snaspe.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    snaspe.parentElement.toggleAttribute('data-invalid', false);
+                                    snaspe.innerText = parseFloat(hex['distancia a snaspe (km)']).toFixed(2);
+                                }
+
+                                const ave = document.querySelector('#valor-ave');
+                                if (isNaN(hex['distancia a ave (km)'])) {
+                                    ave.innerText = msg;
+                                    ave.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    ave.parentElement.toggleAttribute('data-invalid', false);
+                                    ave.innerText = parseFloat(hex['distancia a ave (km)']).toFixed(2);
+                                }
+
+                                const humedal = document.querySelector('#valor-humedal');
+                                if (isNaN(hex['distancia a humedal (km)'])) {
+                                    humedal.innerText = msg;
+                                    humedal.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    humedal.parentElement.toggleAttribute('data-invalid', false);
+                                    humedal.innerText = parseFloat(hex['distancia a humedal (km)']).toFixed(2);
+                                }
+
+                                const patrimonioMundial = document.querySelector('#valor-patrimonioMundial');
+                                if (isNaN(hex['distancia a patrimonio mundial (km)'])) {
+                                    patrimonioMundial.innerText = msg;
+                                    patrimonioMundial.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    patrimonioMundial.parentElement.toggleAttribute('data-invalid', false);
+                                    patrimonioMundial.innerText = parseFloat(hex['distancia a patrimonio mundial (km)']).toFixed(2);
+                                }
+
+                                const monumentoNacional = document.querySelector('#valor-monumentoNacional');
+                                if (isNaN(hex['distancia a monumento nacional (km)'])) {
+                                    monumentoNacional.innerText = msg;
+                                    monumentoNacional.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    monumentoNacional.parentElement.toggleAttribute('data-invalid', false);
+                                    monumentoNacional.innerText = parseFloat(hex['distancia a monumento nacional (km)']).toFixed(2);
+                                }
+
+                                const santuarioNatural = document.querySelector('#valor-santuarioNatural');
+                                if (isNaN(hex['distancia a zona tipica y santuario natural (km)'])) {
+                                    santuarioNatural.innerText = msg;
+                                    santuarioNatural.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    santuarioNatural.parentElement.toggleAttribute('data-invalid', false);
+                                    santuarioNatural.innerText = parseFloat(hex['distancia a zona tipica y santuario natural (km)']).toFixed(2);
+                                }
+
+                                const redVial = document.querySelector('#valor-redVial');
+                                if (isNaN(hex['distancia a red vial(km)'])) {
+                                    redVial.innerText = msg;
+                                    redVial.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    redVial.parentElement.toggleAttribute('data-invalid', false);
+                                    redVial.innerText = parseFloat(hex['distancia a red vial(km)']).toFixed(2);
+                                }
+                                const costa = document.querySelector('#valor-costa');
+                                if (isNaN(hex['distancia a costa(km)'])) {
+                                    costa.innerText = msg;
+                                    costa.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    costa.parentElement.toggleAttribute('data-invalid', false);
+                                    costa.innerText = parseFloat(hex['distancia a costa(km)']).toFixed(2);
+                                }
+                                const terminal = document.querySelector('#valor-terminal');
+                                if (isNaN(hex['distancia a terminal(km)'])) {
+                                    terminal.innerText = msg;
+                                    terminal.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    terminal.parentElement.toggleAttribute('data-invalid', false);
+                                    terminal.innerText = parseFloat(hex['distancia a terminal(km)']).toFixed(2);
+                                }
+                                const poblacion = document.querySelector('#valor-poblacion');
+                                if (isNaN(hex['distancia a poblacion'])) {
+                                    poblacion.innerText = msg;
+                                    poblacion.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    poblacion.parentElement.toggleAttribute('data-invalid', false);
+                                    poblacion.innerText = parseFloat(hex['distancia a poblacion']).toFixed(2);
+                                }
+                                const rti = document.querySelector('#valor-rti');
+                                if (isNaN(hex['RTI (m)'])) {
+                                    rti.innerText = msg;
+                                    rti.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    rti.parentElement.toggleAttribute('data-invalid', false);
+                                    rti.innerText = parseFloat(hex['RTI (m)']).toFixed(2);
+                                }
+                                const pvout = document.querySelector('#valor-pvout');
+                                if (isNaN(hex['potencia solar (MW)'])) {
+                                    pvout.innerText = msg;
+                                    pvout.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    pvout.parentElement.toggleAttribute('data-invalid', false);
+                                    pvout.innerText = parseFloat(hex['potencia solar (MW)']).toFixed(2);
+                                }
+                                const potenciaEolica = document.querySelector('#valor-potenciaEolica');
+                                if (isNaN(hex['potencia eólica (MW)'])) {
+                                    potenciaEolica.innerText = msg;
+                                    potenciaEolica.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    potenciaEolica.parentElement.toggleAttribute('data-invalid', false);
+                                    potenciaEolica.innerText = parseFloat(hex['potencia eólica (MW)']).toFixed(2);
+                                }
+                                const hidrogeno = document.querySelector('#valor-hidrogeno');
+                                if (isNaN(hex['Hidrogeno (kgH_2/kWp)'])) {
+                                    hidrogeno.innerText = msg;
+                                    hidrogeno.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    hidrogeno.parentElement.toggleAttribute('data-invalid', false);
+                                    hidrogeno.innerText = parseFloat(hex['Hidrogeno (kgH_2/kWp)']).toFixed(2);
+                                }
+                                const hidrogenoM2 = document.querySelector('#valor-hidrogenoM2');
+                                if (isNaN(hex['Hidrogeno (kgH_2/m_2)'])) {
+                                    hidrogenoM2.innerText = msg;
+                                    hidrogenoM2.parentElement.toggleAttribute('data-invalid', true);
+                                }
+                                else {
+                                    hidrogenoM2.parentElement.toggleAttribute('data-invalid', false);
+                                    hidrogenoM2.innerText = parseFloat(hex['Hidrogeno (kgH_2/m_2)']).toFixed(2);
+                                }
+
+                                document.getElementById('section-indicadores').toggleAttribute('data-visible', true);
+                                if (hexagonos[e.target.key]["Color"] === 'black') {
+                                    document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
+                                    setTimeout(() => {
+                                        document.getElementById('alert-notMeet').toggleAttribute('data-visible', false);
+                                    }, 4000);
+                                }
+                            });
+                        })(key);
+                    }
+                }
+
+            };
+
+            // ========= Markers =========
+            let cityPin = L.icon({
+                iconUrl: './img/icon/pin.png',
+                iconSize: [32, 32],
+                iconAnchor: [36, 20],
+            });
+            let industrialPin = L.icon({
+                iconUrl: './img/icon/factory_pin.png',
+                iconSize: [32, 32],
+                iconAnchor: [36, 15],
+            });
+            const communesMarkers = [];
+            const desalinationMarkers = [];
+
+            function display_communes_marker() {
+                for (let key in markers) {
+                    if (markers.hasOwnProperty(key)) {
+                        const coordinates = markers[key]["Coordinates"][0];
+                        const marker = L.marker([coordinates[0], coordinates[1]], {icon: cityPin}).addTo(map);
+                        communesMarkers.push(marker);
+                        marker.bindTooltip(key, {permanent: true, direction: 'right'}).openTooltip();
+                    }
+                }
+            };
+
+            function display_desalination_marker() {
+                for (let plantKey in desaladoras) {
+                    if (desaladoras.hasOwnProperty(plantKey)) {
+                        let coordinates = desaladoras[plantKey]["coordinates"];
+                        const marker = L.marker([coordinates[0], coordinates[1]], {icon: industrialPin}).addTo(map);
+                        desalinationMarkers.push(marker);
+                        marker.name = plantKey
+                        marker.bindTooltip(plantKey, {permanent: true, direction: 'right'}).openTooltip();
+
+                        marker.on('click', (event) => {
+                            const selectElement = document.getElementById('select-desaladoras');
+                            const sectionDesaladoras = document.getElementById('section-desaladoras');
+                            selectElement.value = event.target.name;
+                            selectElement.dispatchEvent(new Event('change'));
+                            sectionDesaladoras.toggleAttribute('data-visible', true);
+                        });
+                    }
+                }
+            }
+
+            const toggleMarkers = (markers, show) => {
+                markers.forEach(marker => {
+                    show ? marker.addTo(map) : map.removeLayer(marker);
+                });
+            }
+
+            window.onload = function () {
+                loadCuencas();
+                loadSubcuencas();
+                display_communes_marker();
+                display_hidrogen_availability();
+                display_desalination_marker();
+
+                let pointedMarker;
+                map.on('click', (e) => {
+                    if (pointedMarker) {
+                        map.removeLayer(pointedMarker);
+                    }
+                    const coor = e.latlng;
+                    pointedMarker = L.marker(coor).addTo(map);
+                })
+
+                map.on('mousemove', function (e) {
+                    const latlng = e.latlng;
+                    const coordDisplay = document.getElementById("coordValue");
+                    const a = "[" + latlng.lat + ", " + latlng.lng + "]";
+                    coordDisplay.textContent = a;
+                });
+
+            }
+        </script>
+    </div>
 </body>
 
 </html>
