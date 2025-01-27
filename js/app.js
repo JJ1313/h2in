@@ -8,9 +8,10 @@ btnsSideMenu.forEach(btn => {
             idTarget = event.target.parentElement.getAttribute('data-target');
             target = event.target.parentElement;
         }
+        // Cierra menus abiertos, para que no se superpongan
         const menus = document.querySelectorAll('#menu-hidrico, #menu-opciones, #section-indicadores, #section-detalle');
         menus.forEach((m) => {
-            if (target.getAttribute("data-target") !== m.getAttribute("id")) { 
+            if (target.getAttribute("data-target") !== m.getAttribute("id") && target.getAttribute('data-target') !== "menu-cuencas") {
                 m.toggleAttribute('data-visible', false);
             }
         });
@@ -54,7 +55,7 @@ selectDesaladora.addEventListener('change', (event) => {
     document.getElementById("desaladora-owner").innerText = desaladoras[selectDesaladora.value].owner;
 });
 
-// Toggle de markers 
+// Toggle markers 
 document.getElementById('toggle-communes').addEventListener('change', (event) => {
     toggleMarkers(communesMarkers, event.target.checked);
 });
