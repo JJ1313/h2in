@@ -1,24 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import '/css/styles.css';
 
-:root {
-    --clr-blue: #17255B;
-    --clr-green: #5baa16;
-    --clr-white: #ffffff;
-    --clr-black: #333;
-    --clr-gray-dark: #777777;
-    --clr-gray-light: #dddddd;
-    --clr-red: #ef9a9a;
-
-    --border-radius: 10px;
-    --padding: 10px;
+#spinner-container {
+    background-color: var(--clr-white);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 1000;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
+#spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid var(--clr-gray-light);
+    border-top: 6px solid var(--clr-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #map-container {
@@ -47,13 +56,13 @@ button {
         justify-content: start;
     }
 
-    .btn button.btn-accordion{
-        &::before
-        {
+    .btn button.btn-accordion {
+        &::before {
             top: -10px;
             left: 117px;
         }
-        &::after{
+
+        &::after {
             top: -10px;
             left: 123px;
         }
@@ -243,5 +252,12 @@ span:not(.unit) {
 
     &:not([data-visible]) {
         scale: 0;
+    }
+}
+
+@media (max-width: 700px) {
+
+    #coordDisplay {
+        display: none;
     }
 }

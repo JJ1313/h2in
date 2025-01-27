@@ -1,4 +1,4 @@
-{
+const subsubcuenca6050 = {
     "objectIdFieldName": "OBJECTID",
     "uniqueIdField": {
         "name": "OBJECTID",

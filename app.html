@@ -12,8 +12,8 @@
     <title>H2V Valparaiso</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="css/topBar.css" />
     <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="css/topBar.css" />
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -22,6 +22,7 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="js/valpo8.js"></script>
     <script src="js/comunas.js"></script>
+    <!-- ========= CUENCAS ========= -->
     <script src="./data/cuencas/Cuencas_files/cuenca_050_Costeras Quilimari-Petorca.js"></script>
     <script src="./data/cuencas/Cuencas_files/cuenca_051_Rio Petorca.js"></script>
     <script src="./data/cuencas/Cuencas_files/cuenca_052_Rio Ligua.js"></script>
@@ -32,6 +33,8 @@
     <script src="./data/cuencas/Cuencas_files/cuenca_057_Rio Maipo.js"></script>
     <script src="./data/cuencas/Cuencas_files/cuenca_058_Costeras entre  Maipo y Rapel.js"></script>
     <script src="./data/cuencas/Cuencas_files/cuenca_060_Rio Rapel.js"></script>
+
+    <!-- ========= SUBCUENCAS ========= -->
     <script src="./data/cuencas/Subcuencas_files/subcuenca_500_Costera Quilimari - Petorca.js"></script>
     <script
         src="./data/cuencas/Subcuencas_files/subcuenca_510_Rio Petorca Alto (hasta despues Junta Rio Sobrante).js"></script>
@@ -72,12 +75,20 @@
     <script src="./data/cuencas/Subcuencas_files/subcuenca_603_Tinguiririca Bajo.js"></script>
     <script src="./data/cuencas/Subcuencas_files/subcuenca_604_Estero Alhue.js"></script>
     <script src="./data/cuencas/Subcuencas_files/subcuenca_605_Rio Rapel.js"></script>
+
+    <!-- ========= SUBSUBCUENCAS ========= -->
+    <script
+        src="data/cuencas/Subsubcuencas_files/subsubcuenca_5000_Costeras entre Rios Quilimari y Petorca.js"></script>
+    <script src="data/cuencas/Subsubcuencas_files/subsubcuenca_5100_Rio Sobrante.js"></script>
     <script src="js/desalinizadoras.js"></script>
     <script src="./js/app.js" defer></script>
 
 </head>
 
 <body>
+    <div id="spinner-container">
+        <div id="spinner"></div>
+    </div>
     <div id="top-bar">
         <img src="img/logo_h2v.webp" height="120" class="logo">
         <img src="img/logo_muni.webp" width="160pt">
@@ -195,7 +206,7 @@
                 </div>
                 <div>
                     <input type="checkbox" id="toggle-subsubcuencas" name="toggle-subsubcuencas"
-                        onchange="toggleSubsubcuencas(this)" disabled>
+                        onchange="toggleSubsubcuencas(this)">
                     <label for="toggle-subsubcuencas">Subsubcuencas</label>
                 </div>
             </div>
@@ -569,7 +580,6 @@
             </div>
         </main>
     </section>
-
     <div id="map-container">
         <div id="map" style="width: 100%; height: 100%;  z-index: 1; position: relative;"></div>
         <script>
@@ -634,7 +644,7 @@
             }
             const toggleCuenca = (checkbox, cuencaKey) => {
                 const displayCuencas = document.getElementById('toggle-cuencas').checked;
-                if (cuencasMap[cuencaKey] === undefined) { return }
+                if (cuencasMap[cuencaKey] === undefined) {return }
                 checkbox.checked && displayCuencas ? cuencasMap[cuencaKey].addTo(map) : map.removeLayer(cuencasMap[cuencaKey]);
             }
             const displayCuencas = (checkbox) => {
@@ -708,9 +718,40 @@
                 }
             }
             // ========= Subsubcuencas =========
-            const toggleSubsubcuencas = () => {
-                console.log('subsubcuencas');
+            let subsubcuencasMap = {};
+            const subsubcuencas = [
+                subsubcuenca5000,
+                subsubcuenca5100,
+            ]
+
+            const loadSubsubcuencas = () => {
+                subsubcuencas.forEach((ssc) => {
+                    const coor = ssc.features[0].geometry.rings;
+                    const polygon = L.polygon(coor);
+                    polygon.setStyle({fillColor: '#C0D6DF', color: '#333333', weight: 1, opacity: 1, fillOpacity: 0.5});
+                    polygon.cuenca = ssc.features[0].attributes.COD_CUEN;
+                    console.log(ssc.features[0].attributes.COD_CUEN);
+                    subsubcuencasMap[ssc.features[0].attributes.COD_SUBC] = polygon;
+                });
+            };
+            const toggleSubsubcuencas = (checkbox) => {
+                if (checkbox.checked) {
+                    for (let key in subsubcuencasMap) {
+                        const cuencaId = subsubcuencasMap[key].cuenca;
+                        const cuencaChecked = document.querySelector(`form input[data-cuenca="${cuencaId}"]`).checked;
+                        if (cuencaChecked) {
+                            subsubcuencasMap[key].addTo(map);
+                        }
+                    }
+
+                }
+                else {
+                    for (let key in subcuencasMap) {
+                        map.removeLayer(subsubcuencasMap[key])
+                    }
+                }
             }
+
             // ========= Disponibilidad de Hidrogeno =========
             function display_hidrogen_availability() {
                 for (var key in hexagonos) {
@@ -900,6 +941,10 @@
                                 }
 
                                 document.getElementById('section-indicadores').toggleAttribute('data-visible', true);
+                                const menus = document.querySelectorAll('#menu-hidrico, #menu-opciones, #section-detalle');
+                                menus.forEach((m) => {
+                                    m.toggleAttribute('data-visible', false);
+                                });
                                 if (hexagonos[e.target.key]["Color"] === 'black') {
                                     document.getElementById('alert-notMeet').toggleAttribute('data-visible', true);
                                     setTimeout(() => {
@@ -967,9 +1012,15 @@
             window.onload = function () {
                 loadCuencas();
                 loadSubcuencas();
+                loadSubsubcuencas();
+
                 display_communes_marker();
                 display_hidrogen_availability();
                 display_desalination_marker();
+
+                map.whenReady(() => {
+                    document.getElementById("spinner-container").style.display = "none";
+                });
 
                 let pointedMarker;
                 map.on('click', (e) => {
@@ -977,6 +1028,7 @@
                         map.removeLayer(pointedMarker);
                     }
                     const coor = e.latlng;
+                    console.log(`${coor.lat}, ${coor.lng}`);
                     pointedMarker = L.marker(coor).addTo(map);
                 })
 

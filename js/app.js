@@ -8,6 +8,12 @@ btnsSideMenu.forEach(btn => {
             idTarget = event.target.parentElement.getAttribute('data-target');
             target = event.target.parentElement;
         }
+        const menus = document.querySelectorAll('#menu-hidrico, #menu-opciones, #section-indicadores, #section-detalle');
+        menus.forEach((m) => {
+            if (target.getAttribute("data-target") !== m.getAttribute("id")) { 
+                m.toggleAttribute('data-visible', false);
+            }
+        });
         target.toggleAttribute('data-active')
         document.getElementById(idTarget).toggleAttribute('data-visible');
     });
