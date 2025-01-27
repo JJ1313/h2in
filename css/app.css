@@ -1,4 +1,4 @@
-@import '/css/styles.css';
+@import './styles.css';
 
 #spinner-container {
     background-color: var(--clr-white);

@@ -1,4 +1,4 @@
-@import '/css/styles.css';
+@import './styles.css';
 
 body {
     background: url('/img/background.webp') no-repeat center center fixed;
