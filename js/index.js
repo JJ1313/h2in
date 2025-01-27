@@ -1,6 +1,6 @@
 // ========= CARGAR DE COMUNAS =========
 (async () => {
-    const response = await fetch('/data/comunas-regiones.json');
+    const response = await fetch('../data/comunas-regiones.json');
     const data = await response.json();
     const citySelect = document.getElementById('city');
     const cities = [];
