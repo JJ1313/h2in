@@ -139,7 +139,8 @@ button {
     }
 }
 
-#section-desaladoras {
+#section-desaladoras,
+#section-ptas{
     right: 20px;
     width: 300px;
     z-index: 12;

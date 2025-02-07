@@ -293,6 +293,7 @@
     <script
         src="data/cuencas/Subsubcuencas_files/subsubcuenca_6056_Rio Rapel Entre Estero Corneche y Desembocadura.js"></script>
     <script src="js/desalinizadoras.js"></script>
+    <script src="/data/ptas.js"></script>
     <script src="./js/app.js" defer></script>
 
 </head>
@@ -314,7 +315,7 @@
             <section id="section-opciones">
                 <header data-target="menu-opciones" class="btn">
                     <img src="./img/icon/options.png" width="32" alt="">
-                    <h3>Opciones</h3>
+                    <h3>Comunas</h3>
                 </header>
             </section>
             <section id="menu-indicadores">
@@ -421,26 +422,30 @@
                         onchange="toggleSubsubcuencas(this)">
                     <label for="toggle-subsubcuencas">Subsubcuencas</label>
                 </div>
+                <div>
+                    <input type="checkbox" id="toggle-desalination" name="toggle-desalination">
+                    <label for="toggle-desalination">Desalinizadoras</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-ptas" name="toggle-ptas">
+                    <label for="toggle-ptas">Plantas de Tratamiento de Agua</label>
+                </div>
             </div>
         </main>
     </section>
     <section id="menu-opciones" class="menu-floating">
         <header class="title">
-            <h3>Opciones</h3>
+            <h3>Comunas</h3>
             <button data-target="menu-opciones" class="btn-close">&times;</button>
         </header>
         <main>
             <div>
-                <input type="checkbox" id="toggle-limitCommunes" name="toggle-limitCommunes">
-                <label for="toggle-limitCommunes">Ver límite de comunas</label>
-            </div>
-            <div>
                 <input type="checkbox" id="toggle-communes" name="toggle-communes" checked>
-                <label for="toggle-communes">Ver comunas</label>
+                <label for="toggle-communes">Comunas</label>
             </div>
             <div>
-                <input type="checkbox" id="toggle-desalination" name="toggle-desalination" checked>
-                <label for="toggle-desalination">Ver desalinizadoras</label>
+                <input type="checkbox" id="toggle-limitCommunes" name="toggle-limitCommunes">
+                <label for="toggle-limitCommunes">Límite de comunas</label>
             </div>
         </main>
     </section>
@@ -756,6 +761,28 @@
                 </tr>
             </table>
         </div>
+    </section>
+
+    <section id="section-ptas" class="menu-floating">
+        <header class="title">
+            <h3>Planta de Tratamiento</h3>
+            <button id="btn-closePtas" class="btn-close" data-target="section-ptas">&times;</button>
+        </header>
+        <main>
+            <div>
+                Nombre
+                <span id="ptas-name">-</span>
+            </div>
+            <div>
+                Tecnología
+                <span id="ptas-technology">-</span>
+            </div>
+            <div>
+                Caudal
+                <span id="ptas-flowRate">-</span>
+                <span class="unit">L/s</span>
+            </div>
+        </main>
     </section>
 
     <section id="section-desaladoras" class="menu-floating">
@@ -1077,7 +1104,7 @@
                     polygon.on('click', (e) => {
                         console.log(e.target.name);
                     });
-                    
+
                     subsubcuencasMap[ssc.features[0].attributes.COD_SSUBC] = polygon;
                 });
             };
@@ -1316,6 +1343,12 @@
                 iconSize: [32, 32],
                 iconAnchor: [36, 15],
             });
+
+            let ptasPin = L.icon({
+                iconUrl: './img/icon/water.png',
+                iconSize: [32, 32],
+                iconAnchor: [36, 15],
+            });
             const communesMarkers = [];
             const desalinationMarkers = [];
 
@@ -1330,11 +1363,11 @@
                 }
             };
 
-            function display_desalination_marker() {
+            function loadDesalinationMarker() {
                 for (let plantKey in desaladoras) {
                     if (desaladoras.hasOwnProperty(plantKey)) {
                         let coordinates = desaladoras[plantKey]["coordinates"];
-                        const marker = L.marker([coordinates[0], coordinates[1]], {icon: industrialPin}).addTo(map);
+                        const marker = L.marker([coordinates[0], coordinates[1]], {icon: industrialPin});
                         desalinationMarkers.push(marker);
                         marker.name = plantKey
                         marker.bindTooltip(plantKey, {permanent: true, direction: 'right'}).openTooltip();
@@ -1349,7 +1382,28 @@
                     }
                 }
             }
+            const ptasMarkers = []
+            function loadPtasMarker() {
+                for (let key in ptas) {
+                    if (ptas.hasOwnProperty(key)) {
+                        const coordinates = [ptas[key].lat, ptas[key].lon];
+                        const marker = L.marker([ptas[key].lat, ptas[key].lon], {icon: ptasPin});
+                        ptasMarkers.push(marker);
+                        marker.name = key;
+                        marker.technology = ptas[key].technology;
+                        marker.flowRate = ptas[key].flowRate;
+                        marker.commune = ptas[key].commune;
 
+                        marker.on('click', (event) => {
+                            const sectionPtas = document.getElementById('section-ptas');
+                            const ptasName = document.getElementById('ptas-name').innerText = event.target.name;
+                            const ptasTechnology = document.getElementById('ptas-technology').innerText = event.target.technology;
+                            const ptasFlowRate = document.getElementById('ptas-flowRate').innerText = event.target.flowRate;
+                            sectionPtas.toggleAttribute('data-visible', true);
+                        });
+                    }
+                }
+            }
             const toggleMarkers = (markers, show) => {
                 markers.forEach(marker => {
                     show ? marker.addTo(map) : map.removeLayer(marker);
@@ -1360,10 +1414,11 @@
                 loadCuencas();
                 loadSubcuencas();
                 loadSubsubcuencas();
+                loadPtasMarker();
 
                 display_communes_marker();
                 display_hidrogen_availability();
-                display_desalination_marker();
+                loadDesalinationMarker();
 
                 map.whenReady(() => {
                     document.getElementById("spinner-container").style.display = "none";

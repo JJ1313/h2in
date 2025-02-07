@@ -1,7 +1,8 @@
 // ========= CARGAR DE COMUNAS =========
 (async () => {
     const baseUrl = window.location.origin;
-    const response = await fetch(`${baseUrl}/data/comunas-regiones.json`);
+    console.log(baseUrl);
+    const response = await fetch(`${baseUrl}/plataforma/data/comunas-regiones.json`);
     const data = await response.json();
     const citySelect = document.getElementById('city');
     const cities = [];
@@ -26,11 +27,9 @@ form.addEventListener('submit', (e) => {
     const btnClicked = e.submitter;
     const targetUser = document.getElementById('target-user').value;
     if (btnClicked.getAttribute('id') == 'btn-submit') {
-        console.log('submit');
-        window.location.href = `/app.html?userType=${targetUser}`
+        window.location.href = `/plataforma/app.html?userType=${targetUser}`
     };
     if (btnClicked.getAttribute('id') == 'btn-skip') {
-        console.log('skip');
-        window.location.href = `/app.html?userType=${targetUser}`
+        window.location.href = `/plataforma/app.html?userType=${targetUser}`
     };
 });

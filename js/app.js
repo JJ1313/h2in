@@ -66,3 +66,7 @@ document.getElementById('toggle-desalination').addEventListener('change', (event
 document.getElementById('toggle-limitCommunes').addEventListener('change', (event) => {
     event.target.checked ? displayLimitcommunes() : removeLimitCommunes();
 });
+// Toggle areas
+document.getElementById('toggle-ptas').addEventListener('change', (event) => {
+    toggleMarkers(ptasMarkers, event.target.checked);
+});

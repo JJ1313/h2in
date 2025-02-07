@@ -1,0 +1,220 @@
+const ptas = {
+    "PTAS Punta Puyai": {
+        "technology": "Lodo Activado",
+        "lon": -71.4334283740718,
+        "lat": -32.5050770462849,
+        "flowRate": 20.22,
+        "commune": "Papudo",
+    },
+    "PTAS El Molino": {
+        "technology": "Lodo Activado",
+        "lon": -71.2777461279286,
+        "lat": -32.9020473415084,
+        "flowRate": 469.18,
+        "commune": "Quillota",
+    },
+    "PTAS Zapallar": {
+        "technology": "Lodo Activado",
+        "lon": -71.4525631008941,
+        "lat": -32.5516864053635,
+        "flowRate": 4.18,
+        "commune": "Zapallar"
+    },
+    "PTAS Cordillera": {
+        "technology": "Lodo Activado",
+        "lon": -70.6334796528784,
+        "lat": -32.8068881930951,
+        "flowRate": 163.42,
+        "commune": "Los Andes",
+    },
+    "PTAS Los Maitenes": {
+        "technology": "Lodo Activado",
+        "lon": -71.2355764695753,
+        "lat": -32.4427171862227,
+        "flowRate": 44.49,
+        "commune": "La Ligua",
+    },
+    "PTAS Almendral": {
+        "technology": "Lodo Activado",
+        "lon": -70.6629853112354,
+        "lat": -32.9344632320302,
+        "flowRate": 133.52,
+        "commune": "Rinconada",
+
+    },
+    "PTAS Curimon": {
+        "technology": "Lodo Activado",
+        "lon": -70.68997396793,
+        "lat": -32.7775427074974,
+        "flowRate": 7.61,
+        "commune": "San Felipe",
+
+    },
+    "PTAS Rinconada": {
+        "technology": "Lodo Activado",
+        "lon": -70.7060818096057,
+        "lat": -32.8331026061145,
+        "flowRate": 32.05,
+        "commune": "Rinconada",
+
+    },
+    "PTAS Cachagua": {
+        "technology": "Lodo Activado",
+        "lon": -71.4412906703828,
+        "lat": -32.5862849507559,
+        "flowRate": 7.49,
+        "commune": "Zapallar",
+    },
+    "PTAS Costa Cachagua": {
+        "technology": "Lodo Activado",
+        "lon": -71.4448363904521,
+        "lat": -32.5826333218804,
+        "flowRate": 5.28,
+        "commune": "Zapallar",
+    },
+    "PTAS Putaendo": {
+        "technology": "Laguna Aireada",
+        "lon": -70.7214014758263,
+        "lat": -32.6341803367534,
+        "flowRate": 14.56,
+        "commune": "Putaendo",
+
+    },
+    "PTAS Chincolco": {
+        "technology": "Laguna Aireada",
+        "lon": -70.7799134089944,
+        "lat": -32.1872055626349,
+        "flowRate": 1.25,
+        "commune": "Petorca",
+
+    },
+    "PTAS Casablanca": {
+        "technology": "Laguna Aireada",
+        "lon": -71.4211304501982,
+        "lat": -33.3064994633207,
+        "flowRate": 50.76,
+        "commune": "Casablanca",
+
+    },
+    "PTAS Llay Llay": {
+        "technology": "Laguna Aireada",
+        "lon": -70.9865062580368,
+        "lat": -32.8411392782994,
+        "flowRate": 42.65,
+        "commune": "Llay Llay",
+
+    },
+    "PTAS Cabildo": {
+        "technology": "Laguna Aireada",
+        "lon": -71.08594878335,
+        "lat": -32.4381302326614,
+        "flowRate": 17.83,
+        "commune": "Cabildo",
+    },
+    "PTAS Petorca": {
+        "technology": "Laguna Aireada",
+        "lon": -70.9481135772641,
+        "lat": -32.2544904157174,
+        "flowRate": 5.57,
+        "commune": "Petorca",
+    },
+    "PTAS Puchuncaví": {
+        "technology": "Laguna Aireada",
+        "lon": -71.4206535282728,
+        "lat": -32.7352364926847,
+        "flowRate": 6.79,
+        "commune": "Puchuncaví",
+    },
+    "PTAS Santa Maria": {
+        "technology": "Laguna Aireada",
+        "lon": -70.6644300071819,
+        "lat": -32.7402167515919,
+        "flowRate": 10.15,
+        "commune": "Santa Maria",
+    },
+    "PTAS Placilla": {
+        "technology": "Laguna Aireada",
+        "lon": -71.5781414321345,
+        "lat": -33.1101540027601,
+        "flowRate": 130.35,
+        "commune": "Valparaíso",
+    },
+    "PTAS San Esteban": {
+        "technology": "Laguna Aireada",
+        "lon": -70.6089540212262,
+        "lat": -32.8118429529207,
+        "flowRate": 22.25,
+        "commune": "Los Andes"
+    },
+    "PTAS Catemu": {
+        "technology": "Laguna Aireada",
+        "lon": -70.9714995542818,
+        "lat": -32.7815905978934,
+        "flowRate": 43.08,
+        "commune": "Catemu",
+    },
+    "PTF Loma Larga": {
+        "technology": "Emisario Submarino",
+        "lon": -71.6582850576752,
+        "lat": -33.0420903687411,
+        "flowRate": 1383.7,
+        "commune": "Valparaíso",
+    },
+    "PTF Algarrobo": {
+        "technology": "Emisario Submarino",
+        "lon": -71.656295356929,
+        "lat": -33.3550619188493,
+        "flowRate": 69.95,
+        "commune": "Algarrobo",
+    },
+    "PTF El Tabo": {
+        "technology": "Emisario Submarino",
+        "lon": -71.6541739583875,
+        "lat": -33.4634626530914,
+        "flowRate": 58.43,
+        "commune": "El Tabo",
+    },
+    "PTF Concón Higuerillas": {
+        "technology": "Emisario Submarino",
+        "lon": -71.5238741030904,
+        "lat": -32.923415343136,
+        "flowRate": 61.5,
+        "commune": "Concón",
+    },
+    "PTF San Antonio": {
+        "technology": "Emisario Submarino",
+        "lon": -71.555956691345,
+        "lat": -33.0208124413287,
+        "flowRate": 208.35,
+        "commune": "San Antonio",
+    },
+    "PTF Viña del Mar": {
+        "technology": "Emisario Submarino",
+        "lon": -71.555956691345,
+        "lat": -33.0208124413287,
+        "flowRate": 992.28,
+        "commune": "Viña del Mar",
+    },
+    "PTF Cartagena": {
+        "technology": "Emisario Submarino",
+        "lon": -71.555956691345,
+        "lat": -33.0208124413287,
+        "flowRate": 69.86,
+        "commune": "Viña del Mar",
+
+    },
+    "PTF Concón Oriente": {
+        "technology": "Emisario Submarino",
+        "lon": -71.5044991284564,
+        "lat": -32.9263738294133,
+        "flowRate": 77.94,
+        "commune": "Concón",
+    },
+    "PTF Quintero": {
+        "technology": "Emisario Submarino",
+        "lon": -71.4292391884977,
+        "lat": -32.7373838857002,
+        "flowRate": 82.37,
+        "commune": "Quintero",
+    }
+}
