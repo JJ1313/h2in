@@ -18,7 +18,7 @@
             <h3>Formulario de acceso</h3>
             <div class="input-container">
                 <select id="target-user" required>
-                    <option value="" disabled selected> Público objetivo </option>
+                    <option value="" disabled selected> * Público objetivo </option>
                     <option value="publicOfficial"> Funcionario Público </option>
                     <option value="company"> Empresa </option>
                     <option value="education"> Educación </option>
@@ -31,19 +31,22 @@
                 </select>
             </div>
             <div class="input-container">
-                <input type="email" name="email" value="" placeholder="Email">
+                <input id="email" type="email" name="email" value="" placeholder="Email">
             </div>
             <div class="input-container">
-                <input type="text" name="occupation" value="" placeholder="Ocupación">
+                <input id="occupation" type="text" name="occupation" value="" placeholder="Ocupación">
             </div>
             <div class="input-container">
-                <input type="text" name="phone" value="" placeholder="Teléfono">
+                <input id="phone" type="text" name="phone" value="" placeholder="Teléfono">
             </div>
             <div class="input-container">
-                <input type="text" name="addres" value="" placeholder="Dirección">
+                <input id="address" type="text" name="address" value="" placeholder="Dirección">
             </div>
             <div class="input-container">
-                <input type="text" name="organization" value="" placeholder="Organización Social">
+                <input id="organization" type="text" name="organization" value="" placeholder="Organización Social">
+            </div>
+            <div class="input-container" style="color: #555555;">
+                * Campos obligatorios
             </div>
             <div class="btns-container">
                 <!-- <button id="btn-skip" type="submit" class="btn" type="">Saltar</button> -->
