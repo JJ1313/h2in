@@ -1,23 +1,25 @@
 // Controla botones para abrir o cerrar secciones
 const btnsSideMenu = document.querySelectorAll('.btn');
 btnsSideMenu.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        let idTarget = event.target.getAttribute('data-target');
-        let target = event.target;
-        if (!idTarget) {
-            idTarget = event.target.parentElement.getAttribute('data-target');
-            target = event.target.parentElement;
-        }
-        // Cierra menus abiertos, para que no se superpongan
-        const menus = document.querySelectorAll('#menu-hidrico, #menu-opciones, #section-indicadores, #section-detalle');
-        menus.forEach((m) => {
-            if (target.getAttribute("data-target") !== m.getAttribute("id") && target.getAttribute('data-target') !== "menu-cuencas") {
-                m.toggleAttribute('data-visible', false);
+    if (!btn.classList.contains('link')) {
+        btn.addEventListener('click', (event) => {
+            let idTarget = event.target.getAttribute('data-target');
+            let target = event.target;
+            if (!idTarget) {
+                idTarget = event.target.parentElement.getAttribute('data-target');
+                target = event.target.parentElement;
             }
+            // Cierra menus abiertos, para que no se superpongan
+            const menus = document.querySelectorAll('#menu-hidrico, #menu-opciones, #section-indicadores, #section-detalle');
+            menus.forEach((m) => {
+                if (target.getAttribute("data-target") !== m.getAttribute("id") && target.getAttribute('data-target') !== "menu-cuencas") {
+                    m.toggleAttribute('data-visible', false);
+                }
+            });
+            target.toggleAttribute('data-active')
+            document.getElementById(idTarget).toggleAttribute('data-visible');
         });
-        target.toggleAttribute('data-active')
-        document.getElementById(idTarget).toggleAttribute('data-visible');
-    });
+    }
 });
 
 // Control de pop info de indicadores

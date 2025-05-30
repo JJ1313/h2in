@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual de usuario</title>
+    <link href="css/manual.css" rel="stylesheet">
+    <script src="js/manual.js" defer></script>
+</head>
+
+<body>
+    <button id="menu-toggle" aria-label="Abrir menú"></button>
+    <div id="container">
+        <nav id="sidebar">
+            <h2>Manual de usuario</h2>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#acceso">Acceso y vista general</a></li>
+                <li><a href="#navegacion">Navegación por el mapa</a></li>
+                <li><a href="#capas-informacion">Capas de información</a></li>
+                <li><a href="#consulta-mapa">Consulta en el mapa</a></li>
+                <li><a href="#ejemplo">Ejemplo práctico</a></li>
+                <li><a href="#indicadores">¿Qué significa cada indicador?</a></li>
+                <li><a href="#glosario">Glosario básico</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+                <li><a href="#soporte">Soporte y contacto</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="sections-container">
+                <section id="introduccion" class="section">
+                    <h2>Introducción</h2>
+                    <p>
+                        <strong>H2V Valparaíso</strong> es una plataforma web interactiva diseñada para apoyar la
+                        planificación
+                        de proyectos de Hidrógeno Verde en la Región de Valparaíso. Ha sido desarrollada por la
+                        Pontificia
+                        Universidad Católica de Valparaíso con apoyo de CORFO y la Asociación de Municipalidades de la
+                        región,
+                        en el marco del plan nacional de hidrógeno. Su objetivo principal es identificar los territorios
+                        más
+                        aptos para la instalación de proyectos de hidrógeno verde, proporcionando información técnica,
+                        ambiental
+                        y social de forma transparente y accesible. En otras palabras, la plataforma busca disminuir la
+                        brecha
+                        de información para la toma de decisiones de autoridades públicas, empresas y comunidades,
+                        entregando
+                        datos relevantes sobre el potencial energético y las restricciones de cada zona.
+                    </p>
+
+                    <h3>¿A quién está dirigida?</h3>
+                    <p>
+                        Este manual está orientado a usuarios con bajo conocimiento técnico, como funcionarios públicos
+                        municipales y regionales, líderes comunitarios y otras personas interesadas. Se ha redactado en
+                        un
+                        lenguaje claro y sencillo, evitando tecnicismos, para que cualquier usuario pueda entender el
+                        propósito
+                        de la plataforma y cómo utilizarla paso a paso.
+                    </p>
+
+                    <h3>¿Qué ofrece la plataforma?</h3>
+                    <p>
+                        H2V Valparaíso permite navegar un mapa de la región y visualizar, comuna por comuna, qué áreas
+                        del
+                        territorio serían adecuadas para producir hidrógeno verde según criterios socio-ambientales (por
+                        ejemplo, cercanía a áreas protegidas) y técnicos (por ejemplo, potencial solar o eólico
+                        disponible).
+                        La
+                        plataforma muestra el territorio con distintos colores o indicadores, señalando el cumplimiento
+                        de
+                        estos
+                        factores en cada zona. Además, sirve como punto de partida para evaluar proyectos, permitiendo
+                        al
+                        usuario verificar si un sitio específico cumple con las condiciones recomendadas antes de
+                        avanzar
+                        con
+                        estudios más detallados.
+                    </p>
+
+                    <p>
+                        En resumen, <strong>H2V Valparaíso</strong> es una herramienta de apoyo a la decisión: brinda
+                        información geográfica integrada para que los tomadores de decisiones puedan identificar de
+                        antemano
+                        oportunidades y restricciones para proyectos de hidrógeno verde en la región. A continuación,
+                        aprenderemos a usar la plataforma paso a paso, desde la navegación básica del mapa hasta la
+                        interpretación de los indicadores clave.
+                    </p>
+                </section>
+
+                <section id="acceso" class="section">
+                    <h2>Acceso y vista general de la plataforma</h2>
+                    <p>Para acceder a la plataforma H2V Valparaíso, siga estos pasos iniciales:</p>
+                    <h3>Ingreso al sitio web</h3>
+                    <p>Abra un navegador web (por ejemplo, Chrome, Firefox) y visite la URL de la plataforma:
+                        <a href="https://h2v.h2in.cl/plataforma/" target="_blank">https://h2v.h2in.cl/plataforma/</a>.
+                        No es necesario registrarse ni ingresar credenciales; el sitio está abierto para funcionarios
+                        públicos y
+                        público general.
+                    </p>
+                    <h3>Carga de la aplicación</h3>
+                    <p>Espere unos segundos a que cargue la aplicación web interactiva. Verá en pantalla un mapa de la
+                        Región de Valparaíso junto con un panel de menús. Una vez cargada, la interfaz típica se
+                        compone de:</p>
+                    <ul>
+                        <li>
+                            <strong>El mapa principal</strong>, que ocupa la mayor parte de la pantalla, mostrando el
+                            territorio
+                            regional con diferentes capas de información superpuestas.
+                        </li>
+                        <li>
+                            <strong>Un menú lateral</strong> con secciones como
+                            “Comunas”, “Indicadores”, “Recursos Hídricos”, "Descripción indicadores" y "Manual de
+                            usuario". Este menú le permite activar o desactivar
+                            distintas capas del mapa y ver información detallada.
+                        </li>
+                        <li>
+                            <strong>Coordenadas:</strong> Indica las coordenadas geográficas del cursor.
+                        </li>
+                    </ul>
+                    <img src="img/figures/1.png" />
+                    <p class='figure'><strong>Figura 1:</strong> Vista general de la interfaz de H2V Valparaíso, con el
+                        mapa principal de la región y el menú lateral de capas abierto.</p>
+
+                </section>
+
+                <section id="navegacion" class="section">
+                    <h2>Navegación por el mapa</h2>
+                    <p>La plataforma utiliza un mapa interactivo que funciona de manera similar a otras aplicaciones
+                        cartográficas en línea (como Google Maps, por ejemplo). A continuación, se explica cómo moverse
+                        por
+                        el
+                        mapa:</p>
+                    <h3>Acercar o alejar (zoom)</h3>
+                    <p>
+                        Para acercarse a una zona específica (zoom in), puede usar el botón “+” que aparece sobre
+                        el
+                        mapa
+                        (esquina inferior derechar), o alternativamente usar la rueda de scroll del mouse hacia
+                        adelante.
+                        Para alejar la vista (zoom out), use el botón “–” o la rueda del mouse hacia atrás.
+                        También puede usar gestos de pellizcar (pinch) en pantallas táctiles.
+                    </p>
+                    <h3>Desplazamiento (panorámica)</h3>
+                    <p>
+                        Haga clic y mantenga presionado el botón izquierdo del mouse sobre el mapa, luego arrastre en la
+                        dirección deseada para mover la vista del mapa.
+                        En pantallas táctiles, arrastre con un dedo para desplazarse. Esto le permite “viajar” por la
+                        región
+                        de
+                        Valparaíso y enfocar el sector de su interés (por ejemplo, su comuna).
+                    </p>
+                    <h3>Consejo</h3>
+                    <p>
+                        Comience orientándose. Ubique elementos conocidos en el mapa, como las ciudades principales
+                        (Valparaíso,
+                        Viña del Mar, San Antonio, etc.) o accidentes geográficos (la costa, el Río Aconcagua, etc.).
+                        Esto le ayudará a reconocer las zonas en el mapa. También puede activar la capa de “Límite de
+                        comunas”
+                        (ver siguiente sección) para ver los contornos de cada comuna, lo que facilita identificar cada
+                        territorio.
+                    </p>
+                </section>
+
+                <section id="capas-informacion" class="section">
+                    <h2>Capas de información y menú lateral</h2>
+                    <p>
+                        El menú lateral de la plataforma es su principal herramienta para seleccionar qué información
+                        desea
+                        visualizar en el mapa. Está organizado en secciones plegables. Al hacer clic en cada sección,
+                        esta
+                        se
+                        expande mostrando las capas disponibles. Las secciones principales incluyen:
+                        <strong>“Comunas”</strong>,
+                        <strong>“Indicadores”</strong> y <strong>“Recursos Hídricos”</strong>. A continuación,
+                        describimos
+                        cada
+                        una y cómo usarlas:
+                    </p>
+
+                    <article>
+                        <h3>Sección “Comunas”</h3>
+                        <p>
+                            Esta sección permite visualizar los límites administrativos de las comunas y posiblemente
+                            destacar
+                            comunas específicas. Al expandir “Comunas”, verá opciones de capa como:
+                        </p>
+                        <ul>
+                            <li><strong>Límite de comunas:</strong> Muestra el contorno o borde de cada comuna de la
+                                Región
+                                de
+                                Valparaíso en el mapa. Al activar esta capa,
+                                las fronteras comunales se delinearán, ayudándole a distinguir el territorio de cada
+                                municipio.
+                            </li>
+                            <li><strong>Comunas:</strong> Muestra pin y etiqueta con el nombre de las comunas en el
+                                mapa. Esto resulta útil para
+                                orientarse
+                                y
+                                asegurarse de que está analizando la zona correcta.</li>
+                        </ul>
+                        <p>
+                            <strong>Uso:</strong> Si es funcionario de una municipalidad y quiere enfocarse en su
+                            comuna,
+                            active
+                            estas opciones. El mapa resaltará la extensión de las comunas. Esto no solo ubica el área,
+                            sino
+                            que
+                            también limita visualmente dónde debería buscar posibles sitios para proyectos. Asegúrese de
+                            tener
+                            la referencia de límites activada para evitar confundir territorios vecinos.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Sección “Indicadores”</h3>
+                        <p>
+                            Esta es la sección más importante para evaluar la viabilidad técnica y socio-ambiental de un
+                            sitio.
+                            Al hacer clic en “Indicadores”, se desplegarán dos sub-categorías:
+                            <em>Socio-ambientales</em> y
+                            <em>Técnicos</em>. Cada indicador representa un factor que influye en la aptitud de un
+                            terreno
+                            para
+                            un proyecto de hidrógeno verde.
+                        </p>
+
+                        <section>
+                            <h4>Indicadores socio-ambientales</h4>
+                            <p>
+                                Son capas relacionadas con aspectos ambientales o sociales que podrían restringir o
+                                condicionar
+                                un proyecto:
+                            </p>
+                            <ul>
+                                <li><strong>Dist. SNASPE (km):</strong> Distancia al Sistema Nacional de Áreas
+                                    Silvestres
+                                    Protegidas del Estado. Indica qué tan lejos está el punto del mapa del parque o
+                                    reserva
+                                    nacional más cercano (área protegida por ley).</li>
+                                <li><strong>Dist. AVE (km):</strong> Distancia a Áreas con Valor Ecológico. Muestra la
+                                    cercanía
+                                    a zonas de alto valor ecológico (por ejemplo, áreas de conservación de bosque
+                                    nativo,
+                                    según
+                                    Ley 20.283).</li>
+                                <li><strong>Dist. Humedal (km):</strong> Distancia a sitios Ramsar (humedales de
+                                    importancia
+                                    internacional) u otros humedales relevantes.</li>
+                                <li><strong>Dist. Patrimonio Mundial (km):</strong> Distancia a sitios declarados
+                                    Patrimonio Mundial (por UNESCO), como por ejemplo la ciudad histórica de Valparaíso
+                                    o algún
+                                    otro sitio en la región.</li>
+                                <li><strong>Dist. Monumento Nacional (km):</strong> Distancia a cualquier Monumento
+                                    Nacional
+                                    cercano (por ejemplo, reservas naturales o sitios patrimoniales menores protegidos
+                                    por
+                                    la
+                                    Ley 17.288).</li>
+                                <li><strong>Dist. Santuario de la Naturaleza (km):</strong> Distancia a sitios
+                                    declarados
+                                    Santuario de la Naturaleza (áreas protegidas por su valor natural único).</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h4>Indicadores técnicos</h4>
+                            <p>
+                                Son capas referentes a infraestructuras, geografía y potencial energético, que afectan
+                                la
+                                factibilidad práctica y económica:
+                            </p>
+                            <ul>
+                                <li><strong>Dist. Red Vial (km):</strong> Distancia a la red vial principal
+                                    (carreteras). Un
+                                    valor bajo significa que el sitio está cerca de caminos principales, facilitando
+                                    transporte
+                                    de equipos o del hidrógeno producido.</li>
+                                <li><strong>Dist. Costa (km):</strong> Distancia al mar (costa). Esto es relevante si se
+                                    piensa
+                                    en facilitar logística portuaria para exportar hidrógeno o en acceso a agua de mar
+                                    para
+                                    procesos (p. ej., desalación).</li>
+                                <li><strong>Dist. Terminal Marítimo (km):</strong> Distancia a puertos o terminales
+                                    marítimos
+                                    existentes. Mientras más cercano a un puerto, más conveniente para exportar
+                                    amoníaco/hidrógeno o recibir insumos pesados.</li>
+                                <li><strong>Dist. Población (km):</strong> Distancia a áreas pobladas (centros urbanos o
+                                    localidades). Mide qué tan apartado está el sitio de asentamientos humanos. Un
+                                    proyecto
+                                    muy
+                                    cercano a zonas pobladas podría enfrentar restricciones por seguridad o aceptación
+                                    social,
+                                    así que mayor distancia suele ser favorable.</li>
+                                <li><strong>RTI (m):</strong> Rugosidad del terreno. Es una medida de qué tan irregular
+                                    o
+                                    accidentada es la superficie del suelo. Terreno con menor rugosidad (más plano)
+                                    generalmente
+                                    facilita la construcción y beneficia la instalación de aerogeneradores (el viento
+                                    fluye
+                                    más
+                                    uniformemente).</li>
+                                <li><strong>PVOUT (kWh/año por kWp):</strong> Potencial fotovoltaico o energía solar
+                                    disponible.
+                                    Indica cuánta energía solar puede generarse por unidad de potencia instalada de
+                                    paneles
+                                    solares en ese sitio. Es, en términos simples, un índice de radiación solar
+                                    aprovechable
+                                    en
+                                    el lugar (ver sección 6, Glosario). Un valor PVOUT alto significa sitio muy soleado
+                                    (bueno
+                                    para producir hidrógeno con solar); un valor bajo, sitio menos adecuado para solar.
+                                </li>
+                                <li><strong>Pot. Eólico (MW):</strong> Potencial eólico estimado. Representa la
+                                    capacidad de
+                                    generación eólica en el sitio, posiblemente en términos de densidad de potencia o
+                                    viento
+                                    disponible. Un valor mayor indica que el viento en ese punto podría sustentar más
+                                    generación
+                                    eléctrica (bueno para turbinas eólicas).</li>
+                                <li><strong>Hidrógeno (kgH₂/año):</strong> Potencial de generación de hidrógeno verde
+                                    estimado
+                                    en el sitio. La plataforma calcula cuántos kilogramos de H₂ se podrían producir al
+                                    año
+                                    en
+                                    ese punto, en base a los recursos energéticos (solar/eólico) disponibles. A veces se
+                                    expresa
+                                    en dos formas: por kW de electrólisis instalado (kgH₂/año/kWp) y por metro cuadrado
+                                    (kgH₂/año/m²), indicando productividad relativa. Este indicador integra varios
+                                    factores
+                                    anteriores (solar, eólico, etc.) para dar una medida directa del potencial de
+                                    producción
+                                    de
+                                    hidrógeno en el lugar.</li>
+                            </ul>
+                        </section>
+
+                        <p>
+                            <strong>Visualización:</strong> Cada indicador puede ser visualizado en el mapa. Para
+                            activarlos, marque la casilla correspondiente a evaluar en el mapa. Al hacer esto, se abrirá
+                            el menu con el valor
+                            de todos los indicadores de la casilla seleccionada.
+                        </p>
+                        <p>
+                            <strong>Nota:</strong> Al lado de cada nombre de indicador en la lista, hay
+                            un
+                            ícono
+                            de información (representado por ?). Si hace clic,
+                            verá la
+                            descripción detallada del indicador (como las definiciones legales o técnicas) tal como
+                            hemos
+                            resumido arriba. La plataforma incluye un panel de “Descripción de Indicadores” que define
+                            cada
+                            indicador, su fuente y unidad, lo cual es útil para aclarar cualquier duda sobre lo que
+                            significa
+                            cada capa.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Sección “Recursos Hídricos”</h3>
+                        <p>
+                            Esta sección muestra elementos relacionados con agua, un insumo crítico para la producción
+                            de
+                            hidrógeno verde (que típicamente requiere agua para la electrólisis). Al expandir “Recursos
+                            Hídricos”, encontrará capas como:
+                        </p>
+                        <ul>
+                            <li><strong>Cuencas / Subcuencas / Subsubcuencas:</strong> Delimitan las divisiones
+                                hidrográficas de
+                                la región (grandes cuencas hidrográficas, y subdivisiones más pequeñas). Al activarlas,
+                                verá
+                                contornos que indican áreas de drenaje de ríos. Por ejemplo, la región incluye la cuenca
+                                del
+                                Río
+                                Aconcagua, cuencas costeras, etc., que podrá identificar en el mapa. Esto sirve para
+                                saber
+                                en
+                                qué cuenca se ubica un proyecto (lo cual puede ser relevante para permisos de agua).
+                            </li>
+                            <li><strong>Desalinizadoras:</strong> Muestra la ubicación de plantas desalinizadoras de
+                                agua de
+                                mar
+                                existentes o proyectadas en la región. Se indica con un símbolo especial (una fábrica).
+                                Una planta desalinizadora cercana podría proveer agua para
+                                la
+                                producción de H₂ en zonas costeras, así que es un dato importante.</li>
+                            <li><strong>Plantas de Tratamiento de Agua:</strong> Indica localización de plantas de
+                                tratamiento
+                                de aguas servidas u otras fuentes de agua reutilizable. Al igual que las desaladoras, su
+                                presencia podría ofrecer una fuente de agua industrial para un proyecto de hidrógeno, o
+                                representar infraestructuras con las que coordinarse, se representa un un símbolo de una
+                                gota de agua.</li>
+                        </ul>
+                        <p>
+                            <strong>Uso:</strong> Active las capas de Recursos Hídricos para identificar disponibilidad
+                            de
+                            agua.
+                            Por ejemplo, si está evaluando un sitio tierra adentro sin acceso directo al mar, ver si hay
+                            plantas
+                            de tratamiento cercanas podría indicar de dónde obtener agua. Si está en la costa, la
+                            proximidad
+                            a
+                            una desaladora existente puede facilitar el suministro. Además, conocer la cuenca
+                            hidrográfica
+                            le
+                            indica hacia dónde fluiría el agua utilizada o cómo podría afectar a recursos hídricos
+                            existentes.
+                        </p>
+                        <img src="img/figures/2.png" />
+
+                        <figcaption class="figure"><strong>Figura 2:</strong> Menú lateral de la plataforma mostrando
+                            las secciones
+                            “Comunas”,
+                            “Indicadores” y “Recursos Hídricos”.</figcaption>
+                    </article>
+                </section>
+
+                <section id="consulta-mapa" class="section">
+                    <h2>Consultar un punto en el mapa (ver los indicadores)</h2>
+                    <p>
+                        Una de las funciones principales de <strong>H2V Valparaíso</strong> es que permite conocer las
+                        condiciones de cualquier punto del mapa dentro de la región.
+                        Al hacer clic en un lugar, la plataforma entrega automáticamente los valores de todos los
+                        indicadores
+                        para ese sitio.
+                        Es como obtener una <strong>ficha técnica y ambiental</strong> con un solo clic. A continuación
+                        te
+                        explicamos cómo hacerlo paso a paso:
+                    </p>
+
+                    <h3>1. Busca el lugar que te interesa</h3>
+                    <p>
+                        Desplázate por el mapa hasta ubicar el terreno que deseas evaluar. Por ejemplo, puede ser un
+                        sitio
+                        dentro de tu comuna que consideras apropiado para un proyecto de hidrógeno.
+                        Acércate usando el zoom para verlo con más claridad.
+                    </p>
+                    <ul>
+                        <li>Si tienes las coordenadas exactas, ubícalas visualmente en el mapa.</li>
+                        <li>Si no, guíate por referencias geográficas como caminos, ríos o poblados cercanos.</li>
+                    </ul>
+
+                    <h3>2. Haz clic en el mapa</h3>
+                    <p>
+                        Haz <strong>clic izquierdo</strong> sobre el punto exacto que deseas consultar.
+                    </p>
+                    <ul>
+                        <li>La plataforma mostrará los indicadores de ese sitio, ya sea en el menú lateral o en un
+                            cuadro
+                            emergente.</li>
+                        <li>Asegúrate de hacer clic dentro de la <strong>Región de Valparaíso</strong>. Si haces clic
+                            fuera
+                            de
+                            la región o en el mar, puede que no aparezca nada útil.</li>
+                    </ul>
+
+                    <h3>3. Revisa los indicadores que aparecen</h3>
+                    <p>Después del clic, se mostrarán los valores actualizados de los indicadores. Algunos ejemplos:</p>
+                    <ul>
+                        <li><strong>Dist. SNASPE:</strong> 12.3 km (distancia a la reserva o parque más cercano)</li>
+                        <li><strong>Dist. Red Vial:</strong> 5.1 km (distancia a la carretera principal más cercana)
+                        </li>
+                        <li><strong>PVOUT:</strong> 1700 kWh/kWp*año (potencial solar del sitio; este valor es alto)
+                        </li>
+                        <li><strong>Hidrógeno:</strong> 60 kgH₂/m²*año (producción estimada por metro cuadrado al año)
+                        </li>
+                    </ul>
+
+                    <h3>4. Revisa si el sitio cumple los requisitos</h3>
+                    <p>
+                        Además de los números, la plataforma puede indicar si el lugar cumple o no con los requisitos
+                        mínimos
+                        para un proyecto.
+                    </p>
+                    <ul>
+                        <li>Si hay algún problema, aparecerá el mensaje <span style="color: red;"><strong>“Área no
+                                    cumple
+                                    con los requisitos”</strong></span>.</li>
+                        <li>Si todo está bien no habrá ninguna alerta negativa.</li>
+                    </ul>
+                    <p>Estos mensajes automáticos se basan en reglas como:</p>
+                    <ul>
+                        <li>No se puede instalar un proyecto en áreas protegidas como parques nacionales.</li>
+                        <li>Si el punto está dentro de una zona prohibida o demasiado cerca de una ciudad, será marcado
+                            como no apto.</li>
+                    </ul>
+
+                    <h3>5. Interpreta los resultados y decide</h3>
+                    <p>Con los datos en pantalla, analiza si el lugar es viable:</p>
+                    <ul>
+                        <li>¿Está suficientemente lejos de áreas protegidas? (más de 5 km suele ser aceptable)</li>
+                        <li>¿Está cerca de infraestructura clave? (menos de 10 km de una carretera es bueno; más de 50
+                            km
+                            puede
+                            ser costoso)</li>
+                        <li>¿Tiene buen potencial solar o eólico? (en la zona central de Chile, un PVOUT de ~1700 es muy
+                            bueno)
+                        </li>
+                        <li>¿Hay acceso a agua? (si está lejos de la costa o no hay fuentes cercanas, puede ser un
+                            desafío)
+                        </li>
+                    </ul>
+                    <p>
+                        Si el sitio <strong>no cumple</strong>, identifica cuál indicador lo impide, estará indicado con
+                        color<strong> <span style="color: red">rojo</span></strong> y la palabra <strong>
+                            "Inhabilita"</strong>.
+                        A veces basta con moverse unos kilómetros y volver a hacer clic para encontrar un lugar
+                        más apto
+                        (por
+                        ejemplo, alejándose de un parque o monumento).
+                    </p>
+                    <img src="img/figures/3.png" />
+                    <p class="figure"><strong>Figura 3: Consulta de ejemplo</strong>
+                        En esta imagen se muestra un punto seleccionado en el mapa (con un símbolo) y los
+                        indicadores en
+                        el
+                        panel lateral.
+                        Algunos aparecen en <span style="color: red;">rojo</span> (por ejemplo, “Dist. SNASPE:
+                        Inhabilita", lo que indica un posible conflicto,
+                        mientras que otros están sin alerta (por
+                        ejemplo,
+                        “Dist. AVE(Km): 3.54”).
+                    </p>
+                </section>
+
+                <section id="ejemplo" class="section">
+                    <h2>Ejemplo práctico: Evaluar un sitio para un proyecto H₂V en su comuna</h2>
+
+                    <p>
+                        A continuación, ilustramos un caso práctico paso a paso, asumiendo el rol de un funcionario
+                        municipal
+                        que desea evaluar un lugar específico en su comuna:
+                    </p>
+
+                    <h3>Situación de ejemplo</h3>
+                    <p>
+                        Usted es un/a encargado/a de medioambiente del <strong>Municipio X</strong>. Ha escuchado de un
+                        terreno
+                        rural en su comuna, cercano a una carretera y relativamente soleado, que podría ser adecuado
+                        para
+                        una
+                        planta de hidrógeno verde con energía solar. Quiere usar la plataforma <strong>H2V
+                            Valparaíso</strong>
+                        para una pre-evaluación.
+                    </p>
+
+                    <h3>Paso 1: Ubicar la comuna y el sitio en el mapa</h3>
+                    <p>
+                        Abra la plataforma y active la capa <strong>“Límite de comunas”</strong> (sección Comunas) para
+                        resaltar
+                        su municipio. Supongamos que es la Comuna de Catemu. Encuentre Catemu en el mapa; use el zoom
+                        hasta
+                        abarcar la zona entera de la comuna.
+                    </p>
+                    <p>
+                        Identifique referencias: la <strong>Carretera CH-5 (Panamericana)</strong> pasa cerca del límite
+                        de
+                        Catemu, y la comuna colinda con San Felipe al sur.
+                    </p>
+                    <p>
+                        Digamos que el sitio de interés está unos kilómetros al sur del pueblo de Catemu, cerca de la
+                        Panamericana. Ubíquelo visualmente.
+                    </p>
+
+                    <h3>Paso 2: Seleccionar el punto y obtener indicadores</h3>
+                    <p>
+                        Haga clic en el terreno de interes, se desplegará el menú con los indicadores:
+                    </p>
+                    <ul>
+                        <li><strong>PVOUT:</strong> Para ver el potencial solar. El área seleccionada tiene un valor de
+                            1828.81 kWh-Año/kWp, lo
+                            que
+                            indica
+                            buen sol.</li>
+                        <li><strong>Potencial Eólico:</strong> Probablemente menor en esta comuna interior que en zonas
+                            costeras, 65.70 Mw.</li>
+                        <li><strong>SNASPE:</strong> Para verificar áreas protegidas. Catemu no tiene parques
+                            nacionales,
+                            así
+                            que se mostrara un valor alto, 15.25 Km en este caso.</li>
+                        <li><strong>Dist. Red Vial:</strong> 0.04 km (muy cercano a la carretera principal, excelente
+                            acceso).
+                        </li>
+                    </ul>
+                    <p>
+                        Estas capas permiten intuir que la fuente energética más adecuada será solar, y que no hay
+                        restricciones
+                        ambientales evidentes.
+                    </p>
+                    <p>
+                        La plataforma no muestra mensaje de <strong style="color: red">“Área no cumple con los
+                            requisitos”</strong>, lo que indica que el sitio cumple
+                        con
+                        los
+                        criterios mínimos definidos.
+                    </p>
+                    <p>
+                        Revise también los <strong>indicadores socio-ambientales</strong>: Dist. Humedal, Dist.
+                        Santuario,
+                        etc.
+                        En este caso, todos muestran valores aceptables, lo que refuerza la viabilidad.
+                    </p>
+
+                    <h3>Paso 3: Analizar los resultados y decidir pasos siguientes</h3>
+                    <p>
+                        Con esta información, puede concluir preliminarmente que <strong>el sector al sur de Catemu,
+                            cerca
+                            de la
+                            Ruta CH-5</strong>, es prometedor para un proyecto de hidrógeno verde solar.
+                    </p>
+                    <p>
+                        Cumple aspectos clave:
+                    </p>
+                    <ul>
+                        <li>Ambientales: no hay restricciones evidentes.</li>
+                        <li>Infraestructura: buena conectividad vial.</li>
+                        <li>Potencial solar: alto.</li>
+                    </ul>
+                    <p>
+                        La única limitación es la <strong>fuente de agua</strong>, ya que al estar tierra adentro, no
+                        hay
+                        desalinizadora cerca. Se podría considerar el <strong>Río Aconcagua</strong> (que cruza la
+                        comuna) o
+                        permisos de aguas subterráneas.
+                    </p>
+                    <p>
+                        La plataforma permitió validar la idea de manera rápida. Como siguiente paso, se recomienda
+                        encargar
+                        estudios específicos de agua y suelos.
+                        Sin embargo, gracias a H2V Valparaíso ya cuenta con una base técnico-geográfica que respalda la
+                        factibilidad inicial.
+                    </p>
+                    <img src="img/figures/4.png" />
+                    <p class="figure">Figura 4: Zona de Catemu evaluada</p>
+                </section>
+                <section id="indicadores" class="section">
+                    <h2>¿Qué significa cada indicador? (Resumen)</h2>
+                    <p>
+                        En esta sección brindamos una explicación breve y simple de cada indicador que aparece en la
+                        plataforma,
+                        para que el usuario entienda su relevancia sin necesidad de ser experto:
+                    </p>
+
+                    <h3>Distancia a SNASPE</h3>
+                    <p>
+                        SNASPE es el Sistema Nacional de Áreas Silvestres Protegidas del Estado, que incluye parques
+                        nacionales,
+                        reservas nacionales, monumentos naturales, etc. Este indicador muestra qué tan lejos está un
+                        punto de alguna
+                        de esas áreas protegidas. <strong>¿Por qué importa?</strong> Porque la legislación prohíbe
+                        proyectos
+                        industriales dentro o muy cerca de estos lugares. Un valor grande (lejos) es bueno; un valor
+                        pequeño (cerca,
+                        por ejemplo &lt;1 km) indica posible conflicto ambiental.
+                    </p>
+
+                    <h3>Distancia a AVE</h3>
+                    <p>
+                        Áreas de Valor Ecológico, generalmente zonas de biodiversidad importante (pueden ser bosques
+                        nativos, áreas
+                        de conservación no necesariamente SNASPE). Indica cercanía a ecosistemas sensibles.
+                        <strong>¿Por qué importa?</strong> Similar a SNASPE, para evitar impactar ecosistemas valiosos,
+                        aunque no
+                        sean parques oficiales.
+                    </p>
+
+                    <h3>Distancia a Humedal (Sitio Ramsar)</h3>
+                    <p>
+                        Mide la distancia a humedales protegidos internacionalmente bajo la Convención Ramsar.
+                        <strong>Importancia:</strong> Los humedales son ecosistemas frágiles; proyectos cerca de ellos
+                        podrían ser
+                        rechazados. Un sitio ideal estaría lejos de humedales para no afectarlos.
+                    </p>
+
+                    <h3>Distancia a Sitio de Patrimonio Mundial</h3>
+                    <p>
+                        Si hay algún Patrimonio de la Humanidad UNESCO cerca (por ejemplo, el Barrio Histórico de
+                        Valparaíso), este
+                        número lo dirá. <strong>Importancia:</strong> Son sitios culturales/naturales de valor
+                        excepcional; por
+                        normativa, proyectos en sus cercanías deben ser evaluados con mucho cuidado para no ponerlos en
+                        riesgo.
+                    </p>
+
+                    <h3>Distancia a Monumento Nacional</h3>
+                    <p>
+                        Monumentos Nacionales pueden ser edificios históricos, zonas típicas u objetos protegidos por la
+                        ley
+                        chilena. Este valor muestra la proximidad a cualquiera de ellos. <strong>Importancia:</strong>
+                        Evitar dañar
+                        patrimonio cultural; usualmente, si es muy cercano, habrá mayores restricciones o se requerirán
+                        autorizaciones especiales.
+                    </p>
+
+                    <h3>Distancia a Santuario de la Naturaleza</h3>
+                    <p>
+                        Sitios declarados como santuario natural en Chile (áreas privadas o públicas protegidas por su
+                        importancia
+                        natural). <strong>Importancia:</strong> Similar a SNASPE, no es deseable instalar proyectos
+                        adyacentes que
+                        puedan alterar esas áreas.
+                    </p>
+
+                    <h3>Distancia a Red Vial</h3>
+                    <p>
+                        Muestra qué tan lejos está el punto de la carretera o camino importante más cercano.
+                        <strong>Importancia:</strong> La logística de construcción y operación mejora con buen acceso
+                        vial. Un
+                        proyecto lejos de caminos implica construir vías de acceso largas (costosas) y dificultades para
+                        mover
+                        equipos o transportar el hidrógeno producido. Idealmente, se busca estar cerca de rutas
+                        existentes.
+                    </p>
+
+                    <h3>Distancia a la Costa</h3>
+                    <p>
+                        Indica la cercanía al mar. <strong>Importancia:</strong> Para proyectos que planean exportar
+                        hidrógeno o sus
+                        derivados (ej. amoníaco) en barco, estar cerca de la costa/puerto es clave. Además, cerca de la
+                        costa se
+                        puede acceder a agua de mar para procesos (vía desalación). Por otro lado, zonas costeras pueden
+                        tener
+                        consideraciones ambientales (ej. humedales costeros) o urbanas, pero en general esta métrica se
+                        piensa en
+                        términos logísticos.
+                    </p>
+
+                    <h3>Distancia a Terminal Marítimo</h3>
+                    <p>
+                        Similar al anterior, pero específico a puertos o terminales. <strong>Importancia:</strong> Un
+                        proyecto muy
+                        cerca de un puerto existente tiene ventaja para exportar o recibir insumos. Le evita tener que
+                        construir un
+                        nuevo puerto. Si el indicador muestra, por ejemplo, 50 km, significa que tendría que transportar
+                        el producto
+                        50 km hasta embarcarlo, lo cual agrega complejidad.
+                    </p>
+
+                    <h3>Distancia a Población</h3>
+                    <p>
+                        Indica qué tan cerca hay centros poblados (ciudades, pueblos). <strong>Importancia:</strong> Se
+                        prefiere
+                        generalmente cierta distancia de seguridad respecto a poblaciones por varios motivos: riesgo
+                        (aunque el H₂
+                        verde es limpio, su almacenamiento a gran escala tiene consideraciones de seguridad), evitar
+                        molestias
+                        (ruido de plantas, tránsito de camiones) y facilitar la aceptación ciudadana. Un valor alto
+                        (lejos de la
+                        gente) es bueno para reducir conflictos, pero tampoco tan remoto que no haya fuerza laboral
+                        disponible.
+                    </p>
+
+                    <h3>Rugosidad del Terreno (RTI)</h3>
+                    <p>
+                        Es una medida de cuán desigual es la superficie del suelo (geografía).
+                        <strong>Importancia:</strong> Para la
+                        energía eólica, la rugosidad afecta la calidad del viento: terrenos muy rugosos (bosques densos,
+                        ciudades,
+                        cerros abruptos) generan turbulencias y disminuyen la eficiencia eólica. Además, un terreno muy
+                        irregular
+                        puede encarecer las obras civiles. Un valor bajo de RTI (terreno liso, despejado) es favorable
+                        para instalar
+                        aerogeneradores y paneles con menos adaptación del terreno.
+                    </p>
+
+                    <h3>PVOUT (Potencial Solar)</h3>
+                    <p>
+                        Es la energía fotovoltaica que se puede generar anualmente por cada kWp instalado en ese sitio.
+                        En unidades
+                        kWh/kWp por año, indica la productividad solar. <strong>Importancia:</strong> Este es un
+                        indicador clave si
+                        se planea usar energía solar. Valores típicos en la región pueden rondar 1500–1800 kWh/kWp*año;
+                        cuanto más
+                        alto, mejor. Un PVOUT alto significa que, con la misma inversión en paneles solares, obtendrá
+                        más energía en
+                        ese lugar que en otro con PVOUT bajo. Chile, especialmente zonas del norte chico y centro, tiene
+                        PVOUT altos
+                        comparados al promedio mundial. En resumen, PVOUT refleja la “calidad del sol” del sitio.
+                    </p>
+
+                    <h3>Potencial Eólico</h3>
+                    <p>
+                        Representa cuánta potencia eólica podría generarse. A veces está expresado en una unidad de
+                        potencia (MW)
+                        que podría instalarse aprovechando el viento existente. <strong>Importancia:</strong> Si este
+                        valor es alto,
+                        significa que los vientos en el sitio son consistentemente fuertes y aprovecharlos con turbinas
+                        eólicas
+                        sería eficiente. Si es muy bajo, quizás no vale la pena instalar aerogeneradores allí y es mejor
+                        enfocarse
+                        en solar.
+                    </p>
+
+                    <h3>Potencial de Hidrógeno</h3>
+                    <p>
+                        Combina los recursos renovables disponibles para estimar producción de hidrógeno verde. Puede
+                        darse como kg
+                        de H₂ por año por cada kW de electrólisis instalado, o por área. <strong>Importancia:</strong>
+                        Es una forma
+                        de resumir el atractivo energético del sitio específicamente para hidrógeno. Un número más alto
+                        significa
+                        que con los recursos locales podría generar más hidrógeno (sea vía solar, eólico, o mixto). Este
+                        indicador
+                        facilita comparar sitios: por ejemplo, si un lugar A puede generar 10 kg H₂/kWp al año y otro
+                        lugar B 8 kg
+                        H₂/kWp, el lugar A tiene mejor retorno energético potencial.
+                    </p>
+
+                    <p>
+                        Este conjunto de indicadores cubre las dimensiones esenciales: ambientales (evitar áreas
+                        protegidas),
+                        sociales (distancia a población), técnicas (infraestructura y recursos energéticos) y de insumos
+                        (agua, que,
+                        aunque no tiene un indicador numérico directo, se infiere con la capa de recursos hídricos).
+                        Todos ellos en
+                        conjunto determinan si un área “cumple los requisitos” para un proyecto H2V. La plataforma
+                        incorpora estos
+                        criterios basándose en leyes nacionales e internacionales relevantes, por lo que usarla le ayuda
+                        a alinear
+                        su evaluación con las normativas vigentes.
+                    </p>
+                </section>
+
+                <section id="glosario" class="section">
+                    <h2>Glosario Básico</h2>
+                    <p>A continuación, definimos en términos simples algunos conceptos técnicos clave mencionados en la
+                        plataforma y en este manual:</p>
+                    <dl>
+                        <dt><strong>Hidrógeno Verde (H₂V)</strong></dt>
+                        <dd>Hidrógeno producido mediante procesos alimentados por energías renovables (solar, eólica,
+                            etc.), con cero emisiones de carbono en su generación. Se le dice “verde” porque, a
+                            diferencia del hidrógeno convencional obtenido de gas natural (hidrógeno gris) que emite
+                            CO₂, el hidrógeno verde es limpio y sostenible. <em>Ejemplo</em>: usar electricidad solar
+                            para separar agua (electrólisis) y obtener hidrógeno es un proceso de hidrógeno verde.</dd>
+
+                        <dt><strong>Electrólisis</strong></dt>
+                        <dd>Proceso químico que utiliza electricidad para separar los elementos de un compuesto. En el
+                            contexto de H₂V, suele referirse a la electrólisis del agua, donde se descomponen moléculas
+                            de agua (H₂O) en hidrógeno y oxígeno aplicando corriente eléctrica. Es la tecnología central
+                            para producir hidrógeno verde usando electricidad renovable.</dd>
+
+                        <dt><strong>PVOUT (Potencial Fotovoltaico)</strong></dt>
+                        <dd>Es una medida del potencial solar fotovoltaico utilizable en un sitio. Técnicamente, son los
+                            kilowatt-hora de electricidad que podría generar un sistema solar de 1 kW pico en un año en
+                            ese lugar. Se expresa en kWh/kWp*año. <strong>Simplificando</strong>: indica cuánta energía
+                            solar se puede generar; un PVOUT de 1700 kWh/kWp*año significa que un panel de 1 kW
+                            produciría 1700 kWh al año allí. Este índice viene de herramientas como Global Solar Atlas.
+                        </dd>
+
+                        <dt><strong>kWp (Kilovatio pico)</strong></dt>
+                        <dd>Unidad de potencia máxima de un sistema fotovoltaico bajo condiciones estándar. Es la
+                            “capacidad instalada” en términos de paneles solares. 1 kWp equivale a 1000 W de potencia
+                            solar nominal. En palabras simples, es la potencia que un panel o conjunto de paneles puede
+                            entregar en su punto óptimo. Se usa junto con PVOUT para calcular generación: (Potencia en
+                            kWp) * (PVOUT) ≈ kWh generados por año.</dd>
+
+                        <dt><strong>SNASPE</strong></dt>
+                        <dd>Acrónimo de Sistema Nacional de Áreas Silvestres Protegidas del Estado. Conjunto de áreas
+                            protegidas por ley en Chile, administradas principalmente por CONAF, que incluye Parques
+                            Nacionales, Reservas Nacionales y Monumentos Naturales. En estas áreas se prohíbe la mayoría
+                            de las actividades que alteren la naturaleza (como construcciones, explotación de recursos).
+                            La plataforma usa SNASPE para alertar si un sitio está dentro o cerca de una zona donde un
+                            proyecto podría ser inviable por protección ambiental.</dd>
+
+                        <dt><strong>Sitio Ramsar</strong></dt>
+                        <dd>Humedal de importancia internacional protegido bajo la Convención de Ramsar. Son ecosistemas
+                            acuáticos (lagunas, marismas, estuarios) reconocidos por su valor ecológico global. Chile
+                            tiene varios sitios Ramsar. Un proyecto cerca de uno de ellos requiere especial cuidado
+                            ambiental.</dd>
+
+                        <dt><strong>Santuario de la Naturaleza</strong></dt>
+                        <dd>Categoría chilena de área protegida (puede ser pública o privada) definida por su valor para
+                            la conservación de la naturaleza. Se decreta a nivel nacional y suelen ser sitios más
+                            pequeños que un parque nacional pero igualmente importantes a preservar (ej: una colina con
+                            vegetación única, un humedal urbano, etc.).</dd>
+
+                        <dt><strong>Monumento Nacional</strong></dt>
+                        <dd>En este contexto ambiental, puede referirse a Monumento Natural (que es parte de SNASPE) o a
+                            monumentos nacionales histórico-culturales. Dado que en indicadores se separan Patrimonio
+                            Mundial y Monumento Nacional, aquí Monumento Nacional refiere a monumentos
+                            histórico-culturales protegidos (ej: edificios patrimoniales, zonas típicas). Un proyecto
+                            industrial cerca de uno puede afectar el paisaje o contexto patrimonial.</dd>
+
+                        <dt><strong>Electrolizador</strong></dt>
+                        <dd>(No aparece textual en la plataforma, pero relacionado a electrólisis) Es el dispositivo o
+                            planta que realiza la electrólisis del agua. Convierte electricidad en hidrógeno separando
+                            el agua en hidrógeno y oxígeno. Se mide en kW o MW de capacidad (coincidente con la cantidad
+                            de hidrógeno que puede producir por hora). En proyectos H₂V, es el corazón donde se produce
+                            el hidrógeno.</dd>
+
+                        <dt><strong>Ruta crítica ambiental</strong></dt>
+                        <dd>(Concepto general, no un término de la plataforma, pero útil en contexto) Son todos aquellos
+                            factores ambientales que pueden frenar un proyecto. Por ejemplo, la presencia de un Parque
+                            Nacional en el sitio es una ruta crítica (difícil de sortear). La plataforma ayuda a
+                            identificar estas rutas críticas tempranamente.</dd>
+                    </dl>
+
+                    <p style="margin-top: 2rem"><em>Nota:</em> Este glosario resume términos de forma básica. Para más
+                        detalles técnicos, se
+                        puede consultar documentos especializados o las referencias indicadas en la misma plataforma. El
+                        objetivo es que el lector maneje estas definiciones mínimas al usar H2V Valparaíso.</p>
+                </section>
+
+                <section id="faq" class="section">
+                    <h2>Preguntas Frecuentes (FAQ)</h2>
+                    <p>A continuación, respondemos algunas dudas comunes que pueden surgir al usar la plataforma:</p>
+
+                    <dl>
+                        <dt>
+                            <h3>P1. ¿La plataforma me dice exactamente dónde construir una planta de hidrógeno verde?
+                            </h3>
+                        </dt>
+                        <dd>
+                            <p>No exactamente. La plataforma no “recomienda” sitios en forma explícita, sino que entrega
+                                información para que usted evalúe. Es una herramienta de apoyo a la decisión. Le
+                                mostrará dónde hay condiciones favorables o desfavorables (por ejemplo, zonas con in
+                                indicador que inhabilita), e incluso le avisará si un punto no cumple
+                                requisitos básicos. Pero la decisión final de dónde desarrollar un proyecto involucra
+                                más análisis en terreno, estudios de factibilidad detallados y consideraciones
+                                económicas. H2V Valparaíso le ayuda a filtrar y priorizar áreas, mas no reemplaza
+                                estudios profesionales de ingeniería o ambientales.</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P2. ¿Cuán actuales y confiables son los datos mostrados?</h3>
+                        </dt>
+                        <dd>
+                            <p>Los datos provienen de fuentes oficiales y actualizadas al momento del desarrollo del
+                                proyecto (2023-2024). Por ejemplo, el potencial solar (PVOUT) se basa en el Global Solar
+                                Atlas del Banco Mundial, el potencial eólico y otros indicadores técnicos se tomaron de
+                                estudios recientes (como San Martín et al., 2023, citado en la plataforma), y las capas
+                                de áreas protegidas se basan en registros legales (CONAF, Ministerio de Medio Ambiente).
+                                Todos esos datos son de carácter público y confiable. Sin embargo, puede haber cambios
+                                con el tiempo: nuevas rutas, nuevas áreas protegidas, etc. La plataforma irá
+                                incorporando actualizaciones en la medida de lo posible. Siempre es bueno verificar si
+                                hay cambios locales (por ejemplo, una nueva ruta en construcción no contemplada en la
+                                capa actual). En general, puede confiar en que la información es válida como referencia
+                                inicial, pero para etapas posteriores de un proyecto se deberán usar fuentes al día y
+                                estudios in situ.</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P3. ¿Puedo usar la plataforma para regiones fuera de Valparaíso?</h3>
+                        </dt>
+                        <dd>
+                            <p>Actualmente, H2V Valparaíso está personalizada para la Región de Valparaíso. Incluye
+                                datos específicos de esa región. Si intenta navegar fuera de ella, el mapa puede no
+                                mostrar indicadores útiles (por ejemplo, al hacer clic en la Región Metropolitana puede
+                                que la información sea incompleta o ausente). El proyecto H2V se enfoca por ahora en
+                                Valparaíso como piloto regional. Existe la intención de que metodologías similares se
+                                extiendan a otras regiones en el futuro, pero esta plataforma en particular no contiene,
+                                por ejemplo, datos de Atacama o Magallanes. En resumen: no, no es multi-regional por
+                                ahora; sus análisis se limitan a la V Región.</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P4. La plataforma muestra “Área no cumple con los requisitos” en muchos lugares que
+                                pruebo. ¿Qué tan estrictos son esos requisitos?</h3>
+                        </dt>
+                        <dd>
+                            <p>Los requisitos integrados en la plataforma son conservadores, basados en estándares
+                                legales y buenas prácticas internacionales. Por ejemplo, es probable que el modelo exija
+                                no estar dentro de un área protegida, no muy cerca de humedales, estar a cierta
+                                distancia mínima de poblaciones, y contar con cierto mínimo de potencial solar/eólico.
+                                Si cualquiera de esos se viola, dice “Inhabilita”. Es natural entonces que en una región
+                                densamente poblada y con varias zonas protegidas, muchos puntos aleatorios den “Área no
+                                cumple con los requisitos”. Esto no es un error, sino parte del filtro. Busque en el
+                                mapa áreas que
+                                visualmente se vean despejadas de restricciones: por ejemplo, zonas de secano costero
+                                lejos de ciudades, o valles interiores lejos de parques nacionales. Esas tendrán más
+                                probabilidad de “cumplir”. En esencia, la plataforma le está señalando que no cualquiera
+                                de los ~16.000 km² de la región es apto; solo porción de ellos lo son. Use esa
+                                indicación para aprender qué factores están descartando los sitios que probó (vea cuál
+                                indicador salió en rojo o crítico y piense cómo sortearlo o si debe buscar en otro
+                                lado).</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P5. ¿Considera la plataforma aspectos económicos o de costo del proyecto?</h3>
+                        </dt>
+                        <dd>
+                            <p>No directamente. Los indicadores son geográficos, ambientales y técnicos. No encontrará
+                                en la plataforma cálculos de costos monetarios, rentabilidad ni proyecciones
+                                financieras. Sin embargo, muchos indicadores técnicos sí impactan en costos: por
+                                ejemplo, la distancia a la red eléctrica o carretera influye en cuánto dinero costará
+                                conectarse; el potencial solar alto significa más producción por peso invertido en
+                                paneles (mejor economía). Pero esas inferencias las debe hacer el usuario. Para
+                                evaluación económica, se necesitarían datos de costos, precios de terreno, etc., que
+                                están fuera del alcance de esta herramienta pública. H2V Valparaíso complementa, pero no
+                                reemplaza, un estudio económico.</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P6. ¿Se puede descargar la información o los mapas de la plataforma?</h3>
+                        </dt>
+                        <dd>
+                            <p>Por el momento, la plataforma está pensada para consulta visual interactiva en línea. No
+                                ofrece un botón de descarga directa de datos GIS o informes automáticos. Si necesita los
+                                datos brutos (por ejemplo, capas GIS de potencial solar, ubicación de desaladoras,
+                                etc.), probablemente deba contactar a los administradores del proyecto o a las
+                                instituciones fuentes (algunas capas son públicas, como las de CONAF, otras son
+                                resultados de investigación). Una forma manual de guardar cierta información es
+                                utilizando la misma plataforma y haciendo capturas de pantalla de los mapas con los
+                                resultados de su interés (por ejemplo, después de cliquear un punto, podría capturar ese
+                                panel con indicadores para incluirlo en informes). Para datos abiertos, el Global Solar
+                                Atlas y otras fuentes citadas tienen opciones de descarga en sus sitios originales, pero
+                                eso ya sería trabajo por fuera de esta aplicación.</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P7. ¿A quién contacto si encuentro un error en la plataforma o tengo dudas más
+                                específicas?</h3>
+                        </dt>
+                        <dd>
+                            <p>Si detecta algún problema (por ejemplo, un indicador que parece dar un valor incorrecto,
+                                o dificultades técnicas con el mapa) o si requiere ayuda adicional, puede contactar al
+                                equipo de soporte del proyecto H2V Valparaíso. Abajo en este manual (sección de Soporte)
+                                se proporcionan datos de contacto. Por lo general, este tipo de plataformas son
+                                atendidas por la universidad que la desarrolló o por la entidad pública asociada (en
+                                este caso PUCV y la Asociación de Municipalidades). No dude en escribirles: están
+                                interesados en que la herramienta se use correctamente y mejorarla con el feedback de
+                                usuarios públicos.</p>
+                        </dd>
+
+                        <dt>
+                            <h3>P8. ¿Qué tan grande puede ser un proyecto de H₂ para evaluarse con esta plataforma?</h3>
+                        </dt>
+                        <dd>
+                            <p>H2V Valparaíso no está limitado a un tamaño específico de proyecto en sus datos. Usted
+                                puede evaluar desde una pequeña planta piloto hasta un gran hub de hidrógeno. Los
+                                indicadores son más sobre el lugar que sobre la escala. Eso sí, si piensa en un proyecto
+                                muy grande (ej: cientos de hectáreas de paneles solares), recuerde que un solo clic
+                                evalúa un punto. En ese caso, conviene inspeccionar varios puntos a lo largo del área
+                                que abarcaría su proyecto para asegurarse de que toda la zona cumple (y no solo el
+                                centro). Por ejemplo, para un proyecto de 100 MW solar en 500 hectáreas, chequee
+                                indicadores en las esquinas del terreno, no solo en un punto. También, proyectos mayores
+                                pueden tener impactos más amplios – la plataforma no modela cosas como líneas de
+                                transmisión necesarias, que habría que construir para evacuar mucha energía. Esos
+                                detalles van más allá de la herramienta, pero la herramienta sigue siendo útil para la
+                                etapa inicial de <em>screening</em> (cribado) territorial.</p>
+                        </dd>
+                    </dl>
+
+                    <p>Estas FAQ cubren inquietudes típicas. Si tiene otras preguntas, puede consultar con el equipo de
+                        soporte o revisar la documentación adicional del proyecto H2V que pudiera estar disponible.</p>
+                </section>
+
+                <section id="soporte" class="section">
+                    <h2>Soporte y Contacto</h2>
+                    <p>
+                        Si necesita asistencia adicional en el uso de la plataforma H2V Valparaíso, o desea enviar
+                        sugerencias, a continuación, se ofrecen contactos de referencia:
+                    </p>
+
+                    <h3>Mesa de Ayuda H2V Valparaíso:</h3>
+                    <ul>
+                        <li><strong>Correo electrónico:</strong> <a
+                                href="mailto:soporte_h2v@pucv.cl">soporte_h2v@pucv.cl</a></li>
+                        <li><strong>Teléfono:</strong> +56 XXXXXXXXX (horario de oficina)</li>
+                    </ul>
+
+                    <h3>Coordinación Proyecto H2V (PUCV):</h3>
+                    <ul>
+                        <li><strong>Encargado:</strong> XXXX (Proyecto H2V Valpo)</li>
+                        <li><strong>Correo:</strong> <a href="mailto:XXXXXXXXXX@pucv.cl">XXXXXXXXXX@pucv.cl</a></li>
+                    </ul>
+
+                    <h3>Asociación de Municipalidades Región Valparaíso – Secretaría Técnica:</h3>
+                    <ul>
+                        <li><strong>Contacto:</strong> XXXXX XXXXXXXX</li>
+                        <li><strong>Correo:</strong> <a
+                                href="mailto:hidrogenoverde@municipiosvalpo.cl">hidrogenoverde@municipiosvalpo.cl</a>
+                        </li>
+                        <li><strong>Tel:</strong> +56 XXXXXXXXX</li>
+                    </ul>
+
+                    <p style="margin-top: 1rem">
+                        Antes de comunicarse, le sugerimos revisar este manual y las FAQ. Si su duda es sobre el
+                        significado de datos o cómo interpretar algo, probablemente esté respondida en alguna sección.
+                        Para temas técnicos (plataforma no carga, errores) o datos no encontrados, el equipo de soporte
+                        estará disponible para ayudar.
+                    </p>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
