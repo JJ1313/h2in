@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Manual de usuario</title>
     <link href="css/manual.css" rel="stylesheet">
+    <link href="css/topBar.css" rel="stylesheet">
     <script src="js/manual.js" defer></script>
 </head>
 
 <body>
+    <div id="top-bar">
+        <img src="img/logo_h2v.webp" height="120" class="logo">
+        <img src="img/logo_muni.webp" width="160pt">
+        <img src="img/logo_pucv_w.webp" width="160pt">
+        <img src="img/logo_corfo_w.png" width="160pt">
+        <img src="img/logo_DPS_w.png" width="160pt">
+    </div>
     <button id="menu-toggle" aria-label="Abrir menú"></button>
     <div id="container">
         <nav id="sidebar">
@@ -93,11 +101,15 @@
                     <p>Para acceder a la plataforma H2V Valparaíso, siga estos pasos iniciales:</p>
                     <h3>Ingreso al sitio web</h3>
                     <p>Abra un navegador web (por ejemplo, Chrome, Firefox) y visite la URL de la plataforma:
-                        <a href="https://h2v.h2in.cl/plataforma/" target="_blank">https://h2v.h2in.cl/plataforma/</a>.
+                        <a href="https://h2v.h2in.cl/plataforma/" target="_blank">https://h2v.h2in.cl/plataforma/</a>,
+                        es necesario seleccionar el tipo de usuario..
                         No es necesario registrarse ni ingresar credenciales; el sitio está abierto para funcionarios
                         públicos y
                         público general.
                     </p>
+                    <img src='img/figures/Login.jpg' />
+                    <p class='figure'> <strong> Figura 1:</strong> Vista inicial al ingresar a la aplicación, indicando
+                        el campo <em> Tipo de usuario</em> y el botón para continuar al mapa.</p>
                     <h3>Carga de la aplicación</h3>
                     <p>Espere unos segundos a que cargue la aplicación web interactiva. Verá en pantalla un mapa de la
                         Región de Valparaíso junto con un panel de menús. Una vez cargada, la interfaz típica se
@@ -118,8 +130,8 @@
                             <strong>Coordenadas:</strong> Indica las coordenadas geográficas del cursor.
                         </li>
                     </ul>
-                    <img src="img/figures/1.png" />
-                    <p class='figure'><strong>Figura 1:</strong> Vista general de la interfaz de H2V Valparaíso, con el
+                    <img src="img/figures/FirstView.jpg" />
+                    <p class='figure'><strong>Figura 2:</strong> Vista general de la interfaz de H2V Valparaíso, con el
                         mapa principal de la región y el menú lateral de capas abierto.</p>
 
                 </section>
@@ -177,6 +189,9 @@
                         cada
                         una y cómo usarlas:
                     </p>
+                    <img src="./img/figures/MenuLateral.jpg" />
+                    <p class="figure"><strong>Figura 3:</strong> Muestra las distintas secciones disponibles en el menú
+                        lateral.</p>
 
                     <article>
                         <h3>Sección “Comunas”</h3>
@@ -210,6 +225,9 @@
                             tener
                             la referencia de límites activada para evitar confundir territorios vecinos.
                         </p>
+                        <img src="img/figures/Comunas.jpg" />
+                        <p class="figure"><strong>Figura 4: </strong>Sección de comunas abierta con las dos opciones
+                            seleccionadas, los pines con su etiqueta y las áreas con los límites de las comunas.</p>
                     </article>
 
                     <article>
@@ -225,122 +243,32 @@
                             un proyecto de hidrógeno verde.
                         </p>
 
-                        <section>
-                            <h4>Indicadores socio-ambientales</h4>
-                            <p>
+                        <ul>
+                            <li>
+                                <strong>Indicadores socio-ambientales: </strong>
                                 Son capas relacionadas con aspectos ambientales o sociales que podrían restringir o
                                 condicionar
                                 un proyecto:
-                            </p>
-                            <ul>
-                                <li><strong>Dist. SNASPE (km):</strong> Distancia al Sistema Nacional de Áreas
-                                    Silvestres
-                                    Protegidas del Estado. Indica qué tan lejos está el punto del mapa del parque o
-                                    reserva
-                                    nacional más cercano (área protegida por ley).</li>
-                                <li><strong>Dist. AVE (km):</strong> Distancia a Áreas con Valor Ecológico. Muestra la
-                                    cercanía
-                                    a zonas de alto valor ecológico (por ejemplo, áreas de conservación de bosque
-                                    nativo,
-                                    según
-                                    Ley 20.283).</li>
-                                <li><strong>Dist. Humedal (km):</strong> Distancia a sitios Ramsar (humedales de
-                                    importancia
-                                    internacional) u otros humedales relevantes.</li>
-                                <li><strong>Dist. Patrimonio Mundial (km):</strong> Distancia a sitios declarados
-                                    Patrimonio Mundial (por UNESCO), como por ejemplo la ciudad histórica de Valparaíso
-                                    o algún
-                                    otro sitio en la región.</li>
-                                <li><strong>Dist. Monumento Nacional (km):</strong> Distancia a cualquier Monumento
-                                    Nacional
-                                    cercano (por ejemplo, reservas naturales o sitios patrimoniales menores protegidos
-                                    por
-                                    la
-                                    Ley 17.288).</li>
-                                <li><strong>Dist. Santuario de la Naturaleza (km):</strong> Distancia a sitios
-                                    declarados
-                                    Santuario de la Naturaleza (áreas protegidas por su valor natural único).</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h4>Indicadores técnicos</h4>
-                            <p>
-                                Son capas referentes a infraestructuras, geografía y potencial energético, que afectan
+                            </li>
+                            <li>
+                                <strong>Indicadores técnicos: </strong> Son capas referentes a infraestructuras,
+                                geografía y potencial energético, que afectan
                                 la
                                 factibilidad práctica y económica:
-                            </p>
-                            <ul>
-                                <li><strong>Dist. Red Vial (km):</strong> Distancia a la red vial principal
-                                    (carreteras). Un
-                                    valor bajo significa que el sitio está cerca de caminos principales, facilitando
-                                    transporte
-                                    de equipos o del hidrógeno producido.</li>
-                                <li><strong>Dist. Costa (km):</strong> Distancia al mar (costa). Esto es relevante si se
-                                    piensa
-                                    en facilitar logística portuaria para exportar hidrógeno o en acceso a agua de mar
-                                    para
-                                    procesos (p. ej., desalación).</li>
-                                <li><strong>Dist. Terminal Marítimo (km):</strong> Distancia a puertos o terminales
-                                    marítimos
-                                    existentes. Mientras más cercano a un puerto, más conveniente para exportar
-                                    amoníaco/hidrógeno o recibir insumos pesados.</li>
-                                <li><strong>Dist. Población (km):</strong> Distancia a áreas pobladas (centros urbanos o
-                                    localidades). Mide qué tan apartado está el sitio de asentamientos humanos. Un
-                                    proyecto
-                                    muy
-                                    cercano a zonas pobladas podría enfrentar restricciones por seguridad o aceptación
-                                    social,
-                                    así que mayor distancia suele ser favorable.</li>
-                                <li><strong>RTI (m):</strong> Rugosidad del terreno. Es una medida de qué tan irregular
-                                    o
-                                    accidentada es la superficie del suelo. Terreno con menor rugosidad (más plano)
-                                    generalmente
-                                    facilita la construcción y beneficia la instalación de aerogeneradores (el viento
-                                    fluye
-                                    más
-                                    uniformemente).</li>
-                                <li><strong>PVOUT (kWh/año por kWp):</strong> Potencial fotovoltaico o energía solar
-                                    disponible.
-                                    Indica cuánta energía solar puede generarse por unidad de potencia instalada de
-                                    paneles
-                                    solares en ese sitio. Es, en términos simples, un índice de radiación solar
-                                    aprovechable
-                                    en
-                                    el lugar (ver sección 6, Glosario). Un valor PVOUT alto significa sitio muy soleado
-                                    (bueno
-                                    para producir hidrógeno con solar); un valor bajo, sitio menos adecuado para solar.
-                                </li>
-                                <li><strong>Pot. Eólico (MW):</strong> Potencial eólico estimado. Representa la
-                                    capacidad de
-                                    generación eólica en el sitio, posiblemente en términos de densidad de potencia o
-                                    viento
-                                    disponible. Un valor mayor indica que el viento en ese punto podría sustentar más
-                                    generación
-                                    eléctrica (bueno para turbinas eólicas).</li>
-                                <li><strong>Hidrógeno (kgH₂/año):</strong> Potencial de generación de hidrógeno verde
-                                    estimado
-                                    en el sitio. La plataforma calcula cuántos kilogramos de H₂ se podrían producir al
-                                    año
-                                    en
-                                    ese punto, en base a los recursos energéticos (solar/eólico) disponibles. A veces se
-                                    expresa
-                                    en dos formas: por kW de electrólisis instalado (kgH₂/año/kWp) y por metro cuadrado
-                                    (kgH₂/año/m²), indicando productividad relativa. Este indicador integra varios
-                                    factores
-                                    anteriores (solar, eólico, etc.) para dar una medida directa del potencial de
-                                    producción
-                                    de
-                                    hidrógeno en el lugar.</li>
-                            </ul>
-                        </section>
 
+                            </li>
+
+                        </ul>
                         <p>
                             <strong>Visualización:</strong> Cada indicador puede ser visualizado en el mapa. Para
                             activarlos, marque la casilla correspondiente a evaluar en el mapa. Al hacer esto, se abrirá
                             el menu con el valor
                             de todos los indicadores de la casilla seleccionada.
                         </p>
+                        <img src="./img/figures/Indicadores.jpg" />
+                        <p class="figure"><strong> Figura 5:</strong> Sección de indicadores abierta, se muestran las
+                            dos
+                            sub-categorías y la lista de indicadores con su valor en el punto seleccionado.</p>
                         <p>
                             <strong>Nota:</strong> Al lado de cada nombre de indicador en la lista, hay
                             un
@@ -407,12 +335,11 @@
                             indica hacia dónde fluiría el agua utilizada o cómo podría afectar a recursos hídricos
                             existentes.
                         </p>
-                        <img src="img/figures/2.png" />
+                        <img src="img/figures/Hidricos.jpg" />
 
-                        <figcaption class="figure"><strong>Figura 2:</strong> Menú lateral de la plataforma mostrando
-                            las secciones
-                            “Comunas”,
-                            “Indicadores” y “Recursos Hídricos”.</figcaption>
+                        <p class="figure"><strong>Figura 6:</strong> Se muestra la sección de Recursos Hídricos abierta,
+                            con los pines para Desalinizadoras y Plantas de tratamiento de agua. Además, se marcan los
+                            límites de las cuencas.</p>
                     </article>
                 </section>
 
@@ -446,27 +373,30 @@
                         Haz <strong>clic izquierdo</strong> sobre el punto exacto que deseas consultar.
                     </p>
                     <ul>
-                        <li>La plataforma mostrará los indicadores de ese sitio, ya sea en el menú lateral o en un
-                            cuadro
-                            emergente.</li>
+                        <li>La plataforma mostrará los indicadores de ese sitio, abriendo un cuadro emergende desde el
+                            menú lateral.</li>
                         <li>Asegúrate de hacer clic dentro de la <strong>Región de Valparaíso</strong>. Si haces clic
                             fuera
                             de
                             la región o en el mar, puede que no aparezca nada útil.</li>
                     </ul>
-
+                    <img src="img/figures/PointSelected.jpg" />
+                    <p class="figure"><strong>Figura 7:</strong> Vista después de hacer clic en un punto, se muestra el
+                        pin y la sección de indicadores que se abre.</p>
                     <h3>3. Revisa los indicadores que aparecen</h3>
                     <p>Después del clic, se mostrarán los valores actualizados de los indicadores. Algunos ejemplos:</p>
                     <ul>
-                        <li><strong>Dist. SNASPE:</strong> 12.3 km (distancia a la reserva o parque más cercano)</li>
-                        <li><strong>Dist. Red Vial:</strong> 5.1 km (distancia a la carretera principal más cercana)
+                        <li><strong>Dist. SNASPE:</strong> 16.93 km (distancia a la reserva o parque más cercano)</li>
+                        <li><strong>Dist. Red Vial:</strong> 0.11 km (distancia a la carretera principal más cercana)
                         </li>
-                        <li><strong>PVOUT:</strong> 1700 kWh/kWp*año (potencial solar del sitio; este valor es alto)
+                        <li><strong>PVOUT:</strong> 1681.98 kWh-Año/kWp (potencial solar del sitio; este valor es alto)
                         </li>
-                        <li><strong>Hidrógeno:</strong> 60 kgH₂/m²*año (producción estimada por metro cuadrado al año)
+                        <li><strong>Hidrógeno:</strong> 6.89 kgH₂-Año/m² (producción estimada por metro cuadrado al año)
                         </li>
                     </ul>
-
+                    <img src="img/figures/DetalleIndicadores.jpg" height="600" width="300" />
+                    <p class="figure"><strong>Figura 8:</strong>Tabla con el valor de distintos indicadores en el punto
+                        seleccionado.</p>
                     <h3>4. Revisa si el sitio cumple los requisitos</h3>
                     <p>
                         Además de los números, la plataforma puede indicar si el lugar cumple o no con los requisitos
@@ -485,6 +415,9 @@
                         <li>Si el punto está dentro de una zona prohibida o demasiado cerca de una ciudad, será marcado
                             como no apto.</li>
                     </ul>
+                    <img src="img/figures/Alerta.jpg" />
+                    <p class="figure"> <strong>Figura 9: </strong>Aviso que aparece al hacer clic en una punto que no
+                        cumple los requisitos para un proyecto de Hidrógeno verde.</p>
 
                     <h3>5. Interpreta los resultados y decide</h3>
                     <p>Con los datos en pantalla, analiza si el lugar es viable:</p>
@@ -510,17 +443,10 @@
                         (por
                         ejemplo, alejándose de un parque o monumento).
                     </p>
-                    <img src="img/figures/3.png" />
-                    <p class="figure"><strong>Figura 3: Consulta de ejemplo</strong>
-                        En esta imagen se muestra un punto seleccionado en el mapa (con un símbolo) y los
-                        indicadores en
-                        el
-                        panel lateral.
-                        Algunos aparecen en <span style="color: red;">rojo</span> (por ejemplo, “Dist. SNASPE:
-                        Inhabilita", lo que indica un posible conflicto,
-                        mientras que otros están sin alerta (por
-                        ejemplo,
-                        “Dist. AVE(Km): 3.54”).
+                    <img src="img/figures/IndicadorInhabilita.jpg" />
+                    <p class="figure"><strong>Figura 10:</strong>
+                        Tabla destacando el indicador que inhabilita la realización de un proyecto de hidrógeno verde en
+                        el punto seleccionado.
                     </p>
                 </section>
 
@@ -556,13 +482,14 @@
                     <p>
                         Identifique referencias: la <strong>Carretera CH-5 (Panamericana)</strong> pasa cerca del límite
                         de
-                        Catemu, y la comuna colinda con San Felipe al sur.
+                        Catemu, y la comuna colinda con Llay-Llay y Panquehue al sur.
                     </p>
                     <p>
-                        Digamos que el sitio de interés está unos kilómetros al sur del pueblo de Catemu, cerca de la
-                        Panamericana. Ubíquelo visualmente.
+                        Digamos que el sitio de interés está unos kilómetros al sur del pueblo de Catemu, entre la
+                        Autopista Panamericana y la Ruta 60. Ubíquelo visualmente.
                     </p>
-
+                    <img src="img/figures/Ejemplo1.jpg" />
+                    <p class="figure"> <strong>Figura 11: </strong>Referencias en el mapa para la zona de interes.</p>
                     <h3>Paso 2: Seleccionar el punto y obtener indicadores</h3>
                     <p>
                         Haga clic en el terreno de interes, se desplegará el menú con los indicadores:
@@ -601,7 +528,8 @@
                         etc.
                         En este caso, todos muestran valores aceptables, lo que refuerza la viabilidad.
                     </p>
-
+                    <img src="img/figures/EjemploIndicadores.png" width="300" height="600" />
+                    <p class="figure"> <strong>Figura 12: </strong>Indicadores para la zona seleccionada</p>
                     <h3>Paso 3: Analizar los resultados y decidir pasos siguientes</h3>
                     <p>
                         Con esta información, puede concluir preliminarmente que <strong>el sector al sur de Catemu,
@@ -631,8 +559,6 @@
                         Sin embargo, gracias a H2V Valparaíso ya cuenta con una base técnico-geográfica que respalda la
                         factibilidad inicial.
                     </p>
-                    <img src="img/figures/4.png" />
-                    <p class="figure">Figura 4: Zona de Catemu evaluada</p>
                 </section>
                 <section id="indicadores" class="section">
                     <h2>¿Qué significa cada indicador? (Resumen)</h2>

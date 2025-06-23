@@ -62,6 +62,12 @@ document.getElementById('toggle-communes').addEventListener('change', (event) =>
     toggleMarkers(communesMarkers, event.target.checked);
 });
 document.getElementById('toggle-desalination').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        document.getElementById('toggle-communes').checked = false;
+        toggleMarkers(communesMarkers, false);
+        removeLimitCommunes();
+        document.getElementById('toggle-limitCommunes').checked = false;
+    }
     toggleMarkers(desalinationMarkers, event.target.checked);
 });
 // Toggle areas
@@ -70,5 +76,11 @@ document.getElementById('toggle-limitCommunes').addEventListener('change', (even
 });
 // Toggle areas
 document.getElementById('toggle-ptas').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        document.getElementById('toggle-communes').checked = false;
+        toggleMarkers(communesMarkers, false);
+        removeLimitCommunes();
+        document.getElementById('toggle-limitCommunes').checked = false;
+    }
     toggleMarkers(ptasMarkers, event.target.checked);
 });

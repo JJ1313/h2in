@@ -16,8 +16,8 @@ body {
 #menu-toggle {
     display: none;
     position: fixed;
-    top: 1rem;
-    left: 1rem;
+    top: 4rem;
+    right: 1rem;
     z-index: 1000;
     background: var(--clr-blue);
     width: 2.5rem;
@@ -33,7 +33,7 @@ nav {
     align-self: start;
     background: var(--clr-blue);
     padding-inline: 1rem;
-    padding-top: 2rem;
+    padding-top: calc(120px + 3rem);
 
     h2 {
         font-size: 1.5rem;
@@ -73,7 +73,7 @@ nav {
 }
 
 main {
-    padding-block: 5rem;
+    padding-block: calc(120px + 5rem);
 }
 
 #sections-container {
@@ -83,6 +83,7 @@ main {
 }
 
 .section {
+    scroll-margin-block: 120px;
     h2 {
         padding-top: 1rem;
         padding-bottom: 0.5rem;
@@ -105,7 +106,7 @@ main {
     img {
         display: block;
         margin-inline: auto;
-        width: 80%;
+        max-width: 80%;
         height: auto;
         object-fit: cover;
         margin-top: 1rem;

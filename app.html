@@ -302,6 +302,7 @@
     <div id="spinner-container">
         <div id="spinner"></div>
     </div>
+
     <div id="top-bar">
         <img src="img/logo_h2v.webp" height="120" class="logo">
         <img src="img/logo_muni.webp" width="160pt">
@@ -309,7 +310,6 @@
         <img src="img/logo_corfo_w.png" width="160pt">
         <img src="img/logo_DPS_w.png" width="160pt">
     </div>
-
     <div id="sideMenu-left" class="menu-floating" data-visible>
         <main>
             <section id="section-opciones">
@@ -336,14 +336,14 @@
                     <img src="./img/icon/information.png" width="32" alt="">
                     <h3>Descripción Indicadores</h3>
                 </header>
-                <section id="menu-manual">
-                    <header data-target="section-manual" class="btn link">
-                        <a href='/manual.html' target="_blank">
-                            <img src="./img/icon/manual.png" width="32" alt="">
-                        </a>
-                        <h3>Manual de Usuario</h3>
-                    </header>
-                </section>
+            </section>
+            <section id="menu-manual">
+                <header data-target="section-manual" class="btn link inverse-color">
+                    <a href='/manual.html' target="_blank">
+                        <img src="./img/icon/manual-white.png" width="32" alt="">
+                    </a>
+                    <h3>Manual de Usuario</h3>
+                </header>
             </section>
         </main>
     </div>
@@ -827,8 +827,18 @@
             </div>
         </main>
     </section>
+    <section id="section-legend">
+        <div class="legend-container">
+            <div class="box black"></div>
+            <div class="legend-text">Zonas no aptas</div>
+        </div>
+        <div class="legend-container">
+            <div class="box green"></div>
+            <div class="legend-text">Zonas aptas</div>
+        </div>
+    </section>
     <div id="map-container">
-        <div id="map" style="width: 100%; height: 100%;  z-index: 1; position: relative;"></div>
+        <div id="map" style="width: 100%; height: 100%; z-index: 1; position: relative;"></div>
         <script>
             const map = L.map('map', {
                 center: [-33.0309126, -71.0634993],
@@ -845,19 +855,32 @@
             }).addTo(map);
 
             // ========= Limite de comunas =========
+            function getRandomHexColor() {
+                const randomColor = Math.floor(Math.random() * 16777215);
+                let hexColor = randomColor.toString(16);
+                while (hexColor.length < 6) {
+                    hexColor = "0" + hexColor;
+                }
+                return "#" + hexColor;
+            }
+
             let communesMap = {};
             const displayLimitcommunes = () => {
-                for (var key in comunas) {
-                    if (comunas.hasOwnProperty(key)) {
-                        (function (key) {
-                            var coor = comunas[key]["Coordinates"];
-                            const polygon = L.polygon(coor).addTo(map);
-                            polygon.setStyle({fillColor: 'black', color: 'black', weight: 1, opacity: 2, fillOpacity: 0.0});
-                            communesMap[key] = polygon;
-                        })(key);
+                for (const communeName in comunas) {
+                    if (comunas.hasOwnProperty(communeName)) {
+                        const communeData = comunas[communeName];
+                        const coor = communeData.Coordinates;
+
+                        const polygon = L.polygon(coor).addTo(map);
+                        const clr = getRandomHexColor();
+                        polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0.25});
+                        communesMap[communeName] = polygon;
+                        polygon.name = communeName;
+                        polygon.bindPopup(`<b>Comuna:</b> ${communeName}`);
                     }
                 }
             }
+
             function removeLimitCommunes() {
                 for (var key in communesMap) {
                     if (communesMap.hasOwnProperty(key)) {
@@ -876,7 +899,7 @@
                 cuenca53,
                 cuenca54,
                 cuenca55,
-                // cuenca56,
+                // cuenca56, 
                 cuenca57,
                 cuenca58,
                 cuenca60,
@@ -885,15 +908,17 @@
                 cuencas.forEach((c) => {
                     const coor = c.features[0].geometry.rings;
                     const polygon = L.polygon(coor);
-                    polygon.setStyle({fillColor: '#17255B', color: '#333333', weight: 1, opacity: 2, fillOpacity: 0.5});
-                    cuencasMap[c.features[0].attributes.COD_CUEN] = polygon;
+                    const clr = getRandomHexColor();
+                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0.25});
+                    if (c.features[0].attributes && c.features[0].attributes.COD_CUEN) {
+                        cuencasMap[c.features[0].attributes.COD_CUEN] = polygon;
+                        polygon.bindPopup(`<b>Cuenca:</b> ${c.features[0].attributes.COD_CUEN}`);
+                    } else {
+                        console.warn("Cuenca missing 'COD_CUEN' attribute:", c);
+                    }
                 });
             }
-            const toggleCuenca = (checkbox, cuencaKey) => {
-                const displayCuencas = document.getElementById('toggle-cuencas').checked;
-                if (cuencasMap[cuencaKey] === undefined) {return }
-                checkbox.checked && displayCuencas ? cuencasMap[cuencaKey].addTo(map) : map.removeLayer(cuencasMap[cuencaKey]);
-            }
+
             const displayCuencas = (checkbox) => {
                 const cuencasCheckbox = document.querySelectorAll('#menu-cuencas input');
                 cuencasCheckbox.forEach((checkbox) => {
@@ -942,25 +967,66 @@
                 subcuencas.forEach((sc) => {
                     const coor = sc.features[0].geometry.rings;
                     const polygon = L.polygon(coor);
-                    polygon.setStyle({fillColor: '#087F8C', color: '#333333', weight: 1, opacity: 1, fillOpacity: 0.5});
-                    polygon.cuenca = sc.features[0].attributes.COD_CUEN;
-                    subcuencasMap[sc.features[0].attributes.COD_SUBC] = polygon;
+
+                    const clr = getRandomHexColor();
+                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0.25});
+
+                    if (sc.features[0].attributes && sc.features[0].attributes.COD_CUEN && sc.features[0].attributes.COD_SUBC) {
+                        polygon.cuenca = sc.features[0].attributes.COD_CUEN;
+                        subcuencasMap[sc.features[0].attributes.COD_SUBC] = polygon;
+                        polygon.bindPopup(`<b>Subcuenca:</b> ${sc.features[0].attributes.COD_SUBC}<br><b>Cuenca:</b> ${sc.features[0].attributes.COD_CUEN}`); // Add popup
+                    } else {
+                        console.warn("Subcuenca missing 'COD_CUEN' or 'COD_SUBC' attribute:", sc);
+                    }
                 });
             };
+            const toggleCuenca = (checkbox, cuencaKey) => {
+                const displayCuencas = document.getElementById('toggle-cuencas').checked;
+                if (displayCuencas) {
+                    document.getElementById('toggle-communes').checked = false;
+                    removeLimitCommunes();
+
+                    document.getElementById('toggle-subcuencas').checked = false;
+                    document.getElementById('toggle-subsubcuencas').checked = false;
+                    toggleSubsubcuencas(document.getElementById('toggle-subsubcuencas'));
+
+                    document.getElementById('toggle-limitCommunes').checked = false;
+                }
+                if (cuencasMap[cuencaKey] === undefined) {return }
+                checkbox.checked && displayCuencas ? cuencasMap[cuencaKey].addTo(map) : map.removeLayer(cuencasMap[cuencaKey]);
+            }
             const toggleSubcuencas = (checkbox) => {
                 if (checkbox.checked) {
+                    removeLimitCommunes();
+                    document.getElementById('toggle-limitCommunes').checked = false;
+                    document.getElementById('toggle-cuencas').checked = false;
+                    document.getElementById('toggle-subsubcuencas').checked = false;
                     for (let key in subcuencasMap) {
-                        const cuencaId = subcuencasMap[key].cuenca;
-                        const cuencaChecked = document.querySelector(`form input[data-cuenca="${cuencaId}"]`).checked;
-                        if (cuencaChecked) {
-                            subcuencasMap[key].addTo(map);
-                        }
+                        subcuencasMap[key].addTo(map);
                     }
 
                 }
                 else {
                     for (let key in subcuencasMap) {
                         map.removeLayer(subcuencasMap[key])
+                    }
+                }
+            }
+            const toggleSubsubcuencas = (checkbox) => {
+                if (checkbox.checked) {
+                    removeLimitCommunes();
+                    document.getElementById('toggle-limitCommunes').checked = false;
+                    document.getElementById('toggle-cuencas').checked = false;
+                    document.getElementById('toggle-subcuencas').checked = false;
+
+                    for (let key in subsubcuencasMap) {
+                        subsubcuencasMap[key].addTo(map);
+                    }
+
+                }
+                else {
+                    for (let key in subsubcuencasMap) {
+                        map.removeLayer(subsubcuencasMap[key])
                     }
                 }
             }
@@ -1008,7 +1074,7 @@
                 subsubcuenca5510,
                 subsubcuenca5520,
                 subsubcuenca5530,
-                //subsubcuenca5601,
+                //subsubcuenca5601, 
                 subsubcuenca5602,
                 subsubcuenca5610,
                 subsubcuenca5700,
@@ -1106,33 +1172,25 @@
                 subsubcuencas.forEach((ssc) => {
                     const coor = ssc.features[0].geometry.rings;
                     const polygon = L.polygon(coor);
-                    polygon.setStyle({fillColor: '#C0D6DF', color: '#333333', weight: 1, opacity: 1, fillOpacity: 0.5});
-                    polygon.cuenca = ssc.features[0].attributes.COD_CUEN;
-                    polygon.name = ssc.features[0].attributes.NOM_SSUBC;
+                    const clr = getRandomHexColor();
+                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0});
+
+                    if (ssc.features[0].attributes) {
+                        polygon.cuenca = ssc.features[0].attributes.COD_CUEN;
+                        polygon.name = ssc.features[0].attributes.NOM_SSUBC;
+                        subsubcuencasMap[ssc.features[0].attributes.COD_SSUBC] = polygon;
+                        polygon.bindPopup(`<b>Subsubcuenca:</b> ${ssc.features[0].attributes.NOM_SSUBC || ssc.features[0].attributes.COD_SSUBC}<br><b>Cuenca:</b> ${ssc.features[0].attributes.COD_CUEN}`);
+                    } else {
+                        console.warn("Subsubcuenca missing attributes:", ssc);
+                    }
+
                     polygon.on('click', (e) => {
                         console.log(e.target.name);
                     });
 
-                    subsubcuencasMap[ssc.features[0].attributes.COD_SSUBC] = polygon;
                 });
             };
-            const toggleSubsubcuencas = (checkbox) => {
-                if (checkbox.checked) {
-                    for (let key in subsubcuencasMap) {
-                        //const cuencaId = subsubcuencasMap[key].cuenca;
-                        //const cuencaChecked = document.querySelector(`form input[data-cuenca="${cuencaId}"]`).checked;
-                        //if (cuencaChecked) {
-                        subsubcuencasMap[key].addTo(map);
-                        //}
-                    }
 
-                }
-                else {
-                    for (let key in subsubcuencasMap) {
-                        map.removeLayer(subsubcuencasMap[key])
-                    }
-                }
-            }
 
             // ========= Disponibilidad de Hidrogeno =========
             function display_hidrogen_availability() {
@@ -1344,18 +1402,21 @@
             let cityPin = L.icon({
                 iconUrl: './img/icon/pin.png',
                 iconSize: [32, 32],
-                iconAnchor: [36, 20],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
             });
             let industrialPin = L.icon({
                 iconUrl: './img/icon/factory_pin.png',
                 iconSize: [32, 32],
-                iconAnchor: [36, 15],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
             });
 
             let ptasPin = L.icon({
                 iconUrl: './img/icon/water.png',
                 iconSize: [32, 32],
-                iconAnchor: [36, 15],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
             });
             const communesMarkers = [];
             const desalinationMarkers = [];
@@ -1394,7 +1455,6 @@
             function loadPtasMarker() {
                 for (let key in ptas) {
                     if (ptas.hasOwnProperty(key)) {
-                        const coordinates = [ptas[key].lat, ptas[key].lon];
                         const marker = L.marker([ptas[key].lat, ptas[key].lon], {icon: ptasPin});
                         ptasMarkers.push(marker);
                         marker.name = key;
@@ -1404,9 +1464,9 @@
 
                         marker.on('click', (event) => {
                             const sectionPtas = document.getElementById('section-ptas');
-                            const ptasName = document.getElementById('ptas-name').innerText = event.target.name;
-                            const ptasTechnology = document.getElementById('ptas-technology').innerText = event.target.technology;
-                            const ptasFlowRate = document.getElementById('ptas-flowRate').innerText = event.target.flowRate;
+                            document.getElementById('ptas-name').innerText = event.target.name;
+                            document.getElementById('ptas-technology').innerText = event.target.technology;
+                            document.getElementById('ptas-flowRate').innerText = event.target.flowRate;
                             sectionPtas.toggleAttribute('data-visible', true);
                         });
                     }
