@@ -361,73 +361,79 @@
         </header>
         <main>
             <div>
-                <header>
-                    <input type="checkbox" id="toggle-cuencas" name="toggle-cuencas" onchange="displayCuencas(this)">
-                    <div data-target="menu-cuencas" class='btn'>
-                        <label>Cuencas</label>
-                        <button type="button" class="btn-accordion"></button>
-                    </div>
-                </header>
-                <form id="menu-cuencas" class="accordion" autocomplete="off">
-                    <div>
-                        <input type="checkbox" id="toggle-quilimariPetorca" name="toggle-quilimariPetorca"
-                            onchange="toggleCuenca(this, '050')" data-cuenca="050" checked>
-                        <label for="toggle-quilimariPetorca">Costeras Quilimari-Petorca</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-petorca" name="toggle-petorca"
-                            onchange="toggleCuenca(this, '051')" data-cuenca="051" checked>
-                        <label for="toggle-petorca">Río petorca</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-ligua" name="toggle-ligua"
-                            onchange="toggleCuenca(this, '052')" data-cuenca="052" checked>
-                        <label for="toggle-ligua">Rio Ligua</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-liguaAconcagua" name="toggle-liguaAconcagua"
-                            onchange="toggleCuenca(this, '053')" data-cuenca="053" checked>
-                        <label for="toggle-liguaAconcagua">Costeras Ligua-Aconcagua</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-quilimari" name="toggle-quilimari"
-                            onchange="toggleCuenca(this, '054')" data-cuenca="054" checked>
-                        <label for="toggle-quilimari">Río Aconcagua</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-AconcaguaMaipo" name="toggle-AconcaguaMaipo"
-                            onchange="toggleCuenca(this, '055')" data-cuenca="055" checked>
-                        <label for="toggle-AconcaguaMaipo">Costeras Aconcagua-Maipo</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-pacifico" name="toggle-pacifico"
-                            onchange="toggleCuenca(this, '056')" data-cuenca="056" checked disabled>
-                        <label for="toggle-pacifico">Islas del Pacífico</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-Maipo" name="toggle-Maipo"
-                            onchange="toggleCuenca(this, '057')" data-cuenca="057" checked>
-                        <label for="toggle-Maipo">Río Maipo</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-MaipoRapel" name="toggle-MaipoRapel"
-                            onchange="toggleCuenca(this, '058')" data-cuenca="058" checked>
-                        <label for="toggle-MaipoRapel">Costeras Maipo-Rapel</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="toggle-Rapel" name="toggle-Rapel"
-                            onchange="toggleCuenca(this, '060')" data-cuenca="060" checked>
-                        <label for="toggle-Rapel">Río Rapel</label>
-                    </div>
-                </form>
+                <!-- <header> -->
+                <!--     <input type="checkbox" id="toggle-cuencas" name="toggle-cuencas" -->
+                <!--         onchange="handleLayerGroupToggle(this)"> -->
+                <!--     <div data-target="menu-cuencas" class='btn'> -->
+                <!--         <label>Cuencas</label> -->
+                <!--         <button type="button" class="btn-accordion"></button> -->
+                <!--     </div> -->
+                <!-- </header> -->
+                <!-- <form id="menu-cuencas" class="accordion" autocomplete="off"> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-quilimariPetorca" name="toggle-quilimariPetorca" -->
+                <!--             onchange="toggleCuenca(this, '050')" data-cuenca="050" checked> -->
+                <!--         <label for="toggle-quilimariPetorca">Costeras Quilimari-Petorca</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-petorca" name="toggle-petorca" -->
+                <!--             onchange="toggleCuenca(this, '051')" data-cuenca="051" checked> -->
+                <!--         <label for="toggle-petorca">Río petorca</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-ligua" name="toggle-ligua" -->
+                <!--             onchange="toggleCuenca(this, '052')" data-cuenca="052" checked> -->
+                <!--         <label for="toggle-ligua">Rio Ligua</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-liguaAconcagua" name="toggle-liguaAconcagua" -->
+                <!--             onchange="toggleCuenca(this, '053')" data-cuenca="053" checked> -->
+                <!--         <label for="toggle-liguaAconcagua">Costeras Ligua-Aconcagua</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-quilimari" name="toggle-quilimari" -->
+                <!--             onchange="toggleCuenca(this, '054')" data-cuenca="054" checked> -->
+                <!--         <label for="toggle-quilimari">Río Aconcagua</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-AconcaguaMaipo" name="toggle-AconcaguaMaipo" -->
+                <!--             onchange="toggleCuenca(this, '055')" data-cuenca="055" checked> -->
+                <!--         <label for="toggle-AconcaguaMaipo">Costeras Aconcagua-Maipo</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-pacifico" name="toggle-pacifico" -->
+                <!--             onchange="toggleCuenca(this, '056')" data-cuenca="056" checked disabled> -->
+                <!--         <label for="toggle-pacifico">Islas del Pacífico</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-Maipo" name="toggle-Maipo" -->
+                <!--             onchange="toggleCuenca(this, '057')" data-cuenca="057" checked> -->
+                <!--         <label for="toggle-Maipo">Río Maipo</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-MaipoRapel" name="toggle-MaipoRapel" -->
+                <!--             onchange="toggleCuenca(this, '058')" data-cuenca="058" checked> -->
+                <!--         <label for="toggle-MaipoRapel">Costeras Maipo-Rapel</label> -->
+                <!--     </div> -->
+                <!--     <div> -->
+                <!--         <input type="checkbox" id="toggle-Rapel" name="toggle-Rapel" -->
+                <!--             onchange="toggleCuenca(this, '060')" data-cuenca="060" checked> -->
+                <!--         <label for="toggle-Rapel">Río Rapel</label> -->
+                <!--     </div> -->
+                <!-- </form> -->
+                <div>
+                    <input type="checkbox" id="toggle-cuencas" name="toggle-cuencas"
+                        onchange="handleLayerGroupToggle(this)">
+                    <label for="toggle-cuencas">Cuencas</label>
+                </div>
                 <div>
                     <input type="checkbox" id="toggle-subcuencas" name="toggle-subcuencas"
-                        onchange="toggleSubcuencas(this)">
+                        onchange="handleLayerGroupToggle(this)">
                     <label for="toggle-subcuencas">Subcuencas</label>
                 </div>
                 <div>
                     <input type="checkbox" id="toggle-subsubcuencas" name="toggle-subsubcuencas"
-                        onchange="toggleSubsubcuencas(this)">
+                        onchange="handleLayerGroupToggle(this)">
                     <label for="toggle-subsubcuencas">Subsubcuencas</label>
                 </div>
                 <div>
@@ -877,6 +883,11 @@
                         communesMap[communeName] = polygon;
                         polygon.name = communeName;
                         polygon.bindPopup(`<b>Comuna:</b> ${communeName}`);
+                        const formCuencas = document.getElementById('menu-cuencas');
+                        const cuencaCheckboxes = formCuencas ? formCuencas.querySelectorAll('input[type="checkbox"][data-cuenca]') : [];
+                        deactivateCuencasLayer(cuencaCheckboxes, formCuencas);
+                        deactivateSubcuencasLayer();
+                        deactivateSubsubcuencasLayer();
                     }
                 }
             }
@@ -899,34 +910,13 @@
                 cuenca53,
                 cuenca54,
                 cuenca55,
-                // cuenca56, 
+                //cuenca56, 
                 cuenca57,
                 cuenca58,
                 cuenca60,
             ];
-            const loadCuencas = () => {
-                cuencas.forEach((c) => {
-                    const coor = c.features[0].geometry.rings;
-                    const polygon = L.polygon(coor);
-                    const clr = getRandomHexColor();
-                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0.25});
-                    if (c.features[0].attributes && c.features[0].attributes.COD_CUEN) {
-                        cuencasMap[c.features[0].attributes.COD_CUEN] = polygon;
-                        polygon.bindPopup(`<b>Cuenca:</b> ${c.features[0].attributes.COD_CUEN}`);
-                    } else {
-                        console.warn("Cuenca missing 'COD_CUEN' attribute:", c);
-                    }
-                });
-            }
 
-            const displayCuencas = (checkbox) => {
-                const cuencasCheckbox = document.querySelectorAll('#menu-cuencas input');
-                cuencasCheckbox.forEach((checkbox) => {
-                    checkbox.dispatchEvent(new Event('change'));
-                });
-                const subcuencaCheckbox = document.getElementById('toggle-subcuencas');
-                subcuencaCheckbox.dispatchEvent(new Event('change'));
-            }
+
 
             // ========= Subcuencas =========
             let subcuencasMap = {};
@@ -962,7 +952,20 @@
                 subcuenca603,
                 subcuenca604,
                 subcuenca605];
-
+            const loadCuencas = () => {
+                cuencas.forEach((c) => {
+                    const coor = c.features[0].geometry.rings;
+                    const polygon = L.polygon(coor);
+                    const clr = getRandomHexColor();
+                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0.25});
+                    if (c.features[0].attributes && c.features[0].attributes.COD_CUEN) {
+                        cuencasMap[c.features[0].attributes.COD_CUEN] = polygon;
+                        polygon.bindPopup(`${c.features[0].attributes.NOM_CUEN}`);
+                    } else {
+                        console.warn("Cuenca missing 'COD_CUEN' attribute:", c);
+                    }
+                });
+            }
             const loadSubcuencas = () => {
                 subcuencas.forEach((sc) => {
                     const coor = sc.features[0].geometry.rings;
@@ -974,62 +977,268 @@
                     if (sc.features[0].attributes && sc.features[0].attributes.COD_CUEN && sc.features[0].attributes.COD_SUBC) {
                         polygon.cuenca = sc.features[0].attributes.COD_CUEN;
                         subcuencasMap[sc.features[0].attributes.COD_SUBC] = polygon;
-                        polygon.bindPopup(`<b>Subcuenca:</b> ${sc.features[0].attributes.COD_SUBC}<br><b>Cuenca:</b> ${sc.features[0].attributes.COD_CUEN}`); // Add popup
+                        const cuencaName = getCuencaNameByCode(cuencas, sc.features[0].attributes.COD_CUEN);
+                        polygon.bindPopup(`<b>Subcuenca:</b> ${sc.features[0].attributes.NOM_SUBC}<br><b>Cuenca:</b> ${cuencaName}`); // Add popup
                     } else {
                         console.warn("Subcuenca missing 'COD_CUEN' or 'COD_SUBC' attribute:", sc);
                     }
                 });
             };
-            const toggleCuenca = (checkbox, cuencaKey) => {
-                const displayCuencas = document.getElementById('toggle-cuencas').checked;
-                if (displayCuencas) {
-                    document.getElementById('toggle-communes').checked = false;
-                    removeLimitCommunes();
+            const loadSubsubcuencas = () => {
+                subsubcuencas.forEach((ssc) => {
+                    const coor = ssc.features[0].geometry.rings;
+                    const polygon = L.polygon(coor);
+                    const clr = getRandomHexColor();
+                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0.25});
 
-                    document.getElementById('toggle-subcuencas').checked = false;
-                    document.getElementById('toggle-subsubcuencas').checked = false;
-                    toggleSubsubcuencas(document.getElementById('toggle-subsubcuencas'));
+                    if (ssc.features[0].attributes) {
+                        polygon.cuenca = ssc.features[0].attributes.COD_CUEN;
+                        polygon.name = ssc.features[0].attributes.NOM_SSUBC;
+                        const cuencaName = getCuencaNameByCode(cuencas, ssc.features[0].attributes.COD_CUEN)
+                        subsubcuencasMap[ssc.features[0].attributes.COD_SSUBC] = polygon;
+                        polygon.bindPopup(`<b>Subsubcuenca:</b> ${ssc.features[0].attributes.NOM_SSUBC || ssc.features[0].attributes.COD_SSUBC}<br><b>Cuenca:</b> ${cuencaName}`);
+                    } else {
+                        console.warn("Subsubcuenca missing attributes:", ssc);
+                    }
 
-                    document.getElementById('toggle-limitCommunes').checked = false;
+                    polygon.on('click', (e) => {
+                        console.log(e.target.name);
+                    });
+
+                });
+            };
+            function getCuencaNameByCode(dataArray, codCuenca) {
+                for (const item of dataArray) {
+                    if (item.features && item.features.length > 0) {
+                        for (const feature of item.features) {
+                            if (feature.attributes && feature.attributes.COD_CUEN === codCuenca) {
+                                return feature.attributes.NOM_CUEN;
+                            }
+                        }
+                    }
                 }
-                if (cuencasMap[cuencaKey] === undefined) {return }
-                checkbox.checked && displayCuencas ? cuencasMap[cuencaKey].addTo(map) : map.removeLayer(cuencasMap[cuencaKey]);
+                return null; // Return null if no matching COD_CUEN is found
             }
-            const toggleSubcuencas = (checkbox) => {
-                if (checkbox.checked) {
-                    removeLimitCommunes();
-                    document.getElementById('toggle-limitCommunes').checked = false;
-                    document.getElementById('toggle-cuencas').checked = false;
-                    document.getElementById('toggle-subsubcuencas').checked = false;
-                    for (let key in subcuencasMap) {
+            // Variable para almacenar el último estado de los checkboxes individuales de cuencas
+            let lastCuencasState = {};
+
+            const handleLayerGroupToggle = (clickedCheckbox) => {
+                const mainLayerToggles = ['toggle-cuencas', 'toggle-subcuencas', 'toggle-subsubcuencas'];
+                const formCuencas = document.getElementById('menu-cuencas');
+                const cuencaCheckboxes = formCuencas ? formCuencas.querySelectorAll('input[type="checkbox"][data-cuenca]') : [];
+
+                // 1. Desactivar los otros checkboxes principales del grupo
+                mainLayerToggles.forEach(id => {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox && checkbox.id !== clickedCheckbox.id) {
+                        // Solo desmarca si está marcado para evitar llamadas recursivas innecesarias
+                        if (checkbox.checked) {
+                            checkbox.checked = false;
+                            // Si desmarcamos programáticamente, necesitamos disparar su lógica de desactivación.
+                            // Es CRUCIAL pasar los argumentos correctos aquí.
+                            if (checkbox.id === 'toggle-cuencas') {
+                                deactivateCuencasLayer(cuencaCheckboxes, formCuencas); // <-- PASANDO ARGUMENTOS
+                            } else if (checkbox.id === 'toggle-subcuencas') {
+                                deactivateSubcuencasLayer();
+                            } else if (checkbox.id === 'toggle-subsubcuencas') {
+                                deactivateSubsubcuencasLayer();
+                            }
+                        }
+                    }
+                });
+
+                // 2. Ejecutar la lógica específica para el checkbox clickeado/cambiado
+                if (clickedCheckbox.id === 'toggle-cuencas') {
+                    if (clickedCheckbox.checked) {
+                        activateCuencasLayer(cuencaCheckboxes, formCuencas);
+                    } else {
+                        deactivateCuencasLayer(cuencaCheckboxes, formCuencas);
+                    }
+                } else if (clickedCheckbox.id === 'toggle-subcuencas') {
+                    if (clickedCheckbox.checked) {
+                        activateSubcuencasLayer();
+                    } else {
+                        deactivateSubcuencasLayer();
+                    }
+                } else if (clickedCheckbox.id === 'toggle-subsubcuencas') {
+                    if (clickedCheckbox.checked) {
+                        activateSubsubcuencasLayer();
+                    } else {
+                        deactivateSubsubcuencasLayer();
+                    }
+                }
+
+                // Lógica adicional para los otros checkboxes no relacionados (ej. límite de comunas)
+                if (clickedCheckbox.checked) {
+                    const toggleLimitCommunes = document.getElementById('toggle-limitCommunes');
+                    if (toggleLimitCommunes && toggleLimitCommunes.checked) {
+                        toggleLimitCommunes.checked = false;
+                        if (typeof removeLimitCommunes === 'function') {
+                            removeLimitCommunes();
+                        }
+                    }
+                }
+            };
+
+            // --- Funciones Auxiliares para Activar/Desactivar Capas Específicas ---
+
+            const activateCuencasLayer = (cuencaCheckboxes, formCuencas) => {
+                if (Object.keys(lastCuencasState).length === 0 || Object.values(lastCuencasState).every(val => !val)) {
+                    cuencaCheckboxes.forEach(cb => {
+                        if (!cb.disabled) {
+                            cb.checked = true;
+                        }
+                    });
+                } else {
+                    cuencaCheckboxes.forEach(cb => {
+                        if (!cb.disabled) {
+                            cb.checked = lastCuencasState[cb.id] || false;
+                        }
+                    });
+                }
+                for (let key in cuencasMap) {
+                    cuencasMap[key].addTo(map);
+                }
+            };
+
+            const deactivateCuencasLayer = (cuencaCheckboxes, formCuencas) => {
+                // Guardar el estado actual de los sub-cuencas antes de desmarcarlos
+                cuencaCheckboxes.forEach(cb => {
+                    lastCuencasState[cb.id] = cb.checked;
+                    cb.checked = false;
+                    // Remover la capa correspondiente del mapa
+                    const cuencaKey = cb.getAttribute('data-cuenca');
+                    if (cuencasMap[cuencaKey] && map.hasLayer(cuencasMap[cuencaKey])) {
+                        map.removeLayer(cuencasMap[cuencaKey]);
+                    }
+                });
+                for (let key in cuencasMap) {
+                    map.removeLayer(cuencasMap[key]);
+                }
+            };
+
+            const activateSubcuencasLayer = () => {
+                for (let key in subcuencasMap) {
+                    if (map && subcuencasMap[key]) {
                         subcuencasMap[key].addTo(map);
                     }
-
                 }
-                else {
-                    for (let key in subcuencasMap) {
-                        map.removeLayer(subcuencasMap[key])
+            };
+
+            const deactivateSubcuencasLayer = () => {
+                for (let key in subcuencasMap) {
+                    if (map && map.hasLayer(subcuencasMap[key])) {
+                        map.removeLayer(subcuencasMap[key]);
                     }
                 }
-            }
-            const toggleSubsubcuencas = (checkbox) => {
-                if (checkbox.checked) {
-                    removeLimitCommunes();
-                    document.getElementById('toggle-limitCommunes').checked = false;
-                    document.getElementById('toggle-cuencas').checked = false;
-                    document.getElementById('toggle-subcuencas').checked = false;
+            };
 
-                    for (let key in subsubcuencasMap) {
+            const activateSubsubcuencasLayer = () => {
+                for (let key in subsubcuencasMap) {
+                    if (map && subsubcuencasMap[key]) {
                         subsubcuencasMap[key].addTo(map);
                     }
-
                 }
-                else {
-                    for (let key in subsubcuencasMap) {
-                        map.removeLayer(subsubcuencasMap[key])
+            };
+
+            const deactivateSubsubcuencasLayer = () => {
+                for (let key in subsubcuencasMap) {
+                    if (map && map.hasLayer(subsubcuencasMap[key])) {
+                        map.removeLayer(subsubcuencasMap[key]);
                     }
                 }
-            }
+            };
+
+
+            // --- Asignación de Event Listeners ---
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleCuencas = document.getElementById('toggle-cuencas');
+                const toggleSubcuencas = document.getElementById('toggle-subcuencas');
+                const toggleSubsubcuencas = document.getElementById('toggle-subsubcuencas');
+                const formCuencas = document.getElementById('menu-cuencas');
+                const cuencaCheckboxes = formCuencas ? formCuencas.querySelectorAll('input[type="checkbox"][data-cuenca]') : [];
+
+                // Asignar el manejador central a los checkboxes principales
+                if (toggleCuencas) {
+                    toggleCuencas.addEventListener('change', () => handleLayerGroupToggle(toggleCuencas));
+                }
+                if (toggleSubcuencas) {
+                    toggleSubcuencas.addEventListener('change', () => handleLayerGroupToggle(toggleSubcuencas));
+                }
+                if (toggleSubsubcuencas) {
+                    toggleSubsubcuencas.addEventListener('change', () => handleLayerGroupToggle(toggleSubsubcuencas));
+                }
+
+                // Manejador para los checkboxes individuales dentro del formulario de cuencas
+                cuencaCheckboxes.forEach(cb => {
+                    cb.addEventListener('change', () => {
+                        lastCuencasState[cb.id] = cb.checked; // Actualiza el estado guardado
+
+                        // Agrega o remueve la capa individual de la cuenca
+                        const cuencaKey = cb.getAttribute('data-cuenca');
+                        if (cuencasMap[cuencaKey]) { // Asegúrate de que la capa existe
+                            if (cb.checked) {
+                                cuencasMap[cuencaKey].addTo(map);
+                            } else {
+                                map.removeLayer(cuencasMap[cuencaKey]);
+                            }
+                        }
+
+                        // Asegura que 'toggle-cuencas' se marque/desmarque según el estado de las cuencas individuales
+                        const anyCuencaChecked = Array.from(cuencaCheckboxes).some(cb => cb.checked);
+                        if (toggleCuencas && toggleCuencas.checked !== anyCuencaChecked) {
+                            toggleCuencas.checked = anyCuencaChecked;
+                            // Si toggle-cuencas se desmarca porque todas las sub-cuencas se desmarcaron
+                            if (!anyCuencaChecked && formCuencas) {
+                                formCuencas.style.display = 'none'; // Oculta el formulario si ninguna cuenca está marcada
+                            } else if (anyCuencaChecked && formCuencas) {
+                                formCuencas.style.display = 'block'; // Muestra el formulario si al menos una está marcada
+                            }
+                        }
+
+                        // Si se marca una subcuenca individual, desactiva Subcuencas y Subsubcuencas
+                        if (cb.checked) {
+                            if (toggleSubcuencas && toggleSubcuencas.checked) {
+                                toggleSubcuencas.checked = false;
+                                deactivateSubcuencasLayer();
+                            }
+                            if (toggleSubsubcuencas && toggleSubsubcuencas.checked) {
+                                toggleSubsubcuencas.checked = false;
+                                deactivateSubsubcuencasLayer();
+                            }
+                            // También desactiva el límite de comunas si está activo
+                            const toggleLimitCommunes = document.getElementById('toggle-limitCommunes');
+                            if (toggleLimitCommunes && toggleLimitCommunes.checked) {
+                                toggleLimitCommunes.checked = false;
+                                if (typeof removeLimitCommunes === 'function') {
+                                    removeLimitCommunes();
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // Inicializar el estado guardado de las cuencas individuales al cargar la página
+                cuencaCheckboxes.forEach(cb => {
+                    lastCuencasState[cb.id] = cb.checked;
+                });
+
+                // Asegurar que el formulario de cuencas se muestre/oculte correctamente al inicio
+                if (formCuencas && toggleCuencas) {
+                    formCuencas.style.display = toggleCuencas.checked ? 'block' : 'none';
+                    // También inicializa las capas en el mapa si 'toggle-cuencas' está marcado al inicio
+                    if (toggleCuencas.checked) {
+                        cuencaCheckboxes.forEach(cb => {
+                            const cuencaKey = cb.getAttribute('data-cuenca');
+                            if (cb.checked && cuencasMap[cuencaKey]) {
+                                cuencasMap[cuencaKey].addTo(map);
+                            }
+                        });
+                    }
+                }
+            });
+
             // ========= Subsubcuencas =========
             let subsubcuencasMap = {};
             const subsubcuencas = [
@@ -1168,28 +1377,6 @@
                 subsubcuenca6056,
             ]
 
-            const loadSubsubcuencas = () => {
-                subsubcuencas.forEach((ssc) => {
-                    const coor = ssc.features[0].geometry.rings;
-                    const polygon = L.polygon(coor);
-                    const clr = getRandomHexColor();
-                    polygon.setStyle({fillColor: clr, color: clr, weight: 1, opacity: 1, fillOpacity: 0});
-
-                    if (ssc.features[0].attributes) {
-                        polygon.cuenca = ssc.features[0].attributes.COD_CUEN;
-                        polygon.name = ssc.features[0].attributes.NOM_SSUBC;
-                        subsubcuencasMap[ssc.features[0].attributes.COD_SSUBC] = polygon;
-                        polygon.bindPopup(`<b>Subsubcuenca:</b> ${ssc.features[0].attributes.NOM_SSUBC || ssc.features[0].attributes.COD_SSUBC}<br><b>Cuenca:</b> ${ssc.features[0].attributes.COD_CUEN}`);
-                    } else {
-                        console.warn("Subsubcuenca missing attributes:", ssc);
-                    }
-
-                    polygon.on('click', (e) => {
-                        console.log(e.target.name);
-                    });
-
-                });
-            };
 
 
             // ========= Disponibilidad de Hidrogeno =========
@@ -1498,7 +1685,7 @@
                         map.removeLayer(pointedMarker);
                     }
                     const coor = e.latlng;
-                    console.log(`${coor.lat}, ${coor.lng}`);
+                    console.log(coor)
                     pointedMarker = L.marker(coor).addTo(map);
                 })
 
